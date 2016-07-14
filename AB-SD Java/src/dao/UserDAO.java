@@ -178,5 +178,15 @@ public class UserDAO implements UserInterface{
 		return true;
 	}
 	
+	public static void main(String[] args) {
+		UserDAO userDAO = new UserDAO();
+		
+		List<User> users = userDAO.getAllUser();
+		
+		for (User user : users) {
+			System.out.println(user.getEmail());
+		}
+	}
+	
 
 }
