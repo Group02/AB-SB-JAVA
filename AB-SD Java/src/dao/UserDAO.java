@@ -3,6 +3,9 @@ package dao;
 import java.util.Iterator;
 import java.util.List;
 
+// tuan khung
+// tuan dien
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -114,7 +117,6 @@ public class UserDAO implements UserInterface{
 	public List<User> getAllUser() {
 		try {
 			openSessionWithBeginTransaction();
-			@SuppressWarnings("unchecked")
 			List<User> user = session.createQuery("from User").list();//chua hieu
 			for(Iterator<User> iterator=user.iterator();iterator.hasNext();){ //chua hieu tooo
 				User em = (User)iterator.next();
@@ -176,16 +178,6 @@ public class UserDAO implements UserInterface{
 			closeSession();
 		}
 		return true;
-	}
-	
-	public static void main(String[] args) {
-		UserDAO userDAO = new UserDAO();
-		
-		List<User> users = userDAO.getAllUser();
-		
-		for (User user : users) {
-			System.out.println(user.getEmail());
-		}
 	}
 	
 
