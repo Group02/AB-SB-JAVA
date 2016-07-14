@@ -6,6 +6,7 @@ import java.util.List;
 // tuan khung
 // tuan dien
 
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -117,6 +118,7 @@ public class UserDAO implements UserInterface{
 	public List<User> getAllUser() {
 		try {
 			openSessionWithBeginTransaction();
+			@SuppressWarnings("unchecked")
 			List<User> user = session.createQuery("from User").list();//chua hieu
 			for(Iterator<User> iterator=user.iterator();iterator.hasNext();){ //chua hieu tooo
 				User em = (User)iterator.next();
