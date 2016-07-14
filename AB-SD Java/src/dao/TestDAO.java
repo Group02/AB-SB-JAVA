@@ -10,6 +10,8 @@ public class TestDAO {
 		// TODO Auto-generated method stub
 		
 		// Toi la chau quoc minh
+		
+		// Minh dep trai :v
 	}
 
 }
