@@ -3,10 +3,6 @@ package dao;
 import java.util.Iterator;
 import java.util.List;
 
-// tuan khung
-// tuan dien
-
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -88,6 +84,13 @@ public class UserDAO implements UserInterface{
 		} finally {
 			closeSession();
 		}
+	}
+	
+	public static void main(String[] args) {
+		User user = new User("memy19992@gmail.com", "123456");
+		UserDAO userDAO = new UserDAO();
+		
+		userDAO.insertUser(user);
 	}
 	
 	//Change user's password
@@ -172,6 +175,11 @@ public class UserDAO implements UserInterface{
 			
 			if(list.isEmpty()) return false;
 			
+			// Check password:
+			if(!list.get(0).getPassword().equals(user.getPassword())) {
+				return false;
+			}
+			
 		} catch (HibernateException e) {
 			System.out.println("Failed when to update User!");
 			e.printStackTrace();
@@ -181,6 +189,5 @@ public class UserDAO implements UserInterface{
 		
 		return true;
 	}
-	
 
 }
