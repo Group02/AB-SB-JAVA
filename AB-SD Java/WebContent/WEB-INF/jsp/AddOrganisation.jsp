@@ -143,7 +143,7 @@
 			</table>
 		</div>
 		<div class="hide">
-			<p>Loading... :3</p>
+			<p>Loading...... :3</p>
 			
 		</div>
 	</div>
