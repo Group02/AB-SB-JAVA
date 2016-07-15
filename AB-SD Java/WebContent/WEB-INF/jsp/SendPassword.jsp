@@ -18,27 +18,19 @@
 		<div class="vertical-middle">
 			<div class="login-form box-shadow">
 				<div class="header header-background" align="center">
-					<h2>Login</h2>
+					<h2>Forgot your password?</h2>
 				</div>
 				<div class="form">
-					<form:form modelAttribute="User" action="handle.html" method="post"
-						onsubmit="return validateForm()">
-						<div style="color: #FF004F;">Email:</div>
-						<div>
-							<form:input path="email" id="email" />
-						</div>
-						<div style="color: #FF004F;">Password:</div>
-						<div>
-							<form:password path="password" id="password" />
-						</div>
+					<form action="handle-forgot-pwd.html" onsubmit="return checkEmail()" 
+						method="post">
+						<div style="color: #FF004F;">Input your email:</div>
+						<div><input type="text" name="email" id="email"></div>
 						<div id="error" class="error">${message}</div>
-						<div align="center">
-							<input type="submit" value="Login">
-						</div>
-					</form:form>
+						<div align="center"><input type="submit" value="Send Password"></div>
+					</form>
 				</div>
 				<div class="header header-background" align="center">
-					<a href="forgot-password.html" class="forgot">Forgot your password?</a>
+					<a href="index.html" class="back">Back to Login Page</a>
 				</div>
 			</div>
 		</div>

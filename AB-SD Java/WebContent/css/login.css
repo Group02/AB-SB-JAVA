@@ -39,7 +39,13 @@
 	color: white;
 }
 
-.forgot:hover {
+.back {
+	text-decoration: none;
+	font-size: 16px;
+	color: white;
+}
+
+.forgot:hover , .back:hover {
 	text-decoration: underline;
 }
 
@@ -49,12 +55,17 @@ input {
 }
 
 input[type="submit"] {
-	width: 120px;
+	width: 140px;
 }
 
 .error {
 	font-style: italic;
 	font-size: 14px;
-	padding: 5px 0 5px 0;
 	color: red;
+}
+
+.success {
+	font-style: italic;
+	font-size: 14px;
+	color: #00A800;
 }
