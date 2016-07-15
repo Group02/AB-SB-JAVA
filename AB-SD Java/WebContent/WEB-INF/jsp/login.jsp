@@ -23,11 +23,11 @@
 				<div class="form">
 					<form:form modelAttribute="User" action="handle.html" method="post"
 						onsubmit="return validateForm()">
-						<div style="color: #FF004F;">Email:</div>
+						<div style="color: #0067FF;;">Email:</div>
 						<div>
 							<form:input path="email" id="email" />
 						</div>
-						<div style="color: #FF004F;">Password:</div>
+						<div style="color: #0067FF;;">Password:</div>
 						<div>
 							<form:password path="password" id="password" />
 						</div>

@@ -82,4 +82,11 @@ public class LoginController {
 		return model; 
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/login/index.html";
+	}
+	
 }

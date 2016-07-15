@@ -23,7 +23,7 @@
 				<div class="form">
 					<form action="handle-forgot-pwd.html" onsubmit="return checkEmail()" 
 						method="post">
-						<div style="color: #FF004F;">Input your email:</div>
+						<div style="color: #0067FF;;">Input your email:</div>
 						<div><input type="text" name="email" id="email"></div>
 						<div id="error" class="error">${message}</div>
 						<div align="center"><input type="submit" value="Send Password"></div>

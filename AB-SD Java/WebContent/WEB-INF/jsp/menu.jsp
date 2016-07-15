@@ -5,18 +5,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/style-1.css">
 <title></title>
 </head>
 <body>
-	<div class="menu-main">
+	<div class="box-shadow">
 		<ul>
-			<li><a class="active" href="#home">Home</a></li>
-			<li><a href="#news">News</a></li>
-			<li class="dropdown" style="float: right;">
-				<a href="#" class="dropbtn">Dropdown</a>
+			<li><a class="active" href="#home">AB-SD</a></li>
+			<li class="dropdown"><a href="#" class="dropbtn">Organisation</a>
 				<div class="dropdown-content">
-					<a href="#">Logout</a>
-				</div>
+					<a href="#">Supporting Materials Maintenance</a> <a href="#">Directorate
+						Maintenance</a> <a href="#">Department Maintenance</a> <a href="#">Team
+						Maintenance</a>
+				</div></li>
+			<li class="dropdown"><a href="#" class="dropbtn">Services</a>
+				<div class="dropdown-content">
+					<a href="#">Programme</a>
+				</div></li>
+			<li class="dropdown"><a href="#" class="dropbtn">Geography</a>
+				<div class="dropdown-content">
+					<a href="#">Trust Region Maintenance</a> <a href="#">Trust
+						District Maintenance</a> <a href="#">Government Office Region</a>
+				</div></li>
+			<li><a href="#news">Premises</a></li>
+			<li><a href="#news">Contacts</a></li>
+			<li style="float: right;">
+				<%
+					if (session.getAttribute("User") == null) {
+				%> 
+						<a href="#login">Login</a> 
+				<%
+					} else {
+				%> 
+						<a href="logout.html">Logout</a> 
+				<%
+				 	}
+				%> 
 			</li>
 		</ul>
 	</div>
