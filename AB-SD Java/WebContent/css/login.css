@@ -9,5 +9,52 @@
 }
 
 .login-form {
-	background: white;
+	margin: 20px auto 0 auto;
+	background: rgba(255,255,255,0.8);
+	font: 18px Arial, sans-serif;
+	width: 380px;
+}
+
+.form {
+}
+
+.form div {
+	margin: 10px 20px 10px 20px;
+}
+
+.header {
+	padding: 10px;
+}
+
+.header h2{
+	margin: 0 auto;
+	font-size: 30px;
+	color: white;
+}
+
+.forgot {
+	text-decoration: none;
+	font-style: italic;
+	font-size: 14px;
+	color: white;
+}
+
+.forgot:hover {
+	text-decoration: underline;
+}
+
+input {
+	height: 35px;
+	width: 100%;
+}
+
+input[type="submit"] {
+	width: 120px;
+}
+
+.error {
+	font-style: italic;
+	font-size: 14px;
+	padding: 5px 0 5px 0;
+	color: red;
 }
