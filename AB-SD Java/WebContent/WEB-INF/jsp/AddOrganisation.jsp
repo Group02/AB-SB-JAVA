@@ -140,11 +140,10 @@
 						<button type="submit">Back</button>
 					</td>
 				</tr>
-				
 			</table>
 		</div>
 		<div class="hide">
-			<p>Loading...</p>
+			<p>Loading... :3</p>
 			
 		</div>
 	</div>
