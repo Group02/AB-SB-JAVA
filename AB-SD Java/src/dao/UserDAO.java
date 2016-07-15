@@ -172,13 +172,13 @@ public class UserDAO implements UserInterface{
 			
 			if(list.isEmpty()) return false;
 			
-			
 		} catch (HibernateException e) {
 			System.out.println("Failed when to update User!");
 			e.printStackTrace();
 		} finally {
 			closeSession();
 		}
+		
 		return true;
 	}
 	

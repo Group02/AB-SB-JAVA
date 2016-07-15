@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/login")
 public class LoginController {
 	
+	private UserDAO userDAO= new UserDAO();
+	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView initialLoginForm() {
 		ModelAndView model = new ModelAndView("login");
@@ -21,18 +23,18 @@ public class LoginController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.POST)
+	@RequestMapping(value = "/handle", method = RequestMethod.POST)
 	public ModelAndView handleLoginForm(@ModelAttribute("User") User user) {
-		ModelAndView model1 = new ModelAndView("login");
-		ModelAndView model2 = new ModelAndView("menu");
 		
-		UserDAO userDAO= new UserDAO();
-		
-		if(userDAO.isExist(user)) return model2;
-		else{
-			model1.addObject("message", "The email and password you entered don't match");
-			return model1;
+		// Find user on database:
+		if (userDAO.isExist(user)) {
+			// If user exist then redirect to Organisation List Page
+			return new ModelAndView("OrganisationList");
 		}
+		
+		// Else -> Redirect to Login Page with error message:
+		return new ModelAndView("login", "message", 
+				"The email and password you entered don't match.");
 	}
 	
 }
