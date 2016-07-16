@@ -10,13 +10,14 @@
 </head>
 <body>
 	<div class="box-shadow">
-		<ul>
+		<ul class="menu">
 			<li><a class="active" href="#home">AB-SD</a></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Organisation</a>
 				<div class="dropdown-content">
-					<a href="#">Supporting Materials Maintenance</a> <a href="#">Directorate
-						Maintenance</a> <a href="#">Department Maintenance</a> <a href="#">Team
-						Maintenance</a>
+					<a href="#">Supporting Materials Maintenance</a> 
+					<a href="#">Directorate Maintenance</a> 
+					<a href="#">Department Maintenance</a> 
+					<a href="#">Team Maintenance</a>
 				</div></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Services</a>
 				<div class="dropdown-content">
@@ -24,8 +25,9 @@
 				</div></li>
 			<li class="dropdown"><a href="#" class="dropbtn">Geography</a>
 				<div class="dropdown-content">
-					<a href="#">Trust Region Maintenance</a> <a href="#">Trust
-						District Maintenance</a> <a href="#">Government Office Region</a>
+					<a href="#">Trust Region Maintenance</a> 
+					<a href="#">Trust District Maintenance</a> 
+					<a href="#">Government Office Region</a>
 				</div></li>
 			<li><a href="#news">Premises</a></li>
 			<li><a href="#news">Contacts</a></li>
@@ -33,7 +35,7 @@
 				<%
 					if (session.getAttribute("User") == null) {
 				%> 
-						<a href="#login">Login</a> 
+						<a href="index.html">Login</a> 
 				<%
 					} else {
 				%> 
