@@ -12,25 +12,28 @@
 	<div class="box-shadow">
 		<ul class="menu">
 			<li><a class="active" href="#home">AB-SD</a></li>
-			<li class="dropdown"><a href="#" class="dropbtn">Organisation</a>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/organisation/list.html" class="dropbtn">Organisation</a>
 				<div class="dropdown-content">
-					<a href="#">Supporting Materials Maintenance</a> 
-					<a href="#">Directorate Maintenance</a> 
-					<a href="#">Department Maintenance</a> 
-					<a href="#">Team Maintenance</a>
+					<a href="<%=request.getContextPath()%>/menu/building.html">Supporting Materials Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Directorate Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Department Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Team Maintenance</a>
 				</div></li>
-			<li class="dropdown"><a href="#" class="dropbtn">Services</a>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Services</a>
 				<div class="dropdown-content">
-					<a href="#">Programme</a>
+					<a href="<%=request.getContextPath()%>/menu/building.html">Programme</a>
 				</div></li>
-			<li class="dropdown"><a href="#" class="dropbtn">Geography</a>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Geography</a>
 				<div class="dropdown-content">
-					<a href="#">Trust Region Maintenance</a> 
-					<a href="#">Trust District Maintenance</a> 
-					<a href="#">Government Office Region</a>
+					<a href="<%=request.getContextPath()%>/menu/building.html">Trust Region Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Trust District Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Government Office Region</a>
 				</div></li>
-			<li><a href="#news">Premises</a></li>
-			<li><a href="#news">Contacts</a></li>
+			<li><a href="<%=request.getContextPath()%>/menu/building.html">Premises</a></li>
+			<li><a href="<%=request.getContextPath()%>/menu/building.html">Contacts</a></li>
 			<li style="float: right;">
 				<%
 					if (session.getAttribute("User") == null) {
