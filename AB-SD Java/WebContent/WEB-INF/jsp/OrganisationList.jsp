@@ -40,7 +40,7 @@
 					<th class="header-background">
 						<span>
 							<input id="in-active" type="checkbox">
-							<label for="in-active">In Active ?</label>
+							<label for="in-active"> In Active ?</label>
 						</span>
 					</th>
 				</tr>

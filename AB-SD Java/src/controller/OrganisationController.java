@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/organisation")
 public class OrganisationController {
 
-	@RequestMapping(value = "/organisation")
+	@RequestMapping(value = "/list")
 	public ModelAndView listOrg() {
 		
 		return new ModelAndView("OrganisationList", "Organisation",
