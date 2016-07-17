@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import org.hibernate.FetchMode;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -83,6 +82,7 @@ public class AddressLookupDAO implements AddressLookupInterface{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<AddressLookup> getAllAddr() {
 		try {
