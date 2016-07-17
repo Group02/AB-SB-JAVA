@@ -6,20 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add a new Organisation</title>
 	<script type = "text/javascript" src = "http://code.jquery.com/jquery.min.js"></script>
+	<script type = "text/javascript" src = "../js/AddOrganisation.js"></script>
 	<link type = "text/css" href="../css/organisationdetails.css" rel = "stylesheet" media = "screen"/>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#tabs ul li").click(function(){
-				$("#tabs ul li").removeClass('active');
-				//var current_index = $(this).index();//use for jquery >=1.4.x
-				var current_index = $("#tabs ul li").index(this);
-				$("#tabs ul li:eq("+current_index+")").addClass("active");
-				$("#tabs div").hide();
-				$("#tabs div:eq("+current_index+")").fadeIn(100);
-				
-			});
-		});
-	</script>
 </head>
 <body>
 <form>
