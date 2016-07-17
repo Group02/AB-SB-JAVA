@@ -1,27 +1,44 @@
 package model;
 
-public class AddressLookup {
+import java.io.Serializable;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="addressLookup")
+@IdClass(AddressLookupID.class)
+public class AddressLookup implements Serializable{
+	
+	@Id
+	@Column(name="address")
 	private String address;
+	
+	@Id
+	@Column(name="postcode")
 	private String postCode;
+	
+	@Column(name="town")
 	private String town;
+	
+	@Column(name="county")
 	private String county;
+	
+	@Column(name="country")
 	private String country;
 	
 	public AddressLookup() {
 		super();
 	}
 
-	public AddressLookup(String address, String postCode) {
-		super();
-		this.address = address;
-		this.postCode = postCode;
-	}
+	
+//	public AddressLookup(String address, String postCode) {
+//		super();
+//		this.address = address;
+//		this.postCode = postCode;
+//	}
 
 	public AddressLookup(String address, String postCode, String town, String county, String country) {
 		super();
-		this.address = address;
-		this.postCode = postCode;
 		this.town = town;
 		this.county = county;
 		this.country = country;

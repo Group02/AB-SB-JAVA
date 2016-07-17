@@ -1,0 +1,212 @@
+thead {color:teal;}
+tbody {color:black;}
+tfoot {color:red;}
+
+/* width 's button */
+#wbutton{
+	width:120px;
+	border-radius: 2px;
+	padding: 4px 4px;
+	position:relative;
+	top:1px;
+	bottom:2px;
+}
+/* align for table business_lookup */
+#table_business{
+	border: 1px solid black;
+	border-collapse: collapse;
+	width:45%;
+}
+
+#table_business th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#table_business td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#tableb{
+	border: none;
+	width:45%;
+}
+
+/* align for table address_lookup */
+#table_address{
+/* 	border: 0.5px solid #0067FF; */
+	border-collapse: collapse;
+	min-width: 98%;
+	margin-left:5px;
+}
+
+#table_address th{
+/* 	border: 0.2px solid black; */
+	border-collapse: collapse;
+	border-color:white;
+	background-color:#0067FF;
+	color:white;
+}
+
+#table_address th, td {
+/*     padding: 8px; */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#table_address tr:hover{
+	background-color:#4d95ff;
+}
+
+#table_address tr:nth-child(even):hover{
+	background-color:#4d95ff;
+}
+
+#table_address tr:nth-child(even){
+	background-color: #b1d0ff;
+}
+
+/* align table search */
+#table_search{
+	border-collapse: collapse;
+    width: 100%;
+    overflow-x:auto;
+}
+
+#table_search th{
+	position:relative;
+	top:0px;
+	background-color:#0067FF;
+	color:white;
+	padding:5px 6px;
+}
+
+/* align 's page address_lookup */
+.pagemar{
+	margin-left:40%;
+}
+
+/* align 's button none address_lookup */
+#none{
+	position:relative;
+	top:-17px;
+	left:2px;
+}
+
+/* frame address lookup */
+.frame_address{
+	visibility: hidden;
+/* 	text-align:center; */
+	position: absolute;
+	z-index: 101;
+	min-width:10%;border-color:black;
+	border-style: solid;
+    border-width: 2px;
+    margin-top:170px;
+	margin-left:410px;
+    min-height: 230px;
+    border: 2px solid #0067FF;
+	border-radius: 9px;
+	box-shadow: 2px 2px 2px grey;
+	background-color:white;
+}
+
+.frame_address th a{
+	position:relative;
+	top:0px;
+	left:250px;
+	cursor:pointer;
+	padding:15 20;
+}
+
+#frame_table{
+	
+}
+
+#frame_table th{
+	background-color: DarkSlateGray;
+	padding: 8px 8px;
+}
+
+/* align phan trang */
+#pagination-clean li{
+border:0; margin:0; padding:0;
+font-size:11px;
+list-style:none;
+}
+ 
+#pagination-clean li, #pagination-clean a{
+border:solid 1px #DEDEDE
+margin-right:2px;
+}
+ 
+#pagination-clean .previous-off,
+#pagination-clean .next-off{
+color:#888888
+display:block;
+float:left;
+font-weight:bold;
+padding:3px 4px;
+}
+ 
+#pagination-clean .next a,
+#pagination-clean .previous a{
+font-weight:bold;
+border:solid 1px #FFFFFF;
+}
+ 
+#pagination-clean .active{
+color:#00000
+font-weight:bold;
+display:block;
+float:left;
+padding:4px 6px;
+}
+ 
+#pagination-clean a:link,
+#pagination-clean a:visited{
+color:#0033CC
+display:block;
+float:left;
+padding:3px 6px;
+text-decoration:none;
+}
+ 
+#pagination-clean a:hover{
+text-decoration:none;
+}
+
+/* close frame */
+.page .close {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		right: 11px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: bold;
+/* 		cursor: pointer; */
+		} 
+
+/* align input address */
+input[type='text']{
+	border : 1px solid teal;
+    width: 150%;
+/*     height: 40px; */
+}
+
+/* align cell in table 's view address */
+.wcell1{
+	width:180px;
+	word-wrap: break-word;
+}
+
+.wcell2{
+	width:80px;
+	word-wrap: break-word;
+}
+
+
+

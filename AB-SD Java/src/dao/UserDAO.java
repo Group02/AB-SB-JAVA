@@ -45,7 +45,7 @@ public class UserDAO implements UserInterface{
 			User user = (User) session.get(User.class, mail);
 			return user;
 		} catch (HibernateException e) {
-			System.out.println("Failed when to delete User!");
+			System.out.println("Failed when to get User!");
 			e.printStackTrace();
 		} finally {
 			closeSession();
