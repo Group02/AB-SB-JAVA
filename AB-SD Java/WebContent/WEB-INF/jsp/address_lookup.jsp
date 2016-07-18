@@ -6,34 +6,25 @@
 <html>
 	<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="../css/address-lookup.css">
-<link rel="stylesheet" href="../css/close.css">	
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="../js/close.js"></script>	
-		<script type="text/javascript" >
-			$(window).load(function() {
-			  $('#close').closef($('#close').data());
-			});
-			
-// 			$(document).ready(function() {
-// 			    var myRadio = $('input[name=postcode]');
-// 			    myRadio.on('change', function () {
-// 			        var checkedValue=myRadio.filter(':checked').val();
-// 			        if (checkedValue != "undefiined")
-// 			        alert(checkedValue);
-// 			    });            
-// 			});
-		</script>
+			<link rel="stylesheet" type="text/css" href="../css/address-lookup.css">
+			<link rel="stylesheet" href="../css/close.css">	
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+			<script type="text/javascript" src="../js/close.js"></script>	
+			<script type="text/javascript" >
+				$(window).load(function() {
+				  $('#close').closef($('#close').data());
+				});
+			</script>
 		<title>Postcode</title>
 	</head>
 	<body>
 		<div id="close" class="frame_address">
 			<table id="table_search">
-				<thead><th colspan=6><a class="close-sign">X</a></th></thead>
+				<thead><tr><th colspan=6><a class="close-sign">X</a></th></tr> </thead>
 				<tbody>
+					<form:form>
 					<tr>
 						<td>
-							<form:form>
 									<fieldset>
 									<legend>Search Postcode:</legend>
 									<table>
@@ -73,7 +64,6 @@
 						<td></td>
 						<td></td>
 						<td></td>
-						</form:form>
 					</tr>
 					<tr>
 						<td></td>
@@ -83,10 +73,11 @@
 						<td></td>
 						<td></td>
 					</tr>
+					</form:form>
+					<form:form   action="addresslookup.html" method="post">
 					<tr>
 						<td colspan=6>
 							<div id="table_address">
-								<form:form  modelAttribute="addr" action="lookup.html" method="post">
 									<table>
 									<thead>
 										<tr>
@@ -101,8 +92,8 @@
 									<tbody>
 									<c:forEach var="addr" items="${listAddr }">
 										<tr>
-											<td><input type="radio" name="addr" value="${addr.address}"> 
-												<input type="hidden" name="addr2" value="${addr.postCode }">
+											<td>
+												<input type="radio" name="addr" value="${addr.postCode}"> 
 											</td>
 											<td><div class="wcell1"><c:out value="${addr.address }"></c:out></div></td>
 											<td><div class="wcell2"><c:out value="${addr.postCode }"></c:out></div></td>
@@ -126,9 +117,9 @@
 		   <li><a href="?page=7">7</a></li>
 		   <li class="next"><a href="?page=2">Next »</a></li>
 		</ul>
-									</form:form>
 						</td>
 					</tr>
+					</form:form>
 				</tbody>
 			</table>
 		</div>
