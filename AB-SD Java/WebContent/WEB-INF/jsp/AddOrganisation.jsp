@@ -5,13 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add a new Organisation</title>
-	<script type = "text/javascript" src = "http://code.jquery.com/jquery.min.js"></script>
-	<script type = "text/javascript" src = "../js/AddOrganisation.js"></script>
-	<link type = "text/css" href="../css/organisationdetails.css" rel = "stylesheet" media = "screen"/>
+	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../js/AddOrganisation.js"></script>
+	<link type="text/css" href="../css/organisationdetails.css" rel="stylesheet" media="screen"/>
 </head>
 <body>
 <form method="post">
-		<header>Organisation details</header>
+		<h1>Organisation details</h1>
 			<div id = "wrapper">
 				<div id = "tabs">
 					<ul>
@@ -113,7 +113,7 @@
 							</select>
 						</td>
 						<td>Email</td>
-						<td><input type="email" id="email" size="24px"></td>
+						<td><input type="text" id="email" size="24px"></td>
 					</tr>
 					<tr>
 						<td>Web Address</td>
@@ -126,7 +126,7 @@
 						<td><input type="text" id="companyNumber" size="24px"></td>
 						<td></td>
 						<td>
-							<button type="submit" id="save">Save</button>&nbsp&nbsp&nbsp
+							<button type="submit" id="save">Save</button>
 							<button type="submit">Back</button>
 						</td>
 					</tr>	

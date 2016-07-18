@@ -1,14 +1,14 @@
 @CHARSET "ISO-8859-1";
 
 body {
-  background: #FFF8DC;
+ background-image: url("bg3.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 16px;
 }
 form {
-  background: white;
+  background: rgba(255,255,255,0.8);
   width: 60%;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
   font-family: lato;
@@ -16,10 +16,10 @@ form {
   color: #333;
   border-radius: 10px;
 }
-form header {
-  background: #00BFFF;
+h1 {
+  background: rgba(255,255,255,0.8);
   padding: 15px 5px;
-  color: white;
+  color: #FF6700;
   font-size: 1.6em;
   font-weight: 600;
   border-radius: 10px 10px 0 0;
@@ -36,10 +36,11 @@ margin: 10px
 }
 #tabs{
 width: 800px
+
 }
 #tabs ul li{
 float: left;
-background: #00BFFF;
+background:  #0067FF;
 padding: 4px 10px;
 margin-right: 3px;
 list-style: none inside;
@@ -55,8 +56,8 @@ color: #111111;
 }
 #tabs div{
 clear: both;
-background: #eee;
-border: 1px solid #00BFFF;
+background: rgba(255,255,255,0.8);
+border: 1px solid  #0067FF;
 padding: 10px
 }
 #tabs div.hide{
@@ -69,7 +70,8 @@ button{
 	height: 25px;
 	color: white;
 	font-size: 15px;
-	background: #00BFFF;
+	background:  #0067FF;
+	margin-right: 10px;
 }
 table tr td{
 font-family: lato;
@@ -80,7 +82,7 @@ input.background {
 background-color: #eee;
 }
 input, select{
-	border: 1px solid #00BFFF;
+	border: 1px solid  #0067FF;
 	border-radius: 5px;
 	height: 25px;
 	-webkit-box-shadow: inset 0px 0px 2px 0px #0067FF;
@@ -88,7 +90,7 @@ input, select{
 	box-shadow: inset 0px 0px 2px 0px #0067FF;
 }
 textarea{
-	border: 1px solid #00BFFF;
+	border: 1px solid  #0067FF;
 	border-radius: 5px;
 	-webkit-box-shadow: inset 0px 0px 2px 0px #0067FF;
 	-moz-box-shadow: inset 0px 0px 2px 0px #0067FF;
