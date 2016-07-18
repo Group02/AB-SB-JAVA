@@ -1,7 +1,3 @@
-thead {color:teal;}
-tbody {color:black;}
-tfoot {color:red;}
-
 /* width 's button */
 #wbutton{
 	width:120px;
@@ -12,15 +8,15 @@ tfoot {color:red;}
 	bottom:2px;
 }
 
-/* align for table address_lookup */
-#table_address{
+/* align for table business_lookup */
+#table_business{
 /* 	border: 0.5px solid #0067FF; */
 	border-collapse: collapse;
 	min-width: 98%;
 	margin-left:5px;
 }
 
-#table_address th{
+#table_business th{
 /* 	border: 0.2px solid black; */
 	border-collapse: collapse;
 	border-color:white;
@@ -28,22 +24,53 @@ tfoot {color:red;}
 	color:white;
 }
 
-#table_address th, td {
+#table_business th, td {
 /*     padding: 8px; */
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-#table_address tr:hover{
+#table_business tr:hover{
 	background-color:#4d95ff;
 }
 
-#table_address tr:nth-child(even):hover{
+#table_business tr:nth-child(even):hover{
 	background-color:#4d95ff;
 }
 
-#table_address tr:nth-child(even){
+#table_business tr:nth-child(even){
 	background-color: #b1d0ff;
+}
+
+#tableb{
+	border: none;
+	width:45%;
+}
+
+/* frame address lookup */
+.frame_business{
+	visibility: hidden;
+/* 	text-align:center; */
+	position: absolute;
+	z-index: 101;
+	min-width:10%;border-color:black;
+	border-style: solid;
+    border-width: 2px;
+    margin-top:170px;
+	margin-left:410px;
+    min-height: 230px;
+    border: 2px solid #0067FF;
+	border-radius: 9px;
+	box-shadow: 2px 2px 2px grey;
+	background-color:white;
+}
+
+.frame_business th a{
+	position:relative;
+	top:0px;
+	left:250px;
+	cursor:pointer;
+	padding:15 20;
 }
 
 /* align table search */
@@ -61,51 +88,15 @@ tfoot {color:red;}
 	padding:5px 6px;
 }
 
-/* align 's page address_lookup */
-.pagemar{
-	margin-left:40%;
+/* align cell in table 's view address */
+.wcell1{
+	width:310px;
+	word-wrap: break-word;
 }
 
-/* align 's button none address_lookup */
-#none{
-	position:relative;
-	top:-17px;
-	left:2px;
-}
-
-/* frame address lookup */
-.frame_address{
-	visibility: hidden;
-/* 	text-align:center; */
-	position: absolute;
-	z-index: 101;
-	min-width:10%;border-color:black;
-	border-style: solid;
-    border-width: 2px;
-    margin-top:170px;
-	margin-left:410px;
-    min-height: 230px;
-    border: 2px solid #0067FF;
-	border-radius: 9px;
-	box-shadow: 2px 2px 2px grey;
-	background-color:white;
-}
-
-.frame_address th a{
-	position:relative;
-	top:0px;
-	left:250px;
-	cursor:pointer;
-	padding:15 20;
-}
-
-#frame_table{
-	
-}
-
-#frame_table th{
-	background-color: DarkSlateGray;
-	padding: 8px 8px;
+.wcell2{
+	width:100px;
+	word-wrap: break-word;
 }
 
 /* align phan trang */
@@ -156,36 +147,14 @@ text-decoration:none;
 text-decoration:none;
 }
 
-/* close frame */
-.page .close {
-		font-size: 22px;
-		line-height: .5;
-		position: absolute;
-		top: 8px;
-		right: 11px;
-		color: #aaa;
-		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
-		font-weight: bold;
-/* 		cursor: pointer; */
-		} 
+/* align 's page business_lookup */
+.pagemar{
+	margin-left:40%;
+}
 
-/* align input address */
+/* align input business */
 input[type='text']{
 	border : 1px solid teal;
     width: 150%;
 /*     height: 40px; */
 }
-
-/* align cell in table 's view address */
-.wcell1{
-	width:180px;
-	word-wrap: break-word;
-}
-
-.wcell2{
-	width:80px;
-	word-wrap: break-word;
-}
-
-
-

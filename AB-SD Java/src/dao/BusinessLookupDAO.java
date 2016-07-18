@@ -7,9 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import hibernate.HibernateUtil;
-import model.AddressLookup;
+import model.BusinessLookup;
 
-public class AddressLookupDAO implements AddressLookupInterface{
+public class BusinessLookupDAO implements BusinessLookupInterface{
 	
 	private Session session;
 	private Transaction transaction;
@@ -36,15 +36,15 @@ public class AddressLookupDAO implements AddressLookupInterface{
 	}
 	
 	@Override
-	public AddressLookup FindAddr(String postcode) {
+	public BusinessLookup FindBusi(String SIC_Code) {
 		try {
 			openSession();
 			
-			AddressLookup addr = (AddressLookup)session.get(AddressLookup.class, postcode);
+			BusinessLookup busi = (BusinessLookup)session.get(BusinessLookup.class, SIC_Code);
 			
-			return addr;
+			return busi;
 		} catch (HibernateException e) {
-			System.out.println("Failed when to Find AddressLookup!");
+			System.out.println("Failed when to Find BusinessLookup!");
 			e.printStackTrace();
 		} finally {
 			closeSession();
@@ -53,21 +53,22 @@ public class AddressLookupDAO implements AddressLookupInterface{
 	}
 
 	@Override
-	public void deleteAddr(AddressLookup addressLookup) {
+	public void deleteBusi(BusinessLookup businessLookup) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void insertAddr(AddressLookup addressLookup) {
+	public void insertBusi(BusinessLookup businessLookup) {
+		
 		try {
 			openSessionWithBeginTransaction();
 			
-			session.saveOrUpdate(addressLookup);
+			session.saveOrUpdate(businessLookup);
 			
 			commit();
 		} catch (HibernateException e) {
-			System.out.println("Failed when to insert Address Lookup!");
+			System.out.println("Failed when to insert business Lookup!");
 			e.printStackTrace();
 			rollback();
 		} finally {
@@ -76,16 +77,17 @@ public class AddressLookupDAO implements AddressLookupInterface{
 	}
 
 	@Override
-	public List<AddressLookup> getAllAddr() {
+	public List<BusinessLookup> getAllBusi() {
+		
 		try {
 			openSession();;
 			
 			@SuppressWarnings("unchecked")
-			List<AddressLookup> addr = session.createCriteria(AddressLookup.class).list();
+			List<BusinessLookup> busi = session.createCriteria(BusinessLookup.class).list();
 			
-			return addr;
+			return busi;
 		} catch (HibernateException e) {
-			System.out.println("Failed when to get list Address Lookup!");
+			System.out.println("Failed when to get list Business Lookup!");
 			e.printStackTrace();
 			rollback();
 		} finally {
@@ -93,5 +95,5 @@ public class AddressLookupDAO implements AddressLookupInterface{
 		}
 		return null;
 	}
-	
+
 }

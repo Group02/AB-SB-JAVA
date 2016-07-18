@@ -4,18 +4,17 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="addressLookup")
-@IdClass(AddressLookupID.class)
 public class AddressLookup implements Serializable{
-	
-	@Id
-	@Column(name="address")
-	private String address;
 	
 	@Id
 	@Column(name="postcode")
 	private String postCode;
+	
+	@Column(name="address")
+	private String address;
 	
 	@Column(name="town")
 	private String town;
@@ -31,11 +30,11 @@ public class AddressLookup implements Serializable{
 	}
 
 	
-//	public AddressLookup(String address, String postCode) {
-//		super();
-//		this.address = address;
-//		this.postCode = postCode;
-//	}
+	public AddressLookup(String address, String postCode) {
+		super();
+		this.address = address;
+		this.postCode = postCode;
+	}
 
 	public AddressLookup(String address, String postCode, String town, String county, String country) {
 		super();
