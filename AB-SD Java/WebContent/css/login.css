@@ -1,29 +1,18 @@
 @CHARSET "UTF-8";
 
-.bg {
-	background: url("../image/bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 .login-form {
-	margin: 20px auto 0 auto;
+	margin: 0 auto 0 auto;
 	background: rgba(255,255,255,0.8);
-	font: 18px Arial, sans-serif;
-	width: 380px;
-}
-
-.form {
+	font: 20px Arial, sans-serif;
+	width: 420px;
 }
 
 .form div {
-	margin: 10px 20px 10px 20px;
+	margin: 15px 20px 15px 20px;
 }
 
 .header {
-	padding: 10px;
+	padding: 20px 10px 20px 10px;
 }
 
 .header h2{
@@ -32,29 +21,35 @@
 	color: white;
 }
 
-.forgot {
+.forgot, .back {
 	text-decoration: none;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 16px;
 	color: white;
 }
 
-.forgot:hover {
+.forgot:hover , .back:hover {
 	text-decoration: underline;
 }
 
 input {
-	height: 35px;
+	height: 40px;
 	width: 100%;
+	font-size: 16px;
 }
 
 input[type="submit"] {
-	width: 120px;
+	width: 160px;
 }
 
 .error {
 	font-style: italic;
 	font-size: 14px;
-	padding: 5px 0 5px 0;
 	color: red;
+}
+
+.success {
+	font-style: italic;
+	font-size: 14px;
+	color: #00A800;
 }

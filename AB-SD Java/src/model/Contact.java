@@ -11,7 +11,7 @@ public class Contact {
 	private String email;
 	private Contact managerName;
 	
-	public Contact() {
+	public Contact() { 
 	}
 
 	public Contact(String firstName, String surname, String knownAs,

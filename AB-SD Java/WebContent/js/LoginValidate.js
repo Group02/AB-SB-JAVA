@@ -1,9 +1,7 @@
 function validateForm() {
-	var email = document.getElementById("email").value;
-	var password = document.getElementById("password").value;
-
-	if (checkEmail(email)) {
-		if (checkPassword(password)) {
+	
+	if (checkEmail()) {
+		if (checkPassword()) {
 			return true;
 		}
 	}
@@ -12,7 +10,9 @@ function validateForm() {
 
 }
 
-function checkEmail(email) {
+function checkEmail() {
+	var email = document.getElementById("email").value;
+	
 	if (email == null || email == "") {
 		document.getElementById("error").innerHTML = "Please enter your email.";
 
@@ -26,11 +26,13 @@ function checkEmail(email) {
 			return false;
 		}
 	}
-
+	
 	return true;
 }
 
-function checkPassword(password) {
+function checkPassword() {
+	var password = document.getElementById("password").value;
+	
 	if (password == null || password == "") {
 		document.getElementById("error").innerHTML = "Please enter your password.";
 

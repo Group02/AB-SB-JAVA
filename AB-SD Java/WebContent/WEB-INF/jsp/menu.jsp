@@ -5,18 +5,47 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/menu.css">
+<link rel="stylesheet" type="text/css" href="../css/style-1.css">
 <title></title>
 </head>
 <body>
-	<div class="menu-main">
-		<ul>
-			<li><a class="active" href="#home">Home</a></li>
-			<li><a href="#news">News</a></li>
-			<li class="dropdown" style="float: right;">
-				<a href="#" class="dropbtn">Dropdown</a>
+	<div class="box-shadow">
+		<ul class="menu">
+			<li><a class="active" href="#home">AB-SD</a></li>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/organisation/list.html" class="dropbtn">Organisation</a>
 				<div class="dropdown-content">
-					<a href="#">Logout</a>
-				</div>
+					<a href="<%=request.getContextPath()%>/menu/building.html">Supporting Materials Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Directorate Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Department Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Team Maintenance</a>
+				</div></li>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Services</a>
+				<div class="dropdown-content">
+					<a href="<%=request.getContextPath()%>/menu/building.html">Programme</a>
+				</div></li>
+			<li class="dropdown">
+				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Geography</a>
+				<div class="dropdown-content">
+					<a href="<%=request.getContextPath()%>/menu/building.html">Trust Region Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Trust District Maintenance</a> 
+					<a href="<%=request.getContextPath()%>/menu/building.html">Government Office Region</a>
+				</div></li>
+			<li><a href="<%=request.getContextPath()%>/menu/building.html">Premises</a></li>
+			<li><a href="<%=request.getContextPath()%>/menu/building.html">Contacts</a></li>
+			<li style="float: right;">
+				<%
+					if (session.getAttribute("User") == null) {
+				%> 
+						<a href="index.html">Login</a> 
+				<%
+					} else {
+				%> 
+						<a href="logout.html">Logout</a> 
+				<%
+				 	}
+				%> 
 			</li>
 		</ul>
 	</div>

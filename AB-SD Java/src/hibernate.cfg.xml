@@ -27,6 +27,8 @@
 		<!-- Mapping to Resource -->
 		<!-- <mapping resource="trainee.hbm.xml" /> -->
 		<mapping class="model.User" />
-
+		<mapping class="model.AddressLookup" />
+		<mapping class="model.BusinessLookup" />
+		
 	</session-factory>
 </hibernate-configuration>
