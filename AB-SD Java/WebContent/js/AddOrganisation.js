@@ -23,19 +23,19 @@ $(document).ready(function(){
 	
 	//When mouse focus
 	$("input").focus(function(){
-		$(this).css("background-color" , "#DEB887");
+		$(this).css("border-color" , "red");
 	});
 	
 	//When mouse leaves
 	$("input").mouseleave(function(){
-		$(this).css("background-color" , "white");
+		$(this).css("border-color" , "#0067FF");
 	});
 		
 	$("#save").click(function(){
 				
 		//test organisation name
 			if($("#orgName").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input organisation name!</div>');
+				$("#error").html('<div id="error" style="color:red">Please input the organisation name!</div>');
 				$("#orgName").focus();
 				$("#orgName").scrollIntoView();
 			}else{
