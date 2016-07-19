@@ -2,11 +2,12 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import hibernate.HibernateUtil;
-import model.Contact;
+import model.Contacts;
 
 public class ContactDAO implements ContactInterface{
 
@@ -35,27 +36,85 @@ public class ContactDAO implements ContactInterface{
 	}
 
 	@Override
-	public Contact FindCont(String address, String postcode) {
-		// TODO Auto-generated method stub
+	public Contacts FindCont(int id) {
+		try {
+			openSession();
+			
+			Contacts addr = (Contacts)session.get(Contacts.class, id);
+			
+			return addr;
+		} catch (HibernateException e) {
+			System.out.println("Failed when to Find AddressLookup!");
+			e.printStackTrace();
+		} finally {
+			closeSession();
+		}
 		return null;
 	}
 
 	@Override
-	public void deleteCont(Contact addressLookup) {
+	public void deleteCont(Contacts contact) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void insertCont(Contact addressLookup) {
-		// TODO Auto-generated method stub
+	public void insertCont(Contacts contact) {
+		try {
+			openSessionWithBeginTransaction();
+			
+			session.saveOrUpdate(contact);
+			
+			commit();
+		} catch (HibernateException e) {
+			System.out.println("Failed when to insert Address Lookup!");
+			e.printStackTrace();
+			rollback();
+		} finally {
+			closeSession();
+		}
 		
 	}
 
 	@Override
-	public List<Contact> getAllCont() {
-		// TODO Auto-generated method stub
+	public List<Contacts> getAllCont() {
+		try {
+			openSession();;
+			
+			@SuppressWarnings("unchecked")
+			List<Contacts> cont = session.createCriteria(Contacts.class).list();
+			
+			return cont;
+		} catch (HibernateException e) {
+			System.out.println("Failed when to get list Address Lookup!");
+			e.printStackTrace();
+			rollback();
+		} finally {
+			closeSession();
+		}
 		return null;
 	}
 
+	public static void main(String[] args) {
+		ContactDAO  doa = new ContactDAO();
+		
+//		doa.openSessionWithBeginTransaction();
+//		muaxuandangden mxdd = new muaxuandangden();
+//		mxdd.setHe("Tuan khung");
+//		doa.session.save(mxdd);
+//		doa.commit();
+		
+//		doa.closesession();
+		
+		Contacts cont = new Contacts("bap","weeekend");
+		doa.insertCont(cont);
+		
+		List<Contacts> cot= doa.getAllCont();
+		for (Contacts s : cot) {
+			System.out.println(s.getFirstName());
+		}
+		
+		if(doa.FindCont(1)!=null)System.out.println(doa.FindCont(1));
+	}
+	
 }

@@ -29,6 +29,7 @@
 		<mapping class="model.User" />
 		<mapping class="model.AddressLookup" />
 		<mapping class="model.BusinessLookup" />
+		<mapping class="model.Contacts" />
 		
 	</session-factory>
 </hibernate-configuration>

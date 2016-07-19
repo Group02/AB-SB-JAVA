@@ -94,4 +94,11 @@ public class AddressLookupDAO implements AddressLookupInterface{
 		return null;
 	}
 	
+	public static void main(String[] args) {
+		AddressLookupDAO dao = new AddressLookupDAO();
+		List<AddressLookup> list = dao.getAllAddr();
+		for (AddressLookup string : list) {
+			System.out.println(string.getAddress()+" Postcode "+string.getPostCode());
+		}
+	}
 }

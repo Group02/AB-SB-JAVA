@@ -1,5 +1,4 @@
 package controller;
-import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import service.SendEmail;
-import java.util.*;
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {
@@ -27,7 +25,7 @@ public class LoginController {
 	public ModelAndView initialLoginForm() {
 		ModelAndView model = new ModelAndView("login");
 		model.addObject("User", new User());
-		log = new Log();
+		
 		logger.info("this is message");
 		Logger.getLogger(LoginController.class).info("this is");
 		return model;
@@ -35,8 +33,8 @@ public class LoginController {
 	
 	@RequestMapping(value = "/forgot-password", method = RequestMethod.GET)
 	public ModelAndView initForgotPassword() {
-		log = new Log();
-		log.setInfo("User activated forgot-password function");
+		//log = new Log();
+		//log.setInfo("User activated forgot-password function");
 		return new ModelAndView("SendPassword");
 	}
 	
@@ -50,11 +48,11 @@ public class LoginController {
 			 * If user exist then add user to session & 
 			 * redirect to Organization List Page
 			 */
-			log.setInfo("User logined successfully");
+			//log.setInfo("User logined successfully");
 			session.setAttribute("User", user);
 			return new ModelAndView("OrganisationList");
 		}
-		log.setInfo("User failed to to login");
+		//log.setInfo("User failed to to login");
 		// Else -> Redirect to Login Page with error message:
 		return new ModelAndView("login", "message", 
 				"The email and password you entered don't match.");
@@ -74,7 +72,7 @@ public class LoginController {
 		if(user == null) {
 			// If user is null then return message to Forgot Password page
 			model.addObject("message", "Sorry! We can't find this email!");
-			log.setInfo("The email is incorrect to send email");
+			//log.setInfo("The email is incorrect to send email");
 			return model;
 		}
 		
@@ -82,7 +80,7 @@ public class LoginController {
 		String password = user.getPassword();
 		SendEmail sendEmail = new SendEmail();
 		sendEmail.sendEmail(email, "Your password for login to AB-SD: " + password);
-		log.setInfo("Sent forgotten password to user");
+		//log.setInfo("Sent forgotten password to user");
 		// Back to Forgot Password page and send message for user
 		model.addObject("message", "We have sent password to your email.<br>"
 				+ "Please check email and login again!");
@@ -92,7 +90,7 @@ public class LoginController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		log.setInfo("User logouted");
+		//log.setInfo("User logouted");
 		return "redirect:/login/index.html";
 	}
 	

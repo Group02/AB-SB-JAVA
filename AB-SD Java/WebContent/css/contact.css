@@ -1,10 +1,18 @@
+.frame_contact_main{
+	border: 2px solid teal;
+	 width:500px;
+	 height:300px;
+	 margin: auto;
+	border-collapse: collapse;
+}
+
 /* frame address lookup */
-.frame_business{
+.frame_contact{
 /* 	visibility: hidden; */
 /* 	text-align:center; */
 	position: relative;
 	z-index: 101;
-	width:600px;
+	width:700px;
 	border-style: solid;
     border-width: 2px;
     margin-top:170px;
@@ -80,7 +88,7 @@
 	color: white;
 	background-color: #0067FF;
 	font: 18px Arial, sans-serif;
-	float: left;
+	float: inherit;
 	position: relative;
 	left: 5px;
 }
@@ -99,10 +107,10 @@
 }
 
 /* align for table address_lookup */
-#table_business{
+#table_contact{
 /* 	border: 0.5px solid #0067FF; */
 	border-collapse: collapse;
-	width: 98%;
+	width: 50%;
 	margin-left:5px;
 	
 }
@@ -112,7 +120,7 @@
 	height: 100px;
 }
 
-#table_business th{
+#table_contact th{
 /* 	border: 0.2px solid black; */
 	border-collapse: collapse;
 	border-color:white;
@@ -120,21 +128,21 @@
 	color:white;
 }
 
-#table_business th, td {
+#table_contact th, td {
 /*     padding: 8px; */
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-#table_business tr:hover{
+#table_contact tr:hover{
 	background-color:#4d95ff;
 }
 
-#table_busniess tr:nth-child(even):hover{
+#table_contact tr:nth-child(even):hover{
 	background-color:#4d95ff;
 }
 
-#table_business tr:nth-child(even){
+#table_contact tr:nth-child(even){
 	background-color: #b1d0ff;
 }
 

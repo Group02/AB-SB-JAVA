@@ -1,16 +1,11 @@
 package model;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name="addressLookup")
-public class AddressLookup implements Serializable{
+public class AddressLookup {
 	
-	private static final long serialVersionUID = 1L;
-
 	@Id
 	@Column(name="postcode")
 	private String postCode;

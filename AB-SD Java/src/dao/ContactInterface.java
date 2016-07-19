@@ -2,19 +2,19 @@ package dao;
 
 import java.util.List;
 
-import model.Contact;
+import model.Contacts;
 
 public interface ContactInterface {
 
 		//return a AddressLookup with address
-		public Contact FindCont(String address, String postcode);
+		public Contacts FindCont(int id);
 		
 		//delete a AddressLookup
-		public void deleteCont(Contact addressLookup);
+		public void deleteCont(Contacts contact);
 		
 		//insert a new AddressLookup
-		public void insertCont(Contact addressLookup);
+		public void insertCont(Contacts contact);
 		
 		//return list of AddressLookup
-		public List<Contact> getAllCont();
+		public List<Contacts> getAllCont();
 }

@@ -1,23 +1,58 @@
 package model;
 
-public class Contact {
+import javax.persistence.*;
+
+@Entity
+@Table(name="contact")
+public class Contacts {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="firstname")
 	private String firstName;
-	private String surname;
-	private String knownAs;
-	private String officePhone;
-	private String mobilePhone;
-	private String stHomePhone;
-	private String email;
-	private Contact managerName;
 	
-	public Contact() { 
+	@Column(name="surname")
+	private String surname;
+	
+	@Column(name="knownAs")
+	private String knownAs;
+	
+	@Column(name="officePhone")
+	private String officePhone;
+	
+	@Column(name="mobilePhone")
+	private String mobilePhone;
+	
+	@Column(name="stHomePhone")
+	private String stHomePhone;
+	
+	@Column(name="email")
+	private String email;
+	
+	@Column(name="managerName")
+	private String managerName;
+
+	public Contacts() {
+		super();
+	}
+	
+	
+
+	public Contacts(String firstName, String surname) {
+		super();
+		this.firstName = firstName;
+		this.surname = surname;
 	}
 
-	public Contact(String firstName, String surname, String knownAs,
-			String officePhone, String mobilePhone, String stHomePhone,
-			String email, Contact managerName) {
+
+
+	public Contacts(int id, String firstName, String surname, String knownAs, String officePhone, String mobilePhone,
+			String stHomePhone, String email, String managerName) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.surname = surname;
 		this.knownAs = knownAs;
@@ -26,6 +61,14 @@ public class Contact {
 		this.stHomePhone = stHomePhone;
 		this.email = email;
 		this.managerName = managerName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -84,13 +127,15 @@ public class Contact {
 		this.email = email;
 	}
 
-	public Contact getManagerName() {
+	public String getManagerName() {
 		return managerName;
 	}
 
-	public void setManagerName(Contact managerName) {
+	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
+
+	
 	
 
 }
