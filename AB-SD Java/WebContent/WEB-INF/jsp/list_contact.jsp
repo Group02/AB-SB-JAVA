@@ -6,63 +6,81 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/contact.css">
+<link rel="stylesheet" href="../css/close.css">	
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+			<script type="text/javascript" src="../js/close.js"></script>	
+			<script type="text/javascript" >
+					$(window).load(function() { 
+				  $('#close').closef($('#close').data()); 
+				});
+			</script> 
 <title>List Contact</title>
 </head>
 <body>
-	<div style="border:1px solid teal; width:500px; margin: auto">
-		<table>
-			<thead></thead>
+	<div >
+		<table class="frame_contact">
+			<thead ><tr><th colspan=6 class="header"><a class="close-sign">X</a></th></tr></thead>
 			<tbody>
 				<tr>
-					<td>First Name:</td>
-					<td><button type="button">Search Contact</button></td>
-				</tr>
+				<td>
+					<table id="table_search">
+						<tbody>
+							<tr>
+								<td>Contact Name:</td>
+								<td colspan=5> 
+									<div class="search">
+										<input type="text" placeholder="Search">
+										<button type="button" id="button" ><img id="img" alt="" src="../image/search.png"></button>
+										<button id="wbutton">Edit</button>
+										<button type="button" id="wbutton">Create</button>
+										<button type="button" id="wbutton">None</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>			
+			</tr>
 				<tr>
-					<td><input type="text"></td>
-					<td><button type="button">Clear</button></td>
+					<td id="bo"></td>
+					<td id="bo"></td>
+					<td id="bo"></td>
+					<td id="bo"></td>
+					<td id="bo"></td>
+					<td id="bo"></td>
 				</tr>
-				<tr>
-					<td>Surname:</td>
-					<td><button type="button">None</button></td>
-				</tr>
-				<tr>
-					<td><input type="text"> </td>
-					<td><button type="button">Create</button></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><div><input type="checkbox">Include in-active contact? </div></td>
-				</tr>
-				<form:form>
+				<form:form >
+				<tr><td colspan=6><div><input type="checkbox">Include in-active contact? </div></td></tr>
 				<tr>
 					<td colspan=6>
-						<table style="border: 1px solid steelblue;">
+						<table id="table_contact">
 							<thead>
 								<tr>
 									<th></th>
-									<th>Contact Name</th>
-									<th>Mobile Phone</th>
-									<th>Email</th>
-									<th>Contact Type</th>
-									<th>Is active?</th>
+									<th><div class="wcell1">Contact Name</div> </th>
+									<th><div class="wcell2">Mobile Phone</div></th>
+									<th><div class="wcell2">Email</div></th>
+									<th><div class="wcell2">Contact Type</div> </th>
+									<th><div class="wcell2">Is active?</div></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<c:forEach var="cont" items="${listCont }">
+									<tr>
+									<td><input type="radio" id="cont" value="${cont.surname}"></td>
+									<td>
+										<span>${cont.surname}</span> ${cont.firstName}</td>
+									<td>${cont.mobilePhone }</td>
+									<td>${cont.email }</td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
+									<td><c:out value=""></c:out></td>
+									<td><c:out value=""></c:out></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
-						<button type="submit">Select</button>
+						<button type="button" id="wbutton">Select</button>
 					</td>
 				</tr>
 				</form:form>

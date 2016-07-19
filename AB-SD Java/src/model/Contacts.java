@@ -4,10 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="contact")
-public class Contact {
+public class Contacts {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private int id;
 	
@@ -33,12 +33,15 @@ public class Contact {
 	private String email;
 	
 	@Column(name="managerName")
-	private Contact managerName;
-	
-	public Contact() { 
+	private String managerName;
+
+	public Contacts() {
+		super();
 	}
 	
-	public Contact(String firstName, String surname) {
+	
+
+	public Contacts(String firstName, String surname) {
 		super();
 		this.firstName = firstName;
 		this.surname = surname;
@@ -46,10 +49,10 @@ public class Contact {
 
 
 
-	public Contact(String firstName, String surname, String knownAs,
-			String officePhone, String mobilePhone, String stHomePhone,
-			String email, Contact managerName) {
+	public Contacts(int id, String firstName, String surname, String knownAs, String officePhone, String mobilePhone,
+			String stHomePhone, String email, String managerName) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.surname = surname;
 		this.knownAs = knownAs;
@@ -58,6 +61,14 @@ public class Contact {
 		this.stHomePhone = stHomePhone;
 		this.email = email;
 		this.managerName = managerName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -116,13 +127,15 @@ public class Contact {
 		this.email = email;
 	}
 
-	public Contact getManagerName() {
+	public String getManagerName() {
 		return managerName;
 	}
 
-	public void setManagerName(Contact managerName) {
+	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
+
+	
 	
 
 }

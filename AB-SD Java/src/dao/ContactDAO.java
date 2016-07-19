@@ -7,9 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import hibernate.HibernateUtil;
-import model.AddressLookup;
-import model.Contact;
-import sun.tools.jar.Main;
+import model.Contacts;
 
 public class ContactDAO implements ContactInterface{
 
@@ -38,11 +36,11 @@ public class ContactDAO implements ContactInterface{
 	}
 
 	@Override
-	public Contact FindCont(int id) {
+	public Contacts FindCont(int id) {
 		try {
 			openSession();
 			
-			Contact addr = (Contact)session.get(Contact.class, id);
+			Contacts addr = (Contacts)session.get(Contacts.class, id);
 			
 			return addr;
 		} catch (HibernateException e) {
@@ -55,13 +53,13 @@ public class ContactDAO implements ContactInterface{
 	}
 
 	@Override
-	public void deleteCont(Contact contact) {
+	public void deleteCont(Contacts contact) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void insertCont(Contact contact) {
+	public void insertCont(Contacts contact) {
 		try {
 			openSessionWithBeginTransaction();
 			
@@ -79,11 +77,12 @@ public class ContactDAO implements ContactInterface{
 	}
 
 	@Override
-	public List<Contact> getAllCont() {
+	public List<Contacts> getAllCont() {
 		try {
 			openSession();;
 			
-			List<Contact> cont = session.createCriteria(Contact.class).list();
+			@SuppressWarnings("unchecked")
+			List<Contacts> cont = session.createCriteria(Contacts.class).list();
 			
 			return cont;
 		} catch (HibernateException e) {
@@ -99,5 +98,23 @@ public class ContactDAO implements ContactInterface{
 	public static void main(String[] args) {
 		ContactDAO  doa = new ContactDAO();
 		
+//		doa.openSessionWithBeginTransaction();
+//		muaxuandangden mxdd = new muaxuandangden();
+//		mxdd.setHe("Tuan khung");
+//		doa.session.save(mxdd);
+//		doa.commit();
+		
+//		doa.closesession();
+		
+		Contacts cont = new Contacts("bap","weeekend");
+		doa.insertCont(cont);
+		
+		List<Contacts> cot= doa.getAllCont();
+		for (Contacts s : cot) {
+			System.out.println(s.getFirstName());
+		}
+		
+		if(doa.FindCont(1)!=null)System.out.println(doa.FindCont(1));
 	}
+	
 }
