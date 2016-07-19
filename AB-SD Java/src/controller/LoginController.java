@@ -1,5 +1,4 @@
 package controller;
-import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import service.SendEmail;
-import java.util.*;
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {

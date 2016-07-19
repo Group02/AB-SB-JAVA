@@ -1,18 +1,50 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="contact")
 public class Contact {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="firstname")
 	private String firstName;
+	
+	@Column(name="surname")
 	private String surname;
+	
+	@Column(name="knownAs")
 	private String knownAs;
+	
+	@Column(name="officePhone")
 	private String officePhone;
+	
+	@Column(name="mobilePhone")
 	private String mobilePhone;
+	
+	@Column(name="stHomePhone")
 	private String stHomePhone;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="managerName")
 	private Contact managerName;
 	
 	public Contact() { 
 	}
+	
+	public Contact(String firstName, String surname) {
+		super();
+		this.firstName = firstName;
+		this.surname = surname;
+	}
+
+
 
 	public Contact(String firstName, String surname, String knownAs,
 			String officePhone, String mobilePhone, String stHomePhone,

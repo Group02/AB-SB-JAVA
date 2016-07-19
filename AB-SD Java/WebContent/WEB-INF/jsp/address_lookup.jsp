@@ -89,7 +89,7 @@
 											<th><div class="wcell2">Country</div> </th>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody class="body">
 									<c:forEach var="addr" items="${listAddr }">
 										<tr>
 											<td>

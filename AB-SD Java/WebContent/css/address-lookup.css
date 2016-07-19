@@ -18,6 +18,12 @@ tfoot {color:red;}
 	border-collapse: collapse;
 	min-width: 98%;
 	margin-left:5px;
+	
+}
+
+.body{
+	overflow: scroll;
+	height: 100px;
 }
 
 #table_address th{

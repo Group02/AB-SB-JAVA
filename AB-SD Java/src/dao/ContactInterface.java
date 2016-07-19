@@ -7,13 +7,13 @@ import model.Contact;
 public interface ContactInterface {
 
 		//return a AddressLookup with address
-		public Contact FindCont(String address, String postcode);
+		public Contact FindCont(int id);
 		
 		//delete a AddressLookup
-		public void deleteCont(Contact addressLookup);
+		public void deleteCont(Contact contact);
 		
 		//insert a new AddressLookup
-		public void insertCont(Contact addressLookup);
+		public void insertCont(Contact contact);
 		
 		//return list of AddressLookup
 		public List<Contact> getAllCont();

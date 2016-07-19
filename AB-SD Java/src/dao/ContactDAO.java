@@ -2,11 +2,14 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import hibernate.HibernateUtil;
+import model.AddressLookup;
 import model.Contact;
+import sun.tools.jar.Main;
 
 public class ContactDAO implements ContactInterface{
 
@@ -35,27 +38,66 @@ public class ContactDAO implements ContactInterface{
 	}
 
 	@Override
-	public Contact FindCont(String address, String postcode) {
-		// TODO Auto-generated method stub
+	public Contact FindCont(int id) {
+		try {
+			openSession();
+			
+			Contact addr = (Contact)session.get(Contact.class, id);
+			
+			return addr;
+		} catch (HibernateException e) {
+			System.out.println("Failed when to Find AddressLookup!");
+			e.printStackTrace();
+		} finally {
+			closeSession();
+		}
 		return null;
 	}
 
 	@Override
-	public void deleteCont(Contact addressLookup) {
+	public void deleteCont(Contact contact) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void insertCont(Contact addressLookup) {
-		// TODO Auto-generated method stub
+	public void insertCont(Contact contact) {
+		try {
+			openSessionWithBeginTransaction();
+			
+			session.saveOrUpdate(contact);
+			
+			commit();
+		} catch (HibernateException e) {
+			System.out.println("Failed when to insert Address Lookup!");
+			e.printStackTrace();
+			rollback();
+		} finally {
+			closeSession();
+		}
 		
 	}
 
 	@Override
 	public List<Contact> getAllCont() {
-		// TODO Auto-generated method stub
+		try {
+			openSession();;
+			
+			List<Contact> cont = session.createCriteria(Contact.class).list();
+			
+			return cont;
+		} catch (HibernateException e) {
+			System.out.println("Failed when to get list Address Lookup!");
+			e.printStackTrace();
+			rollback();
+		} finally {
+			closeSession();
+		}
 		return null;
 	}
 
+	public static void main(String[] args) {
+		ContactDAO  doa = new ContactDAO();
+		
+	}
 }
