@@ -16,5 +16,11 @@ public class OrganisationController {
 		return new ModelAndView("OrganisationList", "Organisation",
 				new Organisation());
 	}
-	
+
+	@RequestMapping(value = "/add")
+	public ModelAndView addOrg() {
+		
+		return new ModelAndView("AddOrganisation", "Organisation",
+				new Organisation());
+	}
 }

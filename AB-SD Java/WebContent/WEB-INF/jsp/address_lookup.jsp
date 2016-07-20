@@ -8,7 +8,7 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 			<link rel="stylesheet" type="text/css" href="../css/address-lookup.css">
 			<link rel="stylesheet" href="../css/close.css">	
-			<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+			<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 			<script type="text/javascript" src="../js/close.js"></script>	
 			<script type="text/javascript" >
 				$(window).load(function() {

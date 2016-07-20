@@ -41,3 +41,4 @@ function checkPassword() {
 
 	return true;
 }
+

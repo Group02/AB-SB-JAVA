@@ -13,14 +13,6 @@ $(document).ready(function(){
 		$("#tabs div:eq("+current_index+")").fadeIn(100);	
 	});
 	
-	//handling input
-	var org = false;
-	var descr = false;
-	var addr = false;
-	var postcode = false;
-	var business = false;
-	var phone = false;
-	
 	//When mouse focus
 	$("input").focus(function(){
 		$(this).css("border-color" , "red");
@@ -30,78 +22,148 @@ $(document).ready(function(){
 	$("input").mouseleave(function(){
 		$(this).css("border-color" , "#0067FF");
 	});
-		
-	$("#save").click(function(){
-				
-		//test organisation name
-			if($("#orgName").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input the organisation name!</div>');
-				$("#orgName").focus();
-				$("#orgName").scrollIntoView();
-			}else{
-				$("#error").html('<div id="error"></div>');
-				org = true;
-			}
-		
-		//test organisation short description 
-			if($("#orgShortDescr").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input the short description!</div>');
-				$("#orgShortDescr").focus();
-				$("#orgShortDescr").scrollIntoView();
-			}else{
-				$("#error").html('<div id="error" style="color:red"></div>');
-				descr = true;
-			}
 	
-		//test type of business
-			if($("#typeBusiness").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input the type of Business!</div>');
-				$("#typeBusiness").focus();
-				$("#typeBusiness").scrollIntoView();
-			}else{
-				$("#error").html('<div id="error"></div>');
-				business = true;
-			}
-			
-		//test address line 1
-			if($("#address").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input the address line 1!</div>');
-				$("#address").focus();
-				$("#address").scrollIntoView();
-			}else{
-				$("#error").html('<div id="error"></div>');
-				addr = true;
-			}
-			
-		//test postcode
-			if($("#postcode").val()==""){
-				$("#error").html('<div id="error" style="color:red">Please input the postcode!</div>');
-				$("#postcode").focus();
-				$("#postcode").scrollIntoView();
-			}else{
-				$("#error").html('<div id="error"></div>');
-				postcode = true;
-			}
+	//change border color in textarea
+	$('#save').click(function(){
+	    var content = $('textarea').text();
+	    if(content == "")
+	    {
+	        $('textarea').addClass('redBorder');
+	    }
+	    else
+	    {
+	        $('textarea').removeClass('redBorder');
+	    }
+	});
+});
+
+	//handling input
+function addOrgForm() {
 	
-		//Test phone number
-				if($("#phoneNumber").val()==""){
-					$("#error").html('<div id="error" style="color:red">Please input the phone number!</div>');
-					$("#phoneNumber").focus();
-					$("#phoneNumber").scrollIntoView();
-				}else{
-					$("#error").html('<div id="error"></div>');
-					
-					//Test validation of phone number
-					var phoneNumber = /(09\d{8})|(((01)|(07))\d{9})/;
-					
-						if(!phoneNumber.test($("#phoneNumber").val())){
-							$("#error").html('<div id="error" style="color:red">The Phone number is invalid. Please typing again! </div>');
-							$("#phoneNumber").focus();
-							$("#phoneNumber").scrollIntoView();	
-						}else{
-							$("#error").html('<div id="error"></div>');
-							phone = true;
+	if (checkOrgName()) {
+		if (checkShortDesrc()) {
+			if (checkAddress()) {
+				if (checkPostcode()) {
+					if (checkTypeBusiness()) {
+						if (checkPhoneNumber()) {
+							return true;
 						}
 					}
-		});	
-});
+				}	
+			}
+		}
+	}
+
+	return false;
+}
+
+//test organisation name
+function checkOrgName() {
+	var orgName = document.getElementById("orgName").value;
+	
+	if (orgName == null || orgName == "") {
+		document.getElementById("orgName").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please input the Organisation Name!";
+
+		return false;
+	}
+	else{
+		document.getElementById("orgName").style.border = "1px solid #0067FF";
+		return true;
+	}
+	
+	
+}
+
+//test organisation short description
+function checkShortDesrc() {
+	var shortDescr = document.getElementById("shortDescr").value;
+	
+	if (shortDescr == null || shortDescr == "") {
+		document.getElementById("shortDescr").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please input the short description!";
+
+		return false;
+	}
+	else{
+		document.getElementById("shortDescr").style.border = "1px solid #0067FF";
+		return true;
+	}
+	
+}
+
+//test type of business
+function checkTypeBusiness() {
+	var typeBusiness = document.getElementById("typeBusiness").value;
+	
+	if (typeBusiness == null || typeBusiness == "") {
+		document.getElementById("typeBusiness").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please input the type of business!";
+
+		return false;
+	}
+	else{
+		document.getElementById("typeBusiness").style.border = "1px solid #0067FF";
+		return true;
+	}
+	
+	
+	
+}	
+	
+//test address 
+function checkAddress() {
+	var address = document.getElementById("address").value;
+	
+	if (address == null || address == "") {
+		document.getElementById("address").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please enter the address!";
+
+		return false;
+	}
+	else{
+		document.getElementById("address").style.border = "1px solid #0067FF";
+		return true;
+	}
+}
+			
+//test postcode
+function checkPostcode() {
+	var postcode = document.getElementById("postcode").value;
+	
+	if (postcode == null || postcode == "") {
+		document.getElementById("postcode").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please enter the postcode!";
+
+		return false;
+	}
+	else{
+		document.getElementById("postcode").style.border = "1px solid #0067FF";
+		return true;
+	}
+	
+}
+			
+//Test phone number
+function checkPhoneNumber() {
+	var phoneNumber = document.getElementById("phoneNumber").value;
+	
+	if (phoneNumber == null || phoneNumber == "") {
+		document.getElementById("phoneNumber").style.border = "2px solid red";
+		document.getElementById("error").innerHTML = "Please input the phone number!";
+
+		return false;
+	} else {
+		var phoneNumberVal = /(09\d{8})|(((01)|(07))\d{9})/;
+
+		if (!phoneNumberVal.test(phoneNumber)) {
+			document.getElementById("phoneNumber").style.border = "1px solid #0067FF";
+			document.getElementById("error").innerHTML = "Sorry, System can't recognize the phone number!";
+
+			return false;
+		}
+	}
+	
+	return true;
+}
+				
