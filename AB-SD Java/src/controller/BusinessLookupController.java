@@ -21,7 +21,7 @@ public class BusinessLookupController {
 	private BusinessLookup business;
 	
 	@RequestMapping(value="/businesslookup", method=RequestMethod.GET)
-	public ModelAndView address(HttpSession session){
+	public ModelAndView address(){
 		ModelAndView model = new ModelAndView("business_lookup");
 		
 		if(busidao.getAllBusi() != null){
@@ -29,8 +29,7 @@ public class BusinessLookupController {
 			//Make list business lookup
 			List<BusinessLookup> listBusi = busidao.getAllBusi();
 			
-			//Save list to session
-			session.setAttribute("listBusi", listBusi);
+			model.addObject("listBusi", listBusi);
 		}
 		return model;
 	}

@@ -30,18 +30,18 @@
 			<thead><tr><th colspan=6 class="header"><a class="close-sign">X</a></th></tr></thead>
 			<tbody>
 				<tr>
-					<td colspan=4>
-						<table id="table_search">
+					<td>
+						<div style="">
+							<fieldset style="width: 220px">
+								<legend>Search Business</legend>
+								<table id="table_search">
 							<form:form>
 							<tr>
 								<td>
-									Business Name:	
+									<div style="width: 120px">Business Name:</div>
 								</td>
 								<td>
 									<div class="search"><input type="text"></div>
-								</td>
-								<td>
-									<div class="search"><button type="submit" id="wbutton">Search</button></div>
 								</td>
 							</tr>
 							<tr>
@@ -51,12 +51,15 @@
 								<td>
 									<div class="search"><input type="text"></div>
 								</td>
-								<td>
-									<div class="search"><button type="submit" id="wbutton">None</button></div>
-								</td>
 							</tr>
 							</form:form>
 						</table>
+							</fieldset>
+						</div>
+					</td>
+					<td colspan="3">
+						<input type="submit" value="Search" id="wbutton" class="mbutton"> <br>
+						<input type="submit" value="None" id="wbutton" class="mbutton">
 					</td>
 				</tr>
 				<tr>
@@ -66,7 +69,7 @@
 					<td id="bo"></td>
 				</tr>
 				<tr>
-					<td colspan=4>
+					<td colspan=5>
 						<table id="table_business">
 							<thead>
 								<tr>
@@ -81,13 +84,13 @@
 										<td>
 											<input type="radio" id="business" value="${busi.SIC_Code }"> 
 										</td>
-										<td><c:out value="${busi.businessName}"></c:out></td>
-										<td><c:out value="${busi.SIC_Code }"></c:out> </td>
+										<td>${busi.businessName}</td>
+										<td>${busi.SIC_Code } </td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-						<button type="button" id="wbutton">Select</button>
+						<input type="submit" value="Select">
 					</td>
 				</tr>
 			</tbody>		

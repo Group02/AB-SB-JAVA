@@ -41,32 +41,18 @@
 }
 
 .search {
-                padding:8px 15px;
-                border:0px solid #dbdbdb;
-                position: relative;
-                left: -5px;
+/*     padding:8px 15px; */
+/*     border:0px solid #dbdbdb; */
+    position: relative;
+    float: left;
 }
 
 .search input[type="text"] {
-	width: 280px;
-	height: 26px;
-	float: left;
-}
-
-#button{
-	background: none;
-	font: 18px Arial, sans-serif;
+	width: 220px;
+	height: 19px;
 	float: left;
 	position: relative;
-	left: -47px;
-	top: 2px;
-}
-
-#button:HOVER{
-	background-color: white;
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	left: -10px;
 }
 
 #bo{
@@ -74,23 +60,21 @@
 	border-collapse: collapse;;
 }
 
-/* button */
+/* width button */
 #wbutton{
-	font-weight: bold;
-	color: white;
-	background-color: #0067FF;
-	font: 18px Arial, sans-serif;
-	float: left;
-	position: relative;
-	left: 5px;
+	width:90px;
+	border-radius: 5px;
+	padding: 4px 4px;
+	position:relative;
+	top:1px;
+	left:0px;
+	bottom:5px;
 }
 
-#wbutton:HOVER{
-	color: #0067FF;
-	background-color: white;
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+/* margin button */
+.mbutton{
+	position: relative;
+	left: -350px;
 }
 
 #img{
@@ -120,7 +104,7 @@
 	color:white;
 }
 
-#table_business th, td {
+#table_business td {
 /*     padding: 8px; */
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -130,12 +114,12 @@
 	background-color:#4d95ff;
 }
 
-#table_busniess tr:nth-child(even):hover{
-	background-color:#4d95ff;
-}
-
 #table_business tr:nth-child(even){
 	background-color: #b1d0ff;
+}
+
+#table_busniess tr:nth-child(even):hover{
+	background-color:#4d95ff;
 }
 
 /* align cell in table 's view address */
@@ -147,5 +131,27 @@
 .wcell2{
 	width:120px;
 	word-wrap: break-word;
+}
+
+/* align button and input[text] */
+input[type="button"], input[type="submit"]{
+	font-weight: bold;
+	color: white;
+	background-color: #0067FF;
+	font: 18px Arial, sans-serif;
+}
+
+input[type="button"], input[type="submit"]:hover {
+	color: #0067FF;
+	background-color: white;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+}
+
+input:focus {
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
 }
 
