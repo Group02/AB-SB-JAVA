@@ -1,13 +1,8 @@
 @CHARSET "UTF-8";
 
 .container {
-	background: rgba(255, 255, 255, 0.9);
+	background: rgba(248, 248, 248, 0.95);
 	position: inherit;
-}
-
-h1, h2 {
-	margin: 0;
-	color: #FF6700;
 }
 
 .sort {
@@ -53,29 +48,28 @@ a.btn_1:ACTIVE {
 	color: #FF6700;
 }
 
-table {
+table.list {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-table tr th {
+table.list tr th {
 	border: 1px solid #0067FF;
 	color: white;
 	padding: 8px;
 }
 
-table tr td {
+table.list tr td {
 	border: 1px solid #0067FF;
 	padding: 5px;
 	color: #333;
 }
 
-table tr:hover {
+table.list tr:hover {
 	background-color: #d4edff;
 }
 
 div.page {
-	margin: 5px 0 5px 0;
 	padding: 5px 0 5px 0;
 }
 

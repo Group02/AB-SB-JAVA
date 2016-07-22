@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+
+h3 {
+	color: #FF6700;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    display: inline-block;
+    
+}
+
+/* Float the list items side by side */
+ul.tab li {
+	float: left;
+	background-color: #ccc;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    text-align: center;
+    color: #333;
+    padding: 8px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #FF6700;
+    color: white;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #0067FF;
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #0067FF;
+    border-radius: 0 8px 8px 8px;
+}
+
+.btn_opt {
+	float: right;
+	margin-left: 5px;
+	height: 30px;
+	background-color: #FF6700;
+	border: 1px solid #FF6700;
+	color: white;
+	font: 16px Arial, sans-serif;
+	border-radius: 3px;
+	transition: 0.2s;
+}
+
+.btn_opt:hover {
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	-moz-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+}
+
+/* ======== Supporting Materials ======== */
+.popup-form {
+	display: none;
+	margin-top: 10px;
+}
+
+.popup-form fieldset {
+	border: 2px solid #0067FF;
+	border-radius: 5px;
+	background: rgba(240, 240, 240, 0.85);
+}
+
+.popup-form legend {
+	font-size: 18px;
+	font-weight: bold;
+	color: #FF6700;
+	background-color: white;
+}
+
+.left {
+	width: 49.5%;
+	height: 100%;
+	display: inline-block;
+}
+
+.right {
+	width: 49.5%;
+	float: right;
+}
+
+.left table tr td, .right table tr td {
+	reset: both;
+} 
+
+.mandatory {
+	color: red;
+}
+
+input[type="text"], textarea, select {
+	border: 1px solid #0067FF;
+	font-size: 14px;
+	padding: 5px 2px;
+	border-radius: 3px;
+	width: 100%;
+}
+
+input:focus {
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+}
+
+.btn_opt_bottom {
+	margin-left: 5px;
+	width: 90px;
+	height: 30px;
+	background-color: #FF6700;
+	border: 1px solid #FF6700;
+	color: white;
+	font: 16px Arial, sans-serif;
+	border-radius: 3px;
+	transition: 0.2s;
+}
+
+.btn_opt_bottom:hover {
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	-moz-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+}
+
+.inActive-rows {
+	display: none;
+}
+
+
+
+/* ====== End Supporting Materials ====== */

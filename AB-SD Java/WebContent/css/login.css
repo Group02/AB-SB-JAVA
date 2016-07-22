@@ -2,7 +2,7 @@
 
 .login-form {
 	margin: 0 auto 0 auto;
-	background: rgba(255,255,255,0.8);
+	background: rgba(250, 250, 250, 0.8);
 	font: 20px Arial, sans-serif;
 	width: 420px;
 }
@@ -32,7 +32,7 @@
 	text-decoration: underline;
 }
 
-input {
+input[type="text"], input[type="password"] {
 	height: 40px;
 	width: 100%;
 	font-size: 16px;
@@ -52,4 +52,58 @@ input[type="submit"] {
 	font-style: italic;
 	font-size: 14px;
 	color: #00A800;
+}
+
+.btn_login{
+	font-weight: bold;
+	color: white;
+	background-color: #0067FF;
+	font: 18px Arial, sans-serif;
+	border: 1px solid #0067FF;;
+	border-radius: 0px;
+	height: 40px;
+}
+
+.btn_login:hover {
+	color: #0067FF;
+	background-color: white;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+}
+
+input[type="text"], input[type="password"] {
+	text-align: center;
+}
+
+.header-background {
+	background: rgba(73, 155, 234, 1);
+	background: -moz-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73, 155, 234
+		, 1)), color-stop(92%, rgba(0, 103, 255, 1)),
+		color-stop(100%, rgba(0, 103, 255, 1)));
+	background: -webkit-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -o-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: linear-gradient(to bottom, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea',
+		endColorstr='#0067ff', GradientType=0);
+}
+
+input[type="text"], input[type="password"], textarea {
+	border: 1px solid #0067FF;
+	font-size: 16px;
+	padding: 5px 2px;
+	border-radius: 3px;
+}
+
+input:focus {
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
 }

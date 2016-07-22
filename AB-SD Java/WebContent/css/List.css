@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+
+h1, h2 {
+	margin: 0; 
+	padding: 0;
+	color: #FF6700;
+}
+
+.sort {
+	padding: 5px 0;
+	margin: 5px 0;
+}
+
+.sort a {
+	text-decoration: none;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 15px;
+	color: #0067FF;
+	padding: 5px;
+	transition: 0.2s;
+}
+
+.sort a:hover {
+	background-color: #FF6700;
+	color: white;
+}
+
+a.btn_1 {
+	background-color: #FF6700;
+	color: white;
+	font: 16px Arial, sans-serif;
+	font-style: normal;
+	border: 1px solid #FF6700;
+	border-radius: 3px;
+	transition: 0.2s;
+}
+
+a.btn_1:hover {
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	-moz-box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+	box-shadow: 0px 0px 2px 2px rgba(255,103,0,0.75);
+}
+
+a.btn_1:ACTIVE {
+	background-color: white;
+	color: #FF6700;
+}
+
+table.list {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.list tr th {
+	font: 14px Arial, sans-serif;
+	font-weight: bold;
+	border: 1px solid #0067FF;
+	color: white;
+	padding: 10px 1px;
+	background: rgba(73, 155, 234, 1);
+	background: -moz-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73, 155, 234
+		, 1)), color-stop(92%, rgba(0, 103, 255, 1)),
+		color-stop(100%, rgba(0, 103, 255, 1)));
+	background: -webkit-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -o-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: linear-gradient(to bottom, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea',
+		endColorstr='#0067ff', GradientType=0);
+}
+
+.list tr td {
+	border: 1px solid #0067FF;
+	color: #333;
+	padding: 10px 5px;
+	font: 14px Arial, sans-serif;
+}
+
+.list tr:hover {
+	background-color: #d4edff;
+}
+
+div.page {
+	margin: 5px 0 5px 0;
+	padding: 5px 0 5px 0;
+}
+
+div.page .btn_page {
+	padding: 5px 10px 5px 10px;
+	background-color: #0067FF;
+	color: white;
+	border-radius: 3px;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+div.page .btn_page:hover {
+	background-color: #FF6700;
+}
