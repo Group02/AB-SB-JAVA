@@ -4,14 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/style-1.css">
-<link rel="stylesheet" type="text/css" href="../css/list.css">
 <title>Building ...</title>
 </head>
 <body class="bg">
-	<jsp:include page="menu.jsp" />
-	<div class="container box-shadow">
-		<h2><i>This functionality is being built..........</i></h2>
+	<jsp:include page="header.jsp" />
+	<div class="container">
+		<div class="main">
+			<div class="content">
+				<h2><i>This functionality is being built..........</i></h2>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

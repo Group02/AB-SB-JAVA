@@ -30,6 +30,7 @@
 		<mapping class="model.AddressLookup" />
 		<mapping class="model.BusinessLookup" />
 		<mapping class="model.Contacts" />
+		<mapping class="model.SupportingMaterial" />
 		
 	</session-factory>
 </hibernate-configuration>

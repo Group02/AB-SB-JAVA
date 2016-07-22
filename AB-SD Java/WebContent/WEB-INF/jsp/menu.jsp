@@ -5,49 +5,54 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/menu.css">
-<link rel="stylesheet" type="text/css" href="../css/style-1.css">
+<link rel="stylesheet" type="text/css" href="../css/style-2.css">
 <title></title>
 </head>
 <body>
-	<div class="box-shadow">
-		<ul class="menu">
-			<li><a class="active" href="#home">AB-SD</a></li>
-			<li class="dropdown">
-				<a href="<%=request.getContextPath()%>/organisation/list.html" class="dropbtn">Organisation</a>
-				<div class="dropdown-content">
-					<a href="<%=request.getContextPath()%>/menu/building.html">Supporting Materials Maintenance</a> 
-					<a href="<%=request.getContextPath()%>/menu/building.html">Directorate Maintenance</a> 
-					<a href="<%=request.getContextPath()%>/menu/building.html">Department Maintenance</a> 
-					<a href="<%=request.getContextPath()%>/menu/building.html">Team Maintenance</a>
-				</div></li>
-			<li class="dropdown">
-				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Services</a>
-				<div class="dropdown-content">
-					<a href="<%=request.getContextPath()%>/menu/building.html">Programme</a>
-				</div></li>
-			<li class="dropdown">
-				<a href="<%=request.getContextPath()%>/menu/building.html" class="dropbtn">Geography</a>
-				<div class="dropdown-content">
-					<a href="<%=request.getContextPath()%>/menu/building.html">Trust Region Maintenance</a> 
-					<a href="<%=request.getContextPath()%>/menu/building.html">Trust District Maintenance</a> 
-					<a href="<%=request.getContextPath()%>/menu/building.html">Government Office Region</a>
-				</div></li>
-			<li><a href="<%=request.getContextPath()%>/menu/building.html">Premises</a></li>
-			<li><a href="<%=request.getContextPath()%>/menu/building.html">Contacts</a></li>
-			<li style="float: right;">
-				<%
-					if (session.getAttribute("User") == null) {
-				%> 
-						<a href="index.html">Login</a> 
-				<%
-					} else {
-				%> 
-						<a href="logout.html">Logout</a> 
-				<%
-				 	}
-				%> 
-			</li>
-		</ul>
+	<div class="page-header">
+		<% 
+			String onBuildingPage = request.getContextPath() + "/menu/building.html";
+			String path = request.getContextPath();
+		%>
+		<div>
+			<ul class="menu">
+				<li class="dropdown">
+					<a href="<%=path%>/organisation/list.html" class="dropbtn">Organisation</a>
+					<div class="dropdown-content">
+						<a href="<%=onBuildingPage%>">Supporting Materials Maintenance</a> 
+						<a href="<%=onBuildingPage%>">Directorate Maintenance</a> 
+						<a href="<%=onBuildingPage%>">Department Maintenance</a> 
+						<a href="<%=onBuildingPage%>">Team Maintenance</a>
+					</div></li>
+				<li class="dropdown">
+					<a href="<%=onBuildingPage%>" class="dropbtn">Services</a>
+					<div class="dropdown-content">
+						<a href="<%=onBuildingPage%>">Programme</a>
+					</div></li>
+				<li class="dropdown">
+					<a href="<%=onBuildingPage%>" class="dropbtn">Geography</a>
+					<div class="dropdown-content">
+						<a href="<%=onBuildingPage%>">Trust Region Maintenance</a> 
+						<a href="<%=onBuildingPage%>">Trust District Maintenance</a> 
+						<a href="<%=onBuildingPage%>">Government Office Region</a>
+					</div></li>
+				<li><a href="<%=onBuildingPage%>">Premises</a></li>
+				<li><a href="<%=onBuildingPage%>">Contacts</a></li>
+				<li style="float: right;">
+					<%
+						if (session.getAttribute("User") == null) {
+					%> 
+							<a href="<%=path%>/login/index.html">Login</a> 
+					<%
+						} else {
+					%> 
+							<a href="<%=path%>/login/logout.html">Logout</a> 
+					<%
+					 	}
+					%> 
+				</li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>

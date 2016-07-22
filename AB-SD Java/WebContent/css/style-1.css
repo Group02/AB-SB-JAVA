@@ -5,20 +5,29 @@ body {
 	margin: 0 auto;
 }
 
+html, body, #container, #background-popup {
+	height: 100%;
+}
+
 .bg {
-	background: url("../image/bg3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+	background: url("../image/bg6.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+h1, h2{
+	margin: 0;
+	color: #FF6700;
 }
 
 .container {
 	margin: 0 auto;
 	display: table;
 	width: 80%;
-	padding: 10px 20px 10px 20px;
-	min-width: 700px;
+	padding: 60px 20px 10px 20px;
+	min-width: 800px;
 }
 
 .vertical-middle {
@@ -27,28 +36,36 @@ body {
 	height: 80vh;
 }
 
-input {
-	border: 1px solid #0067FF;
-}
+	
 
-input[type="button"], input[type="submit"]{
-	font-weight: bold;
+input[type="button"], input[type="submit"] {
+	background-color: #FF6700;
 	color: white;
-	background-color: #0067FF;
-	font: 18px Arial, sans-serif;
+	font: 16px Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	border: 1px solid #FF6700;
+	border-radius: 3px;
+	padding: 0 5px 0 5px;
+	height: 30px
 }
 
-input[type="button"], input[type="submit"]:hover {
-	color: #0067FF;
+input[type="button"]:hover, input[type="submit"]:hover {
+	-webkit-box-shadow: 0px 0px 2px 2px rgba(255, 103, 0, 0.75);
+	-moz-box-shadow: 0px 0px 2px 2px rgba(255, 103, 0, 0.75);
+	box-shadow: 0px 0px 2px 2px rgba(255, 103, 0, 0.75);
+}
+
+input[type="button"]:ACTIVE {
 	background-color: white;
-	-webkit-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	-moz-box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
-	box-shadow: 0px 0px 3px 0px rgba(0, 103, 255, 1);
+	color: #FF6700;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], textarea {
+	border: 1px solid #0067FF;
 	font-size: 16px;
-	text-align: center;
+	padding: 5px 2px;
+	border-radius: 3px;
 }
 
 input:focus {
@@ -58,20 +75,28 @@ input:focus {
 }
 
 .box-shadow {
-	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
 }
 
 .header-background {
-	background: rgba(73,155,234,1);
-	background: -moz-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(0,103,255,1) 92%, rgba(0,103,255,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73,155,234,1)), color-stop(92%, rgba(0,103,255,1)), color-stop(100%, rgba(0,103,255,1)));
-	background: -webkit-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(0,103,255,1) 92%, rgba(0,103,255,1) 100%);
-	background: -o-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(0,103,255,1) 92%, rgba(0,103,255,1) 100%);
-	background: -ms-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(0,103,255,1) 92%, rgba(0,103,255,1) 100%);
-	background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(0,103,255,1) 92%, rgba(0,103,255,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#0067ff', GradientType=0 );
+	background: rgba(73, 155, 234, 1);
+	background: -moz-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73, 155, 234
+		, 1)), color-stop(92%, rgba(0, 103, 255, 1)),
+		color-stop(100%, rgba(0, 103, 255, 1)));
+	background: -webkit-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -o-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	background: linear-gradient(to bottom, rgba(73, 155, 234, 1) 0%,
+		rgba(0, 103, 255, 1) 92%, rgba(0, 103, 255, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea',
+		endColorstr='#0067ff', GradientType=0);
 }
 
 [type="checkbox"]:not(:checked),
@@ -122,3 +147,83 @@ input:focus {
   transform: scale(1);
 }
 
+.btn_opt {
+	float: right;
+	margin-left: 5px;
+	top: 0px;
+}
+
+/*----- Tabs -----*/
+.tab_head {
+    width:100%;
+    display: inline-block;
+}
+
+ul.tab {
+	list-style-type: none;
+}
+
+ul.tab li {
+	margin: 0 1px;
+	background-color: #ccc;
+	padding: 8px 10px;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px 15px 0 0;
+}
+
+ul.tab li:hover {
+	background-color: #FF6700;
+}
+
+.tabs {
+	border: 1px solid #0067FF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.active {
+	background-color: #FF6700;
+}
+
+.tbl_tab tr td {
+	padding: 0;
+	border: none;
+}
+
+#popup-container {
+	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	top: 0;	
+}
+
+.popup {
+	margin: 0 auto;
+	width: 400px;
+	border: 1px solid #0067FF;
+	border-radius: 8px;
+	background-color: white;
+}
+
+.header-popup {
+	border-radius: 6px 6px 0 0;
+	background-color: #0067FF;
+	padding: 8px 0;
+	color: white;
+}
+
+.popup input[type="text"], textarea {
+	width: 95%;
+}
+
+.popup table tr td {
+	padding: 5px 0;
+}
+
+.mandatory {
+	color: red;
+}
+
+.popup-form {
+	padding: 10px;
+}
