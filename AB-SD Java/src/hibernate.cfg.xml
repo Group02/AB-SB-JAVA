@@ -31,6 +31,8 @@
 		<mapping class="model.BusinessLookup" />
 		<mapping class="model.Contacts" />
 		<mapping class="model.SupportingMaterial" />
+		<mapping class="model.Directorate"/>
+		<!-- modify -->
 		
 	</session-factory>
 </hibernate-configuration>

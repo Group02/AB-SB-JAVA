@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import model.User;
 import dao.*;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +18,16 @@ import service.SendEmail;
 public class LoginController {
 	
 	private UserDAO userDAO= new UserDAO();
+	private static Logger logger = Logger.getLogger(LoginController.class);
+	public static Log log;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView initialLoginForm() {
 		ModelAndView model = new ModelAndView("login");
 		model.addObject("User", new User());
 		
+		logger.info("this is message");
+		Logger.getLogger(LoginController.class).info("this is");
 		return model;
 	}
 	
@@ -42,11 +47,10 @@ public class LoginController {
 			 * If user exist then add user to session & 
 			 * redirect to Organization List Page
 			 */
-
 			session.setAttribute("User", user);
 			return new ModelAndView("OrganisationList");
 		}
-		//log.setInfo("User failed to to login");
+
 		// Else -> Redirect to Login Page with error message:
 		return new ModelAndView("login", "message", 
 				"The email and password you entered don't match.");

@@ -9,7 +9,6 @@
 <title>Organisation List</title>
 </head>
 <body class="bg">
-
 	<!-- HEADER -->
 	
 	<jsp:include page="header.jsp"/>
