@@ -92,45 +92,83 @@ function checkShortDesrc() {
 	
 }
 
+<<<<<<< HEAD
 //check type of business
+=======
+//test type of business
+>>>>>>> tuan: team 22/7
 function checkTypeBusiness() {
 	var typeBusiness = document.getElementById("typeBusiness").value;
 	
 	if (typeBusiness == null || typeBusiness == "") {
 		document.getElementById("typeBusiness").style.border = "2px solid red";
 		document.getElementById("error").innerHTML = "Please input the type of business!";
+<<<<<<< HEAD
 		return false;
 	}
+	
+=======
+
+		return false;
+	}
+>>>>>>> tuan: team 22/7
 	else{
 		document.getElementById("typeBusiness").style.border = "1px solid #0067FF";
 		return true;
 	}
+<<<<<<< HEAD
 }	
 	
 //check address 
+=======
+	
+	
+	
+}	
+	
+//test address 
+>>>>>>> tuan: team 22/7
 function checkAddress() {
 	var address = document.getElementById("address").value;
 	
 	if (address == null || address == "") {
 		document.getElementById("address").style.border = "2px solid red";
 		document.getElementById("error").innerHTML = "Please enter the address!";
+<<<<<<< HEAD
 		return false;
 	}
+	
+=======
+
+		return false;
+	}
+>>>>>>> tuan: team 22/7
 	else{
 		document.getElementById("address").style.border = "1px solid #0067FF";
 		return true;
 	}
 }
 			
+<<<<<<< HEAD
 //check postcode
+=======
+//test postcode
+>>>>>>> tuan: team 22/7
 function checkPostcode() {
 	var postcode = document.getElementById("postcode").value;
 	
 	if (postcode == null || postcode == "") {
 		document.getElementById("postcode").style.border = "2px solid red";
 		document.getElementById("error").innerHTML = "Please enter the postcode!";
+<<<<<<< HEAD
 		return false;
 	}
+	
+=======
+
+		return false;
+	}
+>>>>>>> tuan: team 22/7
 	else{
 		document.getElementById("postcode").style.border = "1px solid #0067FF";
 		return true;
@@ -138,18 +176,29 @@ function checkPostcode() {
 	
 }
 			
+<<<<<<< HEAD
 //check phone number
+=======
+//Test phone number
+>>>>>>> tuan: team 22/7
 function checkPhoneNumber() {
 	var phoneNumber = document.getElementById("phoneNumber").value;
 	
 	if (phoneNumber == null || phoneNumber == "") {
 		document.getElementById("phoneNumber").style.border = "2px solid red";
 		document.getElementById("error").innerHTML = "Please input the phone number!";
+<<<<<<< HEAD
 		return false;
+	
+=======
+
+		return false;
+>>>>>>> tuan: team 22/7
 	} else {
 		var phoneNumberVal = /(09\d{8})|(((01)|(07))\d{9})/;
 
 		if (!phoneNumberVal.test(phoneNumber)) {
+<<<<<<< HEAD
 			document.getElementById("phoneNumber").style.border = "2px solid red";
 			document.getElementById("error").innerHTML = "Sorry, System can't recognize the phone number!";
 			return false;
@@ -176,6 +225,7 @@ function checkEmail() {
 			return false;
 		}
 	}
+=======
 			document.getElementById("phoneNumber").style.border = "1px solid #0067FF";
 			document.getElementById("error").innerHTML = "Sorry, System can't recognize the phone number!";
 
@@ -185,3 +235,5 @@ function checkEmail() {
 	
 	return true;
 }
+				
+>>>>>>> tuan: team 22/7

@@ -84,3 +84,7 @@ div.page .btn_page {
 div.page .btn_page:hover {
 	background-color: #FF6700;
 }
+
+.in-acticehide{
+	display: none;
+}

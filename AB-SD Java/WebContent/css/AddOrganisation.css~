@@ -31,11 +31,17 @@ h1 {
 
 #wrapper{
 	width: 900px;
-	margin: 10px 
+	margin: 0 auto ;
+
+>>>>>>> tuan: team 22/7
 }
 
 #tabs{
+<<<<<<< HEAD
 	width: 800px
+=======
+width: 800px;
+>>>>>>> tuan: team 22/7
 }
 
 #tabs ul li{
@@ -140,9 +146,6 @@ textarea{
 	box-shadow: inset 0px 0px 2px 0px #0067FF;
 }
 
-<<<<<<< HEAD
 .error {
 	color: red;
 }
-=======
->>>>>>> tuan: team list 14h 20/7/2016

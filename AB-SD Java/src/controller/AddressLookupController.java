@@ -3,7 +3,6 @@ package controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ public class AddressLookupController {
 	private AddressLookupDAO addrdao= new AddressLookupDAO();
 	
 	@RequestMapping(value="/addresslookup", method=RequestMethod.GET)
-	public ModelAndView address(HttpSession session){
+	public ModelAndView address(){
 		ModelAndView model = new ModelAndView("address_lookup");
 		
 		if(addrdao.getAllAddr()!=null){
@@ -28,8 +27,7 @@ public class AddressLookupController {
 			//Make list address lookup
 			List<AddressLookup> listAddr = addrdao.getAllAddr();
 			
-			//Save object to session
-			session.setAttribute("listAddr", listAddr);
+			model.addObject("listAddr", listAddr);
 		}
 		
 		return model;
