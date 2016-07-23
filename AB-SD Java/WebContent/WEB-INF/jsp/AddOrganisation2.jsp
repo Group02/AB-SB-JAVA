@@ -55,16 +55,17 @@
 					<div id="tab1" class="tabcontent"></div>
 					
 					<!-- "Details 2" content -->
-					<div id="tab2" class="tabcontent"></div>
+					<jsp:include page="OrgDetails_Tab2.jsp"/>
 					
 					<!-- "Details 3" content -->
-					<jsp:include page="OrgDetails_Tab3.jsp"/>
+					<div id="tab3" class="tabcontent"></div>
 					
 					<!-- "Details 4" content -->
-					<div id="tab4" class="tabcontent"></div>
+					<jsp:include page="OrgDetails_Tab4.jsp"/>
 					
 					<!-- "Details 5" content -->
-					<div id="tab5" class="tabcontent"></div>
+					<jsp:include page="OrgDetails_Tab5.jsp"/>
+					
 					
 					<!-- "BU/Directorates" content -->
 					<div id="tab6" class="tabcontent"></div>
