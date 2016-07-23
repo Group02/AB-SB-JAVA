@@ -114,20 +114,6 @@ public class TeamDAO implements TeamInterface{
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		TeamDAO dao = new TeamDAO();
-		Team team = new Team("b00000","khin khin");
-		team.setFax("what the fox say");
-		dao.updateTeam(team);
-		System.out.println("name vua update"+team.getTeamName());
-		
-		for (Team string : dao.getTeam()) {
-			System.out.println(string.getTeamName()+" address "+string.getAddress());;
-		}
-		
-		
-	}
-
 	@Override
 	public void updateTeam(Team team) {
 		try {
@@ -136,15 +122,32 @@ public class TeamDAO implements TeamInterface{
 				Team oldTeam = (Team)session.get(Team.class, team.getTeamName());
 				
 				oldTeam.setTeamName(team.getTeamName());
+				oldTeam.setShortDes(team.getShortDes());
+				oldTeam.setLeadContact(team.getLeadContact());
 				oldTeam.setAddress(team.getAddress());
+				oldTeam.setStatus(team.isStatus());
+				oldTeam.setPostCode(team.getPostCode());
+				oldTeam.setTown(team.getTown());
+				oldTeam.setCounty(team.getCounty());
+				oldTeam.setNation(team.getNation());
+				oldTeam.setTypeOfBu(team.getTypeOfBu());
+				oldTeam.setSicCode(team.getSicCode());
+				oldTeam.setFullDes(team.getFullDes());
+				oldTeam.setPhone(team.getPhone());
+				oldTeam.setFax(team.getFax());
+				oldTeam.setMail(team.getMail());
+				oldTeam.setWA(team.getWA());
 			
 				commit();
 		} catch (Exception e) {
-			session.saveOrUpdate(team);
-			commit();
-//			System.out.println("Failed when to insert Address Lookup!");
-//			e.printStackTrace();
-//			rollback();
+			try {
+				session.saveOrUpdate(team);
+				commit();
+			} catch (Exception e2) {
+				System.out.println("Failed when to insert Address Lookup!");
+				e2.printStackTrace();
+				rollback();
+			}
 		} finally {
 			closeSession();
 		}

@@ -14,16 +14,20 @@
 	    window.history.back();
 	}
 	
-	function he(){
+	function style(){
 		document.getElementById("typof").disabled=true;
 		document.getElementById("sic").disabled=true;
 	}
+	
+	
+	  
 </script>
 </head>
-<body >
-		 <form:form  modelAttribute="command" action="teamadd.html" method="post" style="margin:0 auto;">
+<body onload="style()">
+		 <form:form  modelAttribute="command" action="" method="post" style="margin:0 auto;">
 		  <h6 class="path"><span class="text">Organisation</span> > <span class="text">Directorate</span> > <span class="text">Department</span></h6>
 	      <h1>Team details</h1>
+	      
 	<div id = "wrapper">
 		<div id = "tabs">
 			<ul>
@@ -119,7 +123,7 @@
 						<td></td>
 						<td></td>
 						<td>
-							<button type="submit">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="submit" onclick="error()">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button type="button" onclick="goBack()">Back</button>
 						</td>
 					</tr>
