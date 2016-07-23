@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="tab3" class="tabcontent" style="display: block;">
+	<div id="tab5" class="tabcontent" style="display: block;">
 		<div>
 			<h3>Current List of Supporting Materials</h3>
 			<hr>
