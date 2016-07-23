@@ -189,7 +189,6 @@
 										<c:when test="${i.active ==true}">
 											<tr>
 											<td>${i.directorateName }</td>
-			<!-- 								lay ten thuoc tinh -->
 											<td>${i.addrLine1}</td>
 											<td>${i.postcode}</td>
 											<td>${i.leadContact}</td>
@@ -199,7 +198,6 @@
 										<c:otherwise >
 											<tr class="in-activehide">
 											<td>${i.directorateName }</td>
-			<!-- 								lay ten thuoc tinh -->
 											<td>${i.addrLine1}</td>
 											<td>${i.postcode}</td>
 											<td>${i.leadContact}</td>

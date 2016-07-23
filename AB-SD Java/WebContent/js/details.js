@@ -17,7 +17,9 @@ function openTab(evt, tabName) {
 }
 
 function onBackOrg() {
-	location = "list.html";
+	if(confirm("Are you sure to back?")) {
+		location = "list.html";
+	}
 }
 
 function onCreate(id) {
@@ -25,9 +27,9 @@ function onCreate(id) {
 }
 
 function onCheckInActive() {
-	var inActiveRows = document.getElementsByClassName("inActive-rows");
+	var inActiveRows = document.getElementsByClassName("inActive-SM");
 	
-	if(document.getElementById("in-active").checked) {
+	if(document.getElementById("in-active-SM").checked) {
 		for (i = 0; i < inActiveRows.length; i++) {
 			inActiveRows[i].style.display = "table-row";
 	    }

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,6 +10,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="../js/details.js"></script>
 <title>Organisation Details</title>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        document.getElementById("test").value = localStorage.getItem("item1");
+    });
+</script>
+<script>
+    $(window).on('beforeunload', function() {
+        localStorage.setItem("item1",document.getElementById("test").value);
+    });
+</script>
 </head>
 <body class="bg">
 
@@ -23,6 +35,9 @@
 			<div class="content">
 				<!-- Titile -->
 				<h1>Organisation Details</h1>
+				
+				<p>Input</p>
+				<input type="text" id="test" name="test" value="${fn:escapeXml(param.test)}">
 				
 				<hr>
 				
@@ -58,7 +73,7 @@
 					<jsp:include page="OrgDetails_Tab2.jsp"/>
 					
 					<!-- "Details 3" content -->
-					<div id="tab3" class="tabcontent"></div>
+					<jsp:include page="OrgDetails_Tab3.jsp"/>
 					
 					<!-- "Details 4" content -->
 					<jsp:include page="OrgDetails_Tab4.jsp"/>
@@ -66,13 +81,15 @@
 					<!-- "Details 5" content -->
 					<jsp:include page="OrgDetails_Tab5.jsp"/>
 					
-					
 					<!-- "BU/Directorates" content -->
-					<div id="tab6" class="tabcontent"></div>
+					<jsp:include page="OrgDetails_BU-Directorate.jsp"/>
 				</form:form>
 				
 				<!-- Include AddSupportingMaterials Page -->
 				<jsp:include page="AddSupportingMaterials.jsp"/>
+				
+				<!-- Error -->
+				<div id="error" class="error"></div>
 			</div>
 		</div>
 	</div>
