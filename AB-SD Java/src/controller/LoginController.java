@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import model.User;
 import dao.*;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,16 +17,12 @@ import service.SendEmail;
 public class LoginController {
 	
 	private UserDAO userDAO= new UserDAO();
-	private static Logger logger = Logger.getLogger(LoginController.class);
-	public static Log log;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView initialLoginForm() {
 		ModelAndView model = new ModelAndView("login");
 		model.addObject("User", new User());
 		
-		logger.info("this is message");
-		Logger.getLogger(LoginController.class).info("this is");
 		return model;
 	}
 	
