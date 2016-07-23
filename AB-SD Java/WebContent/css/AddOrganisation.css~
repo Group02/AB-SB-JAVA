@@ -32,10 +32,16 @@ h1 {
 #wrapper{
 	width: 900px;
 	margin: 0 auto ;
+
+>>>>>>> tuan: team 22/7
 }
 
 #tabs{
+<<<<<<< HEAD
 	width: 800px
+=======
+width: 800px;
+>>>>>>> tuan: team 22/7
 }
 
 #tabs ul li{

@@ -30,9 +30,13 @@
 		<mapping class="model.AddressLookup" />
 		<mapping class="model.BusinessLookup" />
 		<mapping class="model.Contacts" />
+<<<<<<< HEAD
 		<mapping class="model.SupportingMaterial" />
 		<mapping class="model.Directorate"/>
+		<!-- modify -->
+=======
 		<mapping class="model.Team" />
+>>>>>>> tuan: team 22/7
 		
 	</session-factory>
 </hibernate-configuration>

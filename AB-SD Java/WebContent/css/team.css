@@ -1,0 +1,131 @@
+@CHARSET "ISO-8859-1";
+
+body {
+/*   background: #FFF8DC; */
+/*   display: flex; */
+/*   justify-content: center; */
+/*   align-items: center; */
+/*   font-size: 16px; */
+}
+form {
+  background: white;
+  width: 60%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  font-family: lato;
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+}
+form header {
+  background: #00BFFF;
+  padding: 15px 5px;
+  color: white;
+  font-size: 1.6em;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+}
+* {
+margin: 0;
+padding: 0;
+}
+
+#wrapper{
+width: 900px;
+margin: 10px 
+
+}
+#tabs{
+width: 800px
+}
+#tabs ul li{
+float: left;
+background: #00BFFF;
+padding: 4px 10px;
+margin-right: 3px;
+list-style: none inside;
+-webkit-border-radius: 5px 5px 0 0;
+-moz-border-radius: 5px 5px 0 0;
+cursor: pointer;
+color: white;
+}
+#tabs ul li.active{
+background: #eee repeat-x bottom; 
+padding-bottom: 6px;
+color: #111111;
+}
+#tabs div{
+clear: both;
+background: #eee;
+border: 1px solid #00BFFF;
+padding: 10px
+}
+#tabs div.hide{
+display: none
+}
+button{
+	border: none;
+	border-radius: 5px;
+	width: 80px;
+	height: 25px;
+	color: white;
+	font-size: 15px;
+	background: #00BFFF;
+}
+table tr td{
+font-family: lato;
+font-size: 15px;
+padding: 3px;
+}
+input.background {
+background-color: #eee;
+}
+input, select{
+	border: 1px solid #00BFFF;
+	border-radius: 5px;
+	height: 25px;
+	-webkit-box-shadow: inset 0px 0px 2px 0px #0067FF;
+	-moz-box-shadow: inset 0px 0px 2px 0px #0067FF;
+	box-shadow: inset 0px 0px 2px 0px #0067FF;
+}
+textarea{
+	border: 1px solid #00BFFF;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px 0px 2px 0px #0067FF;
+	-moz-box-shadow: inset 0px 0px 2px 0px #0067FF;
+	box-shadow: inset 0px 0px 2px 0px #0067FF;
+}
+
+.SIC{
+	position: relative;
+	top:-8px;
+}
+
+.radio{
+	position: relative;
+	top:-8px;
+	left: 5px;
+}
+
+.Fdes{
+	position: relative;
+	top:-15px;
+}
+
+/* align text path */
+.path{
+	position: relative;
+	left: 5px;
+	text-align: left;
+	
+}
+
+
+.text{
+	color: #0067FF;
+}
+
+
+/* ALIGN FOR TEAM LIST */
+.frame_list{
+	margin:0 auto;
+}

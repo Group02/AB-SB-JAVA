@@ -18,52 +18,51 @@
 		<title>Postcode</title>
 	</head>
 	<body>
-		<div id="close" class="frame_address">
+		<div id="close" class="frame_address_main">
 			<table id="table_search">
-				<thead><tr><th colspan=6><a class="close-sign">X</a></th></tr> </thead>
+				<thead><tr><th colspan=6><a class="close-sign" id="header">X</a></th></tr> </thead>
 				<tbody>
-					<form:form>
 					<tr>
 						<td>
-									<fieldset>
-									<legend>Search Postcode:</legend>
-									<table>
+							<table>
+								<tbody>
+									<form:form>
 										<tr>
-											<td>Postcode:</td>
 											<td>
-												<%-- 					
-											<form:input path="address"/> --%>
-											<input type="text">
+												<div style="width: 380px;">
+													<fieldset>
+														<legend>Search Postcode:</legend>
+														<table>
+															<tr>
+																<td>Postcode:</td>
+																<td>
+																	<%-- 					
+																<form:input path="address"/> --%>
+																<input type="text">
+																</td>
+															</tr>
+															<tr>
+																<td>Street:</td>
+																<td><input type="text"></td>
+															</tr>
+															<tr>
+																<td>Town:</td>
+																<td><input type="text"></td>
+															</tr>
+														</table>
+													</fieldset>
+												</div>
+											</td>
+											<td colspan="5">
+												<input type="submit" id="wbutton" value="Search">
+												<br>
+												<input type="submit" id="wbutton" value="None">
 											</td>
 										</tr>
-										<tr>
-											<td>Street:</td>
-											<td><input type="text"></td>
-										</tr>
-										<tr>
-											<td>Town:</td>
-											<td><input type="text"></td>
-										</tr>
-									</table>
-								</fieldset>
+									</form:form>
+								</tbody>
+							</table>
 						</td>
-						<td>
-							<button type="submit" id="wbutton">
-								Search Address
-							</button>
-							<br>
-							<button type="reset" id="wbutton">
-								Clear
-							</button>
-							<br>
-							<button type="submit" id="wbutton">
-								None
-							</button>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -73,7 +72,6 @@
 						<td></td>
 						<td></td>
 					</tr>
-					</form:form>
 					<form:form   action="addresslookup.html" method="post">
 					<tr>
 						<td colspan=6>
@@ -106,17 +104,6 @@
 									</table>
 		<input type="submit" value="Select">			
 							</div>
-		<ul id="pagination-clean" class="pagemar" >
-		   <li class="previous-off">«Previous</li>
-		   <li class="active">1</li>
-		   <li><a href="?page=2">2</a></li>
-		   <li><a href="?page=3">3</a></li>
-		   <li><a href="?page=4">4</a></li>
-		   <li><a href="?page=5">5</a></li>
-		   <li><a href="?page=6">6</a></li>
-		   <li><a href="?page=7">7</a></li>
-		   <li class="next"><a href="?page=2">Next »</a></li>
-		</ul>
 						</td>
 					</tr>
 					</form:form>
