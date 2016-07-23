@@ -11,59 +11,57 @@
 </head>
 <body>
 	<div id="tab5" class="tabcontent" style="display: block;">
-		<div>
-			<h3>Current List of Supporting Materials</h3>
-			<hr>
-			<div class="sort" style="margin-bottom: 25px;">
-				<span style="float: right;">
-					<a href="#sm-details" class="btn_1" onclick="onCreate('sm-details')">Create</a>
-				</span>
-			</div>
-			<table class="list">
-				<tr>
-					<th>URL</th>
-					<th>Description</th>
-					<th>Type</th>
-					<th>Added By</th>
-					<th>Added Date</th>
-					<th>
-						<span>
-							<input id="in-active" type="checkbox" onclick="onCheckInActive()">
-							<label for="in-active">In Active?</label>
-						</span>
-					</th>
-				</tr>
-				<c:forEach var="sm" items="${listSM}" varStatus="i">
-					<c:choose>
-						<c:when test="${sm.isActive == false}">
-							<tr id="${sm.url}" class="inActive-rows">
-								<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
-								<td>${sm.description}</td>
-								<td>${sm.type}</td>
-								<td>${sm.addedBy}</td>
-								<td>${sm.addedDate}</td>
-								<td>In Active</td>
-							</tr>
-						</c:when>
-						<c:otherwise>
-							<tr id="${sm.url}">
-								<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
-								<td>${sm.description}</td>
-								<td>${sm.type}</td>
-								<td>${sm.addedBy}</td>
-								<td>${sm.addedDate}</td>
-								<td>Active</td>
-							</tr>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-			</table>
-			
-			<!-- Page -->
-			<div align="center" class="page">
-				<a href="#previous" class="btn_page">1</a>
-				<a href="#previous" class="btn_page">2</a>
-			</div>
+		<h3>Current List of Supporting Materials</h3>
+		<hr>
+		<div class="sort" style="margin-bottom: 25px;">
+			<span style="float: right;">
+				<a href="#sm-details" class="btn_1" onclick="onCreate('sm-details')">Create</a>
+			</span>
+		</div>
+		<table class="list">
+			<tr>
+				<th>URL</th>
+				<th>Description</th>
+				<th>Type</th>
+				<th>Added By</th>
+				<th>Added Date</th>
+				<th>
+					<span>
+						<input id="in-active" type="checkbox" onclick="onCheckInActive()">
+						<label for="in-active-SM">In Active?</label>
+					</span>
+				</th>
+			</tr>
+			<c:forEach var="sm" items="${listSM}" varStatus="i">
+				<c:choose>
+					<c:when test="${sm.isActive == false}">
+						<tr id="${sm.url}" class="inActive-SM">
+							<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
+							<td>${sm.description}</td>
+							<td>${sm.type}</td>
+							<td>${sm.addedBy}</td>
+							<td>${sm.addedDate}</td>
+							<td>In Active</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<tr id="${sm.url}">
+							<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
+							<td>${sm.description}</td>
+							<td>${sm.type}</td>
+							<td>${sm.addedBy}</td>
+							<td>${sm.addedDate}</td>
+							<td>Active</td>
+						</tr>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+		</table>
+		
+		<!-- Page -->
+		<div align="center" class="page">
+			<a href="#previous" class="btn_page">1</a>
+			<a href="#previous" class="btn_page">2</a>
 		</div>
 	</div>
 </body>

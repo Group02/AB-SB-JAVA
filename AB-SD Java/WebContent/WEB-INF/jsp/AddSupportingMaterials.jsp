@@ -70,15 +70,6 @@
 											<input type="text" id="addedBy" name="addedBy" value="<%=new Date()%>" disabled="disabled">
 										</td>
 									</tr>
-									<tr>
-										<td>In-Active?</td>
-										<td>
-											<span>
-												<input id="in-active" type="checkbox" onclick="onCheckInActive()">
-												<label for="in-active"></label>
-											</span>
-										</td>
-									</tr>
 								</table>
 							</td>
 						</tr>

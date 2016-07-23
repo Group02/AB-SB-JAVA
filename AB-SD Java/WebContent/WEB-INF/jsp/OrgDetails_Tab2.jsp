@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id="tab2" class="tabcontent">
-		<table width="100%">
+		<table width="100%" class="tb_tab2">
 			<tr>
 				<td>Organisation Specicalism</td>
 				<td>
@@ -214,6 +214,43 @@
 							<span>
 								<input id="check29" type="checkbox">
 								<label for="check29">ISO 27001</label>
+							</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Service Benefits Capabilities</td>
+				<td>
+					<div class="check-frame">
+						<div>
+							<span>
+								<input id="check30" type="checkbox">
+								<label for="check30">Disability Living Allowance</label>
+							</span>
+						</div>
+						<div>
+							<span>
+								<input id="check31" type="checkbox">
+								<label for="check31">Employment and Support Allowance</label>
+							</span>
+						</div>
+						<div>
+							<span>
+								<input id="check32" type="checkbox">
+								<label for="check32">Incapacity Benefit</label>
+							</span>
+						</div>
+						<div>
+							<span>
+								<input id="check33" type="checkbox">
+								<label for="check33">Income Support</label>
+							</span>
+						</div>
+						<div>
+							<span>
+								<input id="check34" type="checkbox">
+								<label for="check34">Other</label>
 							</span>
 						</div>
 					</div>
