@@ -64,6 +64,12 @@ public class Team {
 		this.teamName = teamName;
 		this.address = address;
 	}
+	
+	public Team(String teamName, boolean status) {
+		super();
+		this.teamName = teamName;
+		this.status = status;
+	}
 
 	public Team(String teamName, String shortDes, String leadContact, String address, boolean status, String postCode,
 			String town, String county, String nation, String typeOfBu, String sicCode, String fullDes, String phone,

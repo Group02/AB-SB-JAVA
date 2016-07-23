@@ -18,14 +18,14 @@
 		
 		<!-- Sort & Create-->
 		<div class="sort">
-			<span><a href="">All</a></span> |
-			<span><a href="">0 - 9</a></span> |
-			<span><a href="">A B C D E</a></span> |
-			<span><a href="">F G H I J</a></span> |
-			<span><a href="">K L M N</a></span> |
-			<span><a href="">O P Q R</a></span> |
-			<span><a href="">S T U V</a></span> |
-			<span><a href="">W X Y Z</a></span>
+			<span><a href="filter.html?search=ALL">All</a></span> |
+			<span><a href="filter.html?search=0 9">0 - 9</a></span> |
+			<span><a href="filter.html?search=A E">A B C D E</a></span> |
+			<span><a href="filter.html?search=F J">F G H I J</a></span> |
+			<span><a href="filter.html?search=K N">K L M N</a></span> |
+			<span><a href="filter.html?search=O R">O P Q R</a></span> |
+			<span><a href="filter.html?search=S V">>S T U V</a></span> |
+			<span><a href="filter.html?search=W Z">W X Y Z</a></span>
 			<span style="float: right;">
 				<a href="teamadd.html" class="btn_1">Create</a>
 			</span>
@@ -64,12 +64,15 @@
 							}
 							
 							function active(){
-								var x = document.getElementsByName("?()^&&bap$%%").value;
+								var x = confirm("Do you want to make this Team active?");
 								
+								if(x==true) return true;
+								else return false;
 							}
 						</script>
 					</th>
 				</tr>
+				<form:form id="bap">
 				<c:forEach var="team" items="${listTeam }">
 					<c:choose>
 						<c:when test="${team.status == true}">
@@ -77,10 +80,10 @@
 							<td>
 								<c:set var="url">
 									<c:url value="teammo.html">
-										<c:param name="?()^&&bap$%%" value="${team.teamName }" ></c:param>
+										<c:param name="teamName" value="${team.teamName }" ></c:param>
 									</c:url>
 								</c:set>
-								<a href="${url }" >${team.teamName }</a>
+								<a href="${url}" >${team.teamName }</a>
 							</td>
 							<td>${team.address }</td>
 							<td>${team.postCode }</td>
@@ -93,12 +96,8 @@
 						<c:otherwise>
 							<tr class="in-acticehide">
 							<td>
-								<c:set var="url">
-									<c:url value="teammo.html">
-										<c:param name="?()^&&bap$%%" value="${team.teamName }" ></c:param>
-									</c:url>
-								</c:set>
-								<a href="${url }" >${team.teamName }</a>
+								<a href="teamlist2.html?teamName=${team.teamName }" onclick="return active()" >${team.teamName }</a>
+								<input id="${team.teamName }" value="${team.teamName }" type="hidden">
 							</td>
 							<td>${team.address }</td>
 							<td>${team.postCode }</td>
@@ -110,6 +109,7 @@
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
+				</form:form>
 			</table>
 		</div>
 		

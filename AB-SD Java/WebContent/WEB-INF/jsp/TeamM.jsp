@@ -124,6 +124,7 @@
 						<td>
 							<button type="submit">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button type="button" onclick="goBack()">Back</button>
+							<span style="position: absolute; top:58px; "><a href="teammo2.html?teamName=${teamName }" class="btn_1 a">In-active</a></span>
 						</td>
 					</tr>
 					

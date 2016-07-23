@@ -1,5 +1,7 @@
+
 package controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,20 +21,33 @@ public class TeamController {
 
 	TeamDAO dao = new TeamDAO();
 	
+	private static LinkedList<Team> listAll;
+	private static LinkedList<Team> variable; //declare here
+	
 	@RequestMapping(value="/teamlist", method=RequestMethod.GET)
 	public ModelAndView listteam(){
-		ModelAndView model = new ModelAndView("TeamL","command",new Team());
+		ModelAndView model = new ModelAndView("TeamL");
 		
 		List<Team> listTeam = dao.getAllTeam();
 		
 		model.addObject("listTeam", listTeam);
-		for (Team team : listTeam) {
-			if(team.isStatus()){
-				model.addObject("status", "Yes");
-			}else{
-				model.addObject("status", "No");
-			}
-		}
+		
+		
+		return model;
+	}
+	
+	@RequestMapping(value="/teamlist2", method=RequestMethod.GET)
+	public ModelAndView active(HttpServletRequest request){
+		ModelAndView model = new ModelAndView("TeamL");
+		
+		Team team = dao.FindTeam(request.getParameter("teamName"));
+		team.setStatus(true);
+		
+		dao.updateTeam(team);
+
+		List<Team> listTeam = dao.getAllTeam();
+		
+		model.addObject("listTeam", listTeam);
 		return model;
 	}
 	
@@ -46,16 +61,25 @@ public class TeamController {
 	@RequestMapping(value="/teamadd", method=RequestMethod.POST)
 	public ModelAndView addteam(@ModelAttribute("command") Team team){
 		ModelAndView model = new ModelAndView("TeamL");
+		ModelAndView model2 = new ModelAndView("TeamA");
 		
-		team.setStatus(true);
+		if(dao.FindTeam(team.getTeamName()) == null){
+			
+			team.setStatus(true);
+			
+			dao.insertTeam(team);
+			
+//			add list team to model
+			List<Team> listTeam = dao.getAllTeam();
+			model.addObject("listTeam", listTeam);
+			
+			return model;
+		}
+		else{
+			model2.addObject("message", "hkhkj");
+		}
 		
-		dao.insertTeam(team);
-		
-//		add list team to model
-		List<Team> listTeam = dao.getAllTeam();
-		model.addObject("listTeam", listTeam);
-		
-		return model;
+		return model2;
 	}
 	
 	@RequestMapping(value="/teammo", method=RequestMethod.GET)
@@ -63,7 +87,7 @@ public class TeamController {
 		ModelAndView model = new ModelAndView("TeamM", "command", new Team());
 		
 		
-		String teamName = request.getParameter("?()^&&bap$%%");
+		String teamName = request.getParameter("teamName");
 		model.addObject("teamName", teamName);
 		
 		//get a team with teamName
@@ -104,4 +128,65 @@ public class TeamController {
 		return model;
 	}
 
+	@RequestMapping(value="/teammo2", method=RequestMethod.GET)
+	public ModelAndView inactive(HttpServletRequest request){
+		ModelAndView model = new ModelAndView("TeamL");
+		
+		Team team = dao.FindTeam(request.getParameter("teamName"));
+		team.setStatus(false);
+		
+		dao.updateTeam(team);
+
+		List<Team> listTeam = dao.getAllTeam();
+		
+		model.addObject("listTeam", listTeam);
+		return model;
+	}
+	
+	
+	//filter
+		@RequestMapping(value = "/filter")
+		public ModelAndView search(HttpServletRequest request){
+			ModelAndView model = new ModelAndView("TeamL");
+			variable = new LinkedList<Team>();
+			listAll = new LinkedList<Team>();
+			String name;
+			
+			//get string request
+			String[] part = request.getParameter("search").split(" ");
+			
+			List<Team> listTeam = dao.getAllTeam();
+			
+			//get list variable from list all
+			for(int i =0 ; i< listTeam.size();i++){
+				listAll.add(listTeam.get(i));
+			}
+			variable = listAll;
+			
+			//get team correct from variable
+			if (part.length!=1){
+				LinkedList<Team> s = new LinkedList<Team>();
+				int i, variableSize = variable.size();
+				char start = part[0].charAt(0), end = part[1].charAt(0);
+				Team team = new Team();
+				for (i = 0; i<variableSize; i++){
+					team = variable.get(i);
+					name = team.getTeamName();
+					if (!name.equals("")){
+						name = name.toUpperCase();
+						if ((name.charAt(0)>=start) && (name.charAt(0)<=end)){
+							s.add(team);
+						}
+					}
+				}
+				variable = new LinkedList<Team>();
+				variable = s;
+			}
+			
+			model.addObject("listTeam", variable);
+			return model;
+		}
+	
 }
+
+
