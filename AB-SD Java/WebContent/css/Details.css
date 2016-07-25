@@ -9,9 +9,7 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
     display: inline-block;
-    
 }
 
 /* Float the list items side by side */
@@ -42,6 +40,10 @@ ul.tab li a:hover {
 ul.tab li a:focus, .active {
     background-color: #0067FF;
     color: white;
+}
+
+#tablink3 {
+	display: none;
 }
 
 /* Style the tab content */
@@ -89,21 +91,6 @@ legend {
 	background-color: white;
 }
 
-.left {
-	width: 49.5%;
-	height: 100%;
-	display: inline-block;
-}
-
-.right {
-	width: 49.5%;
-	float: right;
-}
-
-.left table tr td, .right table tr td {
-	reset: both;
-} 
-
 .mandatory {
 	color: red;
 }
@@ -146,9 +133,9 @@ input:focus {
 /* ====== End Supporting Materials ====== */
 
 
-/* ========== Details 2 + 3 ========== */
+/* ========== Details 1 + 2 + 3 ========== */
 .check-frame {
-	overflow: scroll;
+	overflow: auto;
 	width: 280px;
 	height: 100px;
 	border: 1px solid #0067FF;
@@ -156,6 +143,43 @@ input:focus {
 	border-radius: 5px;
 }
 
-.tb_tab2 tr td{
+.tb_tab2 tr td, .cols-left tr td, .cols-right tr td{
 	padding: 5px;
 }
+/* ========== End Details 1 + 2 + 3 ========== */
+
+/* ================ Pop-up ================ */
+.model {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.model-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* ================ End Pop-up ================ */
+
+/* ================ List Contact ================ */

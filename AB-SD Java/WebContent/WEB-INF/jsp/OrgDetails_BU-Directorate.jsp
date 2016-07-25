@@ -21,7 +21,7 @@
 			<span><a href="">S T U V</a></span> |
 			<span><a href="">W X Y Z</a></span>
 			<span style="float: right;">
-				<a href="<%=request.getContextPath()%>/organisation/details.html" class="btn_1">Create</a>
+				<a href="#" class="btn_1">Create</a>
 			</span>
 		</div>
 		

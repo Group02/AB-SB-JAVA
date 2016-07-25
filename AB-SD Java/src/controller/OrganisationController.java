@@ -19,10 +19,17 @@ public class OrganisationController {
 	private SupportingMaterialsDAO smDAO = new SupportingMaterialsDAO();
 
 	@RequestMapping(value = "/list")
-	public ModelAndView listActiveOrg() {
+	public ModelAndView listOrg() {
 		
 		return new ModelAndView("OrganisationList", "Organisation",
 				new Organisation());
+	}
+	
+	@RequestMapping(value = "/create")
+	public ModelAndView createOrg() {
+		Organisation org = new Organisation();
+		
+		return new ModelAndView("AddOrganisation2", "Org", org);
 	}
 	
 	@RequestMapping(value = "/details")
@@ -36,6 +43,12 @@ public class OrganisationController {
 		model.addObject("SM", SM);
 		
 		return model;
+	}
+	
+	@RequestMapping(value = "/handleOrgForm", method = RequestMethod.POST)
+	public String handleOrgForm(@ModelAttribute("Org") Organisation org) {
+		
+		return "redirect:/organisation/list.html";
 	}
 	
 	@RequestMapping(value = "/handleSMForm", method = RequestMethod.POST)

@@ -87,6 +87,14 @@ table.list tr th {
 	background-color: #d4edff;
 }
 
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+
 div.page {
 	margin: 5px 0 5px 0;
 	padding: 5px 0 5px 0;

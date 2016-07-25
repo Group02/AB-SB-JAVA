@@ -30,7 +30,7 @@
 					<table width="100%">
 						<tr valign="top">
 							<td>
-								<table class="">
+								<table>
 									<tr>
 										<td>URL<span class="mandatory">*</span></td>
 										<td><form:input path="url" id="url"/></td>

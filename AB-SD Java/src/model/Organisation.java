@@ -1,39 +1,58 @@
 package model;
 
+import javax.persistence.*;
+
 public class Organisation {
 	
+	@Id
+	@Column(name = "orgName")
 	private String orgName;
+	
+	@Column(name = "shortDescr")
 	private String shortDescr;
+	
+	@Column(name = "addressLookup")
 	private AddressLookup addressLookup; // (Address Line, PostCode, City, County, Country)
+	
+	@Column(name = "orgName")
 	private BusinessLookup businessLookup; // (Business Name, SIC code)
+	
+	@Column(name = "orgName")
 	private String phoneNumber;
-	private String leadContact; // Con sua!
-	private boolean preferredOrganisation;
-	private boolean expressOfInterest;
+	
+	@Column(name = "orgName")
+	private Contacts leadContact;
+	
+	@Column(name = "orgName")
 	private String fullDescr;
+	
+	@Column(name = "orgName")
 	private String fax;
+	
+	@Column(name = "orgName")
 	private String email;
+	
+	@Column(name = "orgName")
 	private String webAddr;
+	
+	@Column(name = "orgName")
 	private int charityNumber;
+	
+	@Column(name = "orgName")
 	private int companyNumber;
+	
+	@Column(name = "orgName")
+	private boolean isActive = true;
 	
 	public Organisation() {
 		super();
 	}
 
-	public Organisation(String orgName, String shortDescr, AddressLookup addressLookup, BusinessLookup businessLookup,
-			String phoneNumber) {
-		super();
-		this.orgName = orgName;
-		this.shortDescr = shortDescr;
-		this.addressLookup = addressLookup;
-		this.businessLookup = businessLookup;
-		this.phoneNumber = phoneNumber;
-	}
-
-	public Organisation(String orgName, String shortDescr, AddressLookup addressLookup, BusinessLookup businessLookup,
-			String phoneNumber, String leadContact, boolean preferredOrganisation, boolean expressOfInterest,
-			String fullDescr, String fax, String email, String webAddr, int charityNumber, int companyNumber) {
+	public Organisation(String orgName, String shortDescr,
+			AddressLookup addressLookup, BusinessLookup businessLookup,
+			String phoneNumber, Contacts leadContact, String fullDescr,
+			String fax, String email, String webAddr, int charityNumber,
+			int companyNumber, boolean isActive) {
 		super();
 		this.orgName = orgName;
 		this.shortDescr = shortDescr;
@@ -41,14 +60,13 @@ public class Organisation {
 		this.businessLookup = businessLookup;
 		this.phoneNumber = phoneNumber;
 		this.leadContact = leadContact;
-		this.preferredOrganisation = preferredOrganisation;
-		this.expressOfInterest = expressOfInterest;
 		this.fullDescr = fullDescr;
 		this.fax = fax;
 		this.email = email;
 		this.webAddr = webAddr;
 		this.charityNumber = charityNumber;
 		this.companyNumber = companyNumber;
+		this.isActive = isActive;
 	}
 
 	public String getOrgName() {
@@ -91,28 +109,12 @@ public class Organisation {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getLeadContact() {
+	public Contacts getLeadContact() {
 		return leadContact;
 	}
 
-	public void setLeadContact(String leadContact) {
+	public void setLeadContact(Contacts leadContact) {
 		this.leadContact = leadContact;
-	}
-
-	public boolean isPreferredOrganisation() {
-		return preferredOrganisation;
-	}
-
-	public void setPreferredOrganisation(boolean preferredOrganisation) {
-		this.preferredOrganisation = preferredOrganisation;
-	}
-
-	public boolean isExpressOfInterest() {
-		return expressOfInterest;
-	}
-
-	public void setExpressOfInterest(boolean expressOfInterest) {
-		this.expressOfInterest = expressOfInterest;
 	}
 
 	public String getFullDescr() {
@@ -162,5 +164,13 @@ public class Organisation {
 	public void setCompanyNumber(int companyNumber) {
 		this.companyNumber = companyNumber;
 	}
-	
+
+	public boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 }
