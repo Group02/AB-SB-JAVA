@@ -2,7 +2,6 @@ package controller;
 
 import java.util.List;
 
-import model.Department;
 import model.Directorate;
 import model.Organisation;
 import model.SupportingMaterial;
@@ -40,7 +39,6 @@ public class OrganisationController {
 	public ModelAndView amendOrg() {
 		ModelAndView model = new ModelAndView("AmendOrganisation");
 		
-		//
 		List<Directorate> list = dao.getAllDir();
 		model.addObject("list", list);
 		

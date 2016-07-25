@@ -6,42 +6,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="../css/contact.css">
-<link rel="stylesheet" href="../css/close.css">	
-			<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-			<script type="text/javascript" src="../js/close.js"></script>	
-			<script type="text/javascript" >
-					$(window).load(function() { 
-				  $('#close').closef($('#close').data()); 
-				});
-			</script> 
 <title>List Contact</title>
 </head>
 <body>
-	<div >
-		<table class="frame_contact">
-			<thead ><tr><th colspan=6 class="header"><a class="close-sign">X</a></th></tr></thead>
+	<div id="contactModal" class="contactModal">
+		<div class="contactContent">
+			<table >
+			<thead ><tr><th colspan=6 class="header"><span class="close2">×</span></th></tr></thead>
 			<tbody>
 				<tr>
 				<td>
-					<table id="table_search">
+					<table class="table_search">
 						<tbody>
 							<tr>
 								<td>Contact Name:</td>
 								<td colspan=5> 
 									<div class="search">
 										<input type="text" placeholder="Search">
-										<button type="button" id="button" ><img id="img" alt="" src="../image/search.png"></button>
-										<button id="wbutton">Edit</button>
-										<button type="button" id="wbutton">Create</button>
-										<button type="button" id="wbutton">None</button>
+										<button type="button" id="button" ><img id="imgsearch" alt="" src="../image/search.png"></button>
+										<button id="buttoni">Edit</button>
+										<button type="button" id="buttoni">Create</button>
+										<button type="button" id="buttoni">None</button>
 									</div>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-				</td>			
-			</tr>
+				</td>
+				</tr>			
 				<tr>
 					<td id="bo"></td>
 					<td id="bo"></td>
@@ -50,25 +42,30 @@
 					<td id="bo"></td>
 					<td id="bo"></td>
 				</tr>
-				<form:form >
-				<tr><td colspan=6><div><input type="checkbox">Include in-active contact? </div></td></tr>
 				<tr>
 					<td colspan=6>
 						<table id="table_contact">
 							<thead>
 								<tr>
 									<th></th>
-									<th><div class="wcell1">Contact Name</div> </th>
-									<th><div class="wcell2">Mobile Phone</div></th>
-									<th><div class="wcell2">Email</div></th>
-									<th><div class="wcell2">Contact Type</div> </th>
-									<th><div class="wcell2">Is active?</div></th>
+									<th><div class="wcell3">Contact Name</div> </th>
+									<th><div class="wcell4">Mobile Phone</div></th>
+									<th><div class="wcell4">Email</div></th>
+									<th><div class="wcell4">Contact Type</div> </th>
+									<th>
+										<div class="wcell4">
+											<span>
+												<input id="in-active" type="checkbox">
+												<label for="in-active"> In Active ?</label>
+											</span>
+										</div>
+									</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="cont" items="${listCont }">
 									<tr>
-									<td><input type="radio" id="cont" value="${cont.surname}"></td>
+									<td><input type="radio" name="cont" value="${cont.firstName}"></td>
 									<td>
 										<span>${cont.surname}</span> ${cont.firstName}</td>
 									<td>${cont.mobilePhone }</td>
@@ -80,12 +77,20 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<button type="button" id="wbutton">Select</button>
+						<button type="submit" id="wbutton" onclick="selectcont()">Select</button>
 					</td>
 				</tr>
-				</form:form>
 			</tbody>
 		</table>
+		<script type="text/javascript">
+				function selectcont(){
+					if(document.querySelector('input[name="cont"]:checked').value != ""){
+						document.getElementById("leadcont").value = document.querySelector('input[name="cont"]:checked').value;
+						contactModal.style.display = "none";
+					}
+				}
+		</script>
+		</div>
 	</div>
 </body>
 </html>
