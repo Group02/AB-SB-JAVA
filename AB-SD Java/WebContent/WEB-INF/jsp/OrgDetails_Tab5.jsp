@@ -6,11 +6,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="../js/sorttable.js"></script>
 </head>
 <body>
-	<div id="tab5" class="tabcontent" style="display: block;">
+	<div id="tab5" class="tabcontent">
 		<h3>Current List of Supporting Materials</h3>
 		<hr>
 		<div class="sort" style="margin-bottom: 25px;">
@@ -18,20 +18,22 @@
 				<a href="#sm-details" class="btn_1" onclick="onCreate('sm-details')">Create</a>
 			</span>
 		</div>
-		<table class="list">
-			<tr>
-				<th>URL</th>
-				<th>Description</th>
-				<th>Type</th>
-				<th>Added By</th>
-				<th>Added Date</th>
-				<th>
-					<span>
-						<input id="in-active" type="checkbox" onclick="onCheckInActive()">
-						<label for="in-active-SM">In Active?</label>
-					</span>
-				</th>
-			</tr>
+		<table class="list sortable">
+			<thead>
+				<tr>
+					<th>URL</th>
+					<th>Description</th>
+					<th>Type</th>
+					<th>Added By</th>
+					<th>Added Date</th>
+					<th>
+						<span>
+							<input id="in-active" type="checkbox" onclick="onCheckInActive()">
+							<label for="in-active-SM">In Active?</label>
+						</span>
+					</th>
+				</tr>
+			</thead>
 			<c:forEach var="sm" items="${listSM}" varStatus="i">
 				<c:choose>
 					<c:when test="${sm.isActive == false}">

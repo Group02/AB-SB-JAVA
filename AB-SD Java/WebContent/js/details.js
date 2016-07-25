@@ -16,6 +16,14 @@ function openTab(evt, tabName) {
 	evt.currentTarget.className += " active";
 }
 
+function openTab3() {
+	if(document.getElementById("expressOfInterest").checked) {
+		document.getElementById("tablink3").style.display = "block";
+	} else {
+		document.getElementById("tablink3").style.display = "none";
+	}
+}
+
 function onBackOrg() {
 	if(confirm("Are you sure to back?")) {
 		location = "list.html";
@@ -58,3 +66,32 @@ function onBack() {
 	document.getElementById("sm-details").style.display = "none";
 }
 // ==============================================
+
+/* ============== POPUP ============== */
+function openPopup(popupID) {
+	document.getElementById(popupID).style.display = "block";
+}
+
+function openPopup(popupID) {
+	document.getElementById(popupID).style.display = "block";
+}
+
+function closePopup(popupID) {
+	document.getElementById(popupID).style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Storage data in local 
+$(document).ready(function(){
+    document.getElementById("test").value = localStorage.getItem("item1");
+});
+
+$(window).on('beforeunload', function() {
+    localStorage.setItem("item1",document.getElementById("test").value);
+});

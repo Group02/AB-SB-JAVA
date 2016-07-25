@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/List.css">
 <link rel="stylesheet" type="text/css" href="../css/main-page.css">
+<script type="text/javascript" src="../js/sorttable.js"></script>
 <title>Organisation List</title>
 </head>
 <body class="bg">
@@ -34,12 +35,12 @@
 					<span><a href="">S T U V</a></span> |
 					<span><a href="">W X Y Z</a></span>
 					<span style="float: right;">
-						<a href="<%=request.getContextPath()%>/organisation/details.html" class="btn_1">Create</a>
+						<a href="<%=request.getContextPath()%>/organisation/create.html" class="btn_1">Create</a>
 					</span>
 				</div>
 				
 				<!-- List -->
-				<table class="list">
+				<table class="list sort">
 					<tr>
 						<th>Orgainsation Name</th>
 						<th>Head Office Address Line 1</th>

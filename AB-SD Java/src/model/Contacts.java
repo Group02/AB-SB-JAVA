@@ -38,16 +38,12 @@ public class Contacts {
 	public Contacts() {
 		super();
 	}
-	
-	
 
 	public Contacts(String firstName, String surname) {
 		super();
 		this.firstName = firstName;
 		this.surname = surname;
 	}
-
-
 
 	public Contacts(int id, String firstName, String surname, String knownAs, String officePhone, String mobilePhone,
 			String stHomePhone, String email, String managerName) {
@@ -134,8 +130,5 @@ public class Contacts {
 	public void setManagerName(String managerName) {
 		this.managerName = managerName;
 	}
-
-	
-	
 
 }
