@@ -98,14 +98,6 @@ public class ContactDAO implements ContactInterface{
 	public static void main(String[] args) {
 		ContactDAO  doa = new ContactDAO();
 		
-//		doa.openSessionWithBeginTransaction();
-//		muaxuandangden mxdd = new muaxuandangden();
-//		mxdd.setHe("Tuan khung");
-//		doa.session.save(mxdd);
-//		doa.commit();
-		
-//		doa.closesession();
-		
 		Contacts cont = new Contacts("bap","weeekend");
 		doa.insertCont(cont);
 		

@@ -30,174 +30,220 @@
 				<hr>
 				
 				<!-- Form -->
-				<form:form method="post" action="handleSMForm.html" modelAttribute="he">
+				<form:form method="post" action="handleSMForm.html" modelAttribute="command">
 					
 					<!-- Tab Name -->
 					<div class="tab_head">
 						<ul class="tab">
 							<li><a href="#" class="tablinks active"
 								onclick="openTab(event, 'tab1')">Details</a></li>
-							<li><a href="<%=request.getContextPath()%>/web/index.html" class="tablinks"
+							<li><a href="#" class="tablinks"
 								onclick="openTab(event, 'tab2')">Teams</a></li>
 						</ul>
 
 						<!-- Operation -->
-						<input type="button" value="Back" class="btn_opt" onclick="onBackOrg()">
+						<input type="button" value="Back" class="btn_opt" onclick="">
 						<input type="submit" value="Save" class="btn_opt">
 					</div>
 					
 					<!-- "Details" content -->
 					<div id="tab1" class="tabcontent" style="display: block;">
-						<table class="tb_dir">
+						<table>
 							<tr>
-								<td>BU/Directorate Name *</td>
-								<td><form:input id="BUName" path="directorateName" size="24px"/> </td>
-								<td>Type of Business *</td>
+								<td>Department Name *</td>
+								<td><form:input path="departmentName" size="24px" id = "departmentName" readonly = "${readonly}"/> </td>
+								<td>Type of Business</td>
 								<td>
-									<form:input id="typeBusiness" path="typeBusiness" disabled="true" style="width: 70%;"/>
-									<a href="#">Lookup</a>
+								<form:input path="typeOfBusiness" class="background" size="14px" readonly="readonly"/>
+								<a href="">Lookup</a>
 								</td>
 							</tr>
 							<tr>
-								<td>BU/Directorate Short Description</td>
-								<td><form:textarea id="shortDescr" path="shortDescr" cols="30" rows="3"/></td>
-								<td>SIC Code</td>
-								<td><form:input id="SICCode" path="SICcode" disabled="true" style="width: 70%;"/></td>
-							</tr>
-							<tr>
-								<td>Lead Contact</td>
+								<td>Department Short Description </td>
 								<td>
-									<form:input id="leadContact" path="leadContact" disabled="true" style="width: 70%;"/>
-									<a href="#">Lookup</a>
+									<form:textarea path="shortDescription" cols = "30" rows = "3" />
 								</td>
-								<td>Organisation Full Description</td>
-								<td><form:textarea id="BUFullDescr" path="fullDescr" cols="30" rows="3"/></td>
+								<td><span class="SIC">SIC Code</span></td>
+								<td><span class="SIC"><form:input path="sicCode" class="background" size="14px" readonly="readonly" /> </span> </td>
 							</tr>
 							<tr>
-								<td colspan=2>
-									<span>
-										<form:input type="checkbox" name="cpAddress" id="cpAddress" path="cpAddr"/>
-										<label for="cpAddress" >Copy Address from Organisation</label>
-									</span>
+								<td>Lead Contact *</td>
+								<td>
+									<form:input path="leadContact" class="background" size="16px" readonly="readonly" />
+									<a href="ListContact.jsp">Lookup</a>
+								</td>
+								<td rowspan="3"><span class="Fdes">Department Full Description</span></td>
+								<td rowspan=3><span class="Fdes"><form:textarea path="fullDescription" cols = "30" rows = "3"/> </span></td>
+							</tr>
+							<tr>
+								<td>Copy Address from</td>
+								<td><input type="radio" value = "Organisation"><span class="radio">Organisation</span> &nbsp; &nbsp; <input type="radio" value = "Parent"><span class="radio">Parent</span> </td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>
+									Address
+								</td>
+								<td>
+									<form:input path="addressLine" size="24px"/>
 								</td>
 								<td>Phone Number</td>
-								<td><form:input type="text" id="phoneNumber" path="phoneNumber" size="24px"/></td>
+								<td>
+									<form:input path="phoneNumber" size="24px"/>
+								</td>
 							</tr>
 							<tr>
-								<td>Address*</td>
-								<td><form:input type="text" id="address" path="addrLine1" size="24px"/></td>
+								<td>Postcode</td>
+								<td>
+									<form:input path="postcode" class="background" size="16px" readonly="readonly"/>
+									<a href="ListContact.jsp">Lookup</a>
+								</td>
 								<td>Fax</td>
-								<td><form:input type="text" id="fax" path="fax" size="24px"/></td>
-							</tr>
-							<tr>		
-								<td>Postcode *</td>	
-								<td><form:input id="postcode" path="postcode"  style="width: 70%;"/>
-								<a href="#">Lookup</a></td>
-								<td>Email</td>
-								<td><form:input type="text" id="email" path="email" size="24px"/></td>
+								<td><form:input path="fax" size="24px"/> </td>
 							</tr>
 							<tr>
 								<td>Town/Village/City</td>
-								<td><form:input type="text" id="town" path="town" size="24px"/></td>
-								<td>Web Address</td>
-								<td><form:input type="text" id="webAddr" path="webAddress" size="24px"/></td>
+								<td><form:input path="town" size="24px"/> </td>
+								<td>Email</td>
+								<td><form:input path="email" size="24px"/> </td>
 							</tr>
 							<tr>
 								<td>County</td>
-								<td><form:input type="text" id="county" path="county" size="24px"/></td>
-								<td>Charity Number</td>
-								<td><form:input type="text" id="charNum" path="county" size="24px"/></td>
+								<td><form:input path="county" size="24px"/> </td>
+								<td>Web Address</td>
+								<td><form:input path="webAddress" size="24px"/> </td>
 							</tr>
 							<tr>
 								<td>Nation/Country</td>
 								<td>
 									<form:select path="nation">
 										<option>-- none --</option>
-										<option> VietNam </option>
-										<option> America </option>
+										<option>-- Viet Nam --</option>
+										<option>-- America --</option>
 									</form:select>
 								</td>
-								<td>Company Number</td>
-								<td><form:input type="text" id="compNumber" path="compNumber" size="24px"/></td>
+								<td></td>
+								<td></td>
 							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>
+									<button onclick="save()">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href = "<%= request.getContextPath()%>/web/index.html"><button type="button" >Back</button></a>
+								</td>
+							</tr>
+							
 						</table>
 					</div>
 					
 					<!-- "Department" content -->
 					<div id="tab2" class="tabcontent">
-						<!-- Sort & Create-->
 						<div class="sort">
-							<span><a href="">All</a></span> |
-							<span><a href="">0 - 9</a></span> |
-							<span><a href="">A B C D E</a></span> |
-							<span><a href="">F G H I J</a></span> |
-							<span><a href="">K L M N</a></span> |
-							<span><a href="">O P Q R</a></span> |
-							<span><a href="">S T U V</a></span> |
-							<span><a href="">W X Y Z</a></span>
+							<span><a href="filter.html?search=ALL">All</a></span> |
+							<span><a href="filter.html?search=0 9">0 - 9</a></span> |
+							<span><a href="filter.html?search=A E">A B C D E</a></span> |
+							<span><a href="filter.html?search=F J">F G H I J</a></span> |
+							<span><a href="filter.html?search=K N">K L M N</a></span> |
+							<span><a href="filter.html?search=O R">O P Q R</a></span> |
+							<span><a href="filter.html?search=S V">S T U V</a></span> |
+							<span><a href="filter.html?search=W Z">W X Y Z</a></span>
 							<span style="float: right;">
-								<a href="#" class="btn_1">Create</a>
+								<a href="teamadd.html" class="btn_1">Create</a>
+							</span>
+							<span style="float: right;">
+								<a href="#" class="btn_1">In-active</a>
 							</span>
 						</div>
 						
 						<!-- List -->
 						<table class="list">
 							<tr>
-								<th class="header-background">Department Name</th>
-								<th class="header-background">Address</th>
+								<th class="header-background">Team Name</th>
+								<th class="header-background">Address Line 1</th>
 								<th class="header-background">Postcode</th>
 								<th class="header-background">Contact</th>
 								<th class="header-background">
-									
-											<span>
-											<input id="in-active" type="checkbox" onclick="getall()" ${check}>
-											<label for="in-active"> In Active ?</label>
-											</span>
+									<span>
+										<input id="in-active" type="checkbox" onclick="getall()">
+										<label for="in-active"> In Active ?</label>
+									</span>
+									<script type="text/javascript">
+										function getall(){
+											var x = document.getElementsByClassName("in-acticehide");
 											
+											if (document.getElementById("in-active").checked) {
+												for(var i=0;i<x.length;i++) {
+													x[i].style.display = "table-row";
+												} 
+											} else {
+												for(var i=0;i<x.length;i++) {
+													x[i].style.display = "none";
+												} 
+											}					
+											
+										}
+										
+										function active(){
+											var x = confirm("Do you want to make this Team active?");
+											
+											if(x==true) return true;
+											else return false;
+										}
+									</script>
 								</th>
 							</tr>
-							<c:forEach var="dept" items="${result}">
-								<tr>
-						  			<c:if test="${dept.isActive == 'no' }">
-						  				<td><a href="activateDept.html?departmentName=${dept.departmentName}&status=no" onclick="return confirm('Do you want to activate this department!')" style = "color: #333;">${dept.departmentName }</a> </td>
-						  			</c:if>
-						  			<c:if test="${dept.isActive == 'yes' }">
-						  				<td><a href="viewDepartment.html?departmentName=${dept.departmentName}">${dept.departmentName }</a> </td>
-						  			</c:if>
-									<td>${dept.addressLine }</td>
-									<td>${dept.postcode }</td>
-									<td>${dept.leadContact }</td>
-									<td>${dept.isActive }  </td>
-								</tr>
+							<c:forEach var="team" items="${listTeam }">
+								<c:choose>
+									<c:when test="${team.status == true}">
+										<tr>
+										<td>
+											<c:set var="url">
+												<c:url value="teammo.html">
+													<c:param name="teamName" value="${team.teamName }" ></c:param>
+												</c:url>
+											</c:set>
+											<a href="${url}" >${team.teamName }</a>
+										</td>
+										<td>${team.address }</td>
+										<td>${team.postCode }</td>
+										<td>${team.leadContact }</td>
+										<td>
+											Yes 
+										</td>
+										</tr>	
+									</c:when>
+									<c:otherwise>
+										<tr class="in-acticehide">
+										<td>
+											<a href="teamlist2.html?teamName=${team.teamName }" onclick="return active()" >${team.teamName }</a>
+											<input id="${team.teamName }" value="${team.teamName }" type="hidden">
+										</td>
+										<td>${team.address }</td>
+										<td>${team.postCode }</td>
+										<td>${team.leadContact }</td>
+										<td>
+											No
+										</td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
 							</c:forEach>
 						</table>
 						
 						<!-- Page -->
-						<%-- </form> --%>
 						<div align="center" class="page">
-							<a href = "wrap.html?url=previous"> <input type = "button"  value = "previous" class="btn_page" style = "${previous}"> </a> 
-							<form  action="index.html">
-								<c:forEach items="${ NumberOfButton}" var="num" >
-									<c:if test="${checkButton == num}">
-										<input type = "submit" value = "${num+1}" name = "pageNumber" id="wbutton" class="btn_page" style = "${style}">
-									</c:if>
-									<c:if test="${checkButton != num}">
-										<input type = "submit" value = "${num+1}" name = "pageNumber" id="wbutton" class="btn_page">
-									</c:if>
-									<%-- <input type = "submit" value = "${num+1}" name = "pageNumber" id="wbutton" class="btn_page" style = "${style}"> --%>
-								</c:forEach>
-							</form>
-							<a href = "wrap.html?url=next"> <input type = "button" value = "next" class="btn_page" style = "${next}"> </a>
+							<a href="#previous" class="btn_page">1</a>
+							<a href="#previous" class="btn_page">2</a>
 						</div>
-					</div>
-					
+					</div>				
 				</form:form>
-				<script type="text/javascript">
-					function getall(){
-						if (document.getElementById('in-active').checked) {location = "listAll.html";}
-						else{ location = "listOnlyTrue.html"; }
-					}
-				</script>
+				
 			</div>
 			<div id="error" class="error"></div>
 		</div>

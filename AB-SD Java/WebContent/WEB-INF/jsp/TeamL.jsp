@@ -72,7 +72,6 @@
 						</script>
 					</th>
 				</tr>
-				<form:form id="bap">
 				<c:forEach var="team" items="${listTeam }">
 					<c:choose>
 						<c:when test="${team.status == true}">
@@ -109,13 +108,9 @@
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
-				</form:form>
 			</table>
 		</div>
 		
-		<div>
-			
-		</div>
 		<!-- Page -->
 		<div align="center" class="page">
 			<a href="#previous" class="btn_page">1</a>

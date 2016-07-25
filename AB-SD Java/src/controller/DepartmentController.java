@@ -219,7 +219,7 @@ public class DepartmentController {
 		setView(model, index, number.length);
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
-		return "AmendDirectorate2";
+		return "AmendDepartment";
 	}
 	
 	public static void setCheckboxList(Model model){
@@ -327,7 +327,7 @@ public class DepartmentController {
 	public ModelAndView viewDepartment(HttpServletRequest request){
 		kt = 2;
 		String deptName = request.getParameter("departmentName");
-		ModelAndView model = new ModelAndView("addDepartment", "command", findDepartment(deptName));
+		ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
 		turn = 0;
 		model.addObject("readonly", "true");
 		return model;
