@@ -6,28 +6,14 @@
 <html>
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<link rel="stylesheet" href="../css/business-lookup.css">
-		<link rel="stylesheet" href="../css/close.css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="../js/close.js"></script>	
-		<script type="text/javascript" >
-			$(window).load(function() {
-			  $('#close').closef($('#close').data());
-			});
-		</script>
-		<script>
-		function changeParent() { 
-			var x= document.getElementById("business").value;  
-			window.opener.document.getElementById('dd').value = x;
-			  window.close();
-			} 
-		</script>
+<!-- 		<link rel="stylesheet" href="../css/business-lookup.css"> -->
 <title>Business Type</title>
 </head>
 <body>
-	<div  > 
-		<table class="frame_business">
-			<thead><tr><th colspan=6 class="header"><a class="close-sign">X</a></th></tr></thead>
+	<div   id="businessModal" class="businessModal"> 
+		<div class="businessContent">
+			<table class="frame_business">
+			<thead><tr><th colspan=4 class="header"><span class="close3">×</span></th></tr></thead>
 			<tbody>
 				<tr>
 					<td>
@@ -41,7 +27,7 @@
 									<div style="width: 120px">Business Name:</div>
 								</td>
 								<td>
-									<div class="search"><input type="text"></div>
+									<div class="searchb"><input type="text"></div>
 								</td>
 							</tr>
 							<tr>
@@ -49,7 +35,7 @@
 									SIC Code:
 								</td>
 								<td>
-									<div class="search"><input type="text"></div>
+									<div class="searchb"><input type="text"></div>
 								</td>
 							</tr>
 							</form:form>
@@ -58,8 +44,8 @@
 						</div>
 					</td>
 					<td colspan="3">
-						<input type="submit" value="Search" id="wbutton" class="mbutton"> <br>
-						<input type="submit" value="None" id="wbutton" class="mbutton">
+						<input type="submit" value="Search" id="buttonb" class="buttonb"> <br>
+						<input type="submit" value="None" id="buttonb" class="buttonb">
 					</td>
 				</tr>
 				<tr>
@@ -69,20 +55,20 @@
 					<td id="bo"></td>
 				</tr>
 				<tr>
-					<td colspan=5>
+					<td colspan=4>
 						<table id="table_business">
 							<thead>
 								<tr>
 									<th></th>
-									<th><div class="wcell1">Business Name</div></th>
-									<th><div class="wcell2">SIC Code</div></th>
+									<th><div class="wcell5">Business Name</div></th>
+									<th><div class="wcell6">SIC Code</div></th>
 								</tr>
 							</thead>
-							<tbody class="tbl_body">
+							<tbody >
 								<c:forEach var="busi" items="${listBusi }">
 									<tr>
 										<td>
-											<input type="radio" id="business" value="${busi.SIC_Code }"> 
+											<input type="radio" name="sic" value="${busi.SIC_Code }?${busi.businessName}"> 
 										</td>
 										<td>${busi.businessName}</td>
 										<td>${busi.SIC_Code } </td>
@@ -90,11 +76,23 @@
 								</c:forEach>
 							</tbody>
 						</table>
-						<input type="submit" value="Select">
+						<input type="submit" value="Select" onclick="selectbusi()">
 					</td>
 				</tr>
 			</tbody>		
-		</table>
+			</table>
+			<script type="text/javascript">
+				function selectbusi(){
+					if(document.querySelector('input[name="sic"]:checked').value != ""){
+						var x = document.querySelector('input[name="sic"]:checked').value;
+						var part = x.split("?");
+						document.getElementById("sic").value = part[0];
+						document.getElementById("typebusi").value = part[1];
+						businessModal.style.display = "none";
+					}
+				}
+			</script>
+		</div>
 	</div>
 </body>
 </html>

@@ -6,21 +6,14 @@
 <html>
 	<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-			<link rel="stylesheet" type="text/css" href="../css/address-lookup.css">
-			<link rel="stylesheet" href="../css/close.css">	
-			<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
-			<script type="text/javascript" src="../js/close.js"></script>	
-			<script type="text/javascript" >
-				$(window).load(function() {
-				  $('#close').closef($('#close').data());
-				});
-			</script>
+<!-- 			<link rel="stylesheet" type="text/css" href="../css/lookup.css"> -->
 		<title>Postcode</title>
 	</head>
-	<body>
-		<div id="close" class="frame_address_main">
+	<body >
+		<div  id="myModal" class="modal">
+			<div class="modal-content">
 			<table id="table_search">
-				<thead><tr><th colspan=6><a class="close-sign" id="header">X</a></th></tr> </thead>
+				<thead><tr><th colspan=6><span class="close">×</span></th></tr> </thead>
 				<tbody>
 					<tr>
 						<td>
@@ -72,7 +65,7 @@
 						<td></td>
 						<td></td>
 					</tr>
-					<form:form   action="addresslookup.html" method="post">
+<%-- 					<form:form   action="addresslookup.html" method="post"> --%>
 					<tr>
 						<td colspan=6>
 							<div id="table_address">
@@ -91,7 +84,7 @@
 									<c:forEach var="addr" items="${listAddr }">
 										<tr>
 											<td>
-												<input type="radio" name="addr" value="${addr.postCode}"> 
+												<input type="radio" name="addr" value="${addr.postCode}" >
 											</td>
 											<td><div class="wcell1"><c:out value="${addr.address }"></c:out></div></td>
 											<td><div class="wcell2"><c:out value="${addr.postCode }"></c:out></div></td>
@@ -102,13 +95,21 @@
 									</c:forEach>
 									</tbody>
 									</table>
-		<input type="submit" value="Select">			
+		<input type="submit" value="Select" onclick="selectaddr()">			
 							</div>
 						</td>
 					</tr>
-					</form:form>
 				</tbody>
 			</table>
+			<script type="text/javascript">
+				function selectaddr(){
+					if(document.querySelector('input[name="addr"]:checked').value != ""){
+						document.getElementById("postCode").value = document.querySelector('input[name="addr"]:checked').value;
+						modal.style.display = "none";
+					}
+				}
+			</script>			
+			</div>
 		</div>
 	</body>
 </html>

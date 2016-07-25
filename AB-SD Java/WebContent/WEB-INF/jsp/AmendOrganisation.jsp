@@ -63,10 +63,10 @@
 					</div>
 					
 					<!-- "Details 1" content -->
-					<jsp:include page="OrgDetails_Tab1.jsp"/>
+<%-- 					<jsp:include page="OrgDetails_Tab1.jsp"/> --%>
 					
 					<!-- "Details 2" content -->
-					<jsp:include page="OrgDetails_Tab2.jsp"/>
+<%-- 					<jsp:include page="OrgDetails_Tab2.jsp"/> --%>
 					
 					<!-- "Details 3" content -->
 					<jsp:include page="OrgDetails_Tab3.jsp"/>

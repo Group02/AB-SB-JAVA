@@ -12,7 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import dao.AddressLookupDAO;
+import dao.BusinessLookupDAO;
+import dao.ContactDAO;
 import dao.TeamDAO;
+import model.AddressLookup;
+import model.BusinessLookup;
+import model.Contacts;
 import model.Team;
 
 @Controller
@@ -20,6 +26,9 @@ import model.Team;
 public class TeamController {
 
 	TeamDAO dao = new TeamDAO();
+	AddressLookupDAO addrdao= new AddressLookupDAO();
+	ContactDAO cont = new ContactDAO();
+	BusinessLookupDAO busidao = new BusinessLookupDAO();
 	
 	private static LinkedList<Team> listAll;
 	private static LinkedList<Team> variable; //declare here
@@ -55,16 +64,40 @@ public class TeamController {
 	public ModelAndView addteam(){
 		ModelAndView model = new ModelAndView("TeamA", "command", new Team());
 		
+		//list address lookup
+		if(addrdao.getAllAddr()!=null){
+			
+			//Make list address lookup
+			List<AddressLookup> listAddr = addrdao.getAllAddr();
+			
+			model.addObject("listAddr", listAddr);
+		}
+		
+		//list contact lookup
+		if(cont.getAllCont()!=null){
+			
+			//Make list address lookup
+			List<Contacts> listCont = cont.getAllCont();
+			
+			//Save object to session
+			model.addObject("listCont", listCont);
+		}
+
+		//list business lookup
+		if(busidao.getAllBusi() != null){
+			
+			//Make list business lookup
+			List<BusinessLookup> listBusi = busidao.getAllBusi();
+			
+			model.addObject("listBusi", listBusi);
+		}
 		return model;
 	}
 	
 	@RequestMapping(value="/teamadd", method=RequestMethod.POST)
 	public ModelAndView addteam(@ModelAttribute("command") Team team){
 		ModelAndView model = new ModelAndView("TeamL");
-		ModelAndView model2 = new ModelAndView("TeamA");
 		
-		if(dao.FindTeam(team.getTeamName()) == null){
-			
 			team.setStatus(true);
 			
 			dao.insertTeam(team);
@@ -74,12 +107,6 @@ public class TeamController {
 			model.addObject("listTeam", listTeam);
 			
 			return model;
-		}
-		else{
-			model2.addObject("message", "hkhkj");
-		}
-		
-		return model2;
 	}
 	
 	@RequestMapping(value="/teammo", method=RequestMethod.GET)
@@ -110,6 +137,34 @@ public class TeamController {
 			model.addObject("WA", team.getWA());
 			
 		}
+		
+			//list address lookup
+			if(addrdao.getAllAddr()!=null){
+				
+				//Make list address lookup
+				List<AddressLookup> listAddr = addrdao.getAllAddr();
+				
+				model.addObject("listAddr", listAddr);
+			}
+			
+			//list contact lookup
+			if(cont.getAllCont()!=null){
+				
+				//Make list address lookup
+				List<Contacts> listCont = cont.getAllCont();
+				
+				//Save object to session
+				model.addObject("listCont", listCont);
+			}
+	
+			//list business lookup
+			if(busidao.getAllBusi() != null){
+				
+				//Make list business lookup
+				List<BusinessLookup> listBusi = busidao.getAllBusi();
+				
+				model.addObject("listBusi", listBusi);
+			}
 		return model;
 	}
 	
@@ -170,6 +225,7 @@ public class TeamController {
 				char start = part[0].charAt(0), end = part[1].charAt(0);
 				Team team = new Team();
 				for (i = 0; i<variableSize; i++){
+					//dept = new Department();
 					team = variable.get(i);
 					name = team.getTeamName();
 					if (!name.equals("")){
