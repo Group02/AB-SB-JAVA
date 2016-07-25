@@ -43,7 +43,14 @@
 				<c:choose >
 					<c:when test="${i.active ==true}">
 						<tr>
-							<td>${i.directorateName }</td>
+							<td>
+							<c:set var="url">
+									<c:url value="amendDir.html">
+										<c:param name="directorateName" value="${i.directorateName }" ></c:param>
+									</c:url>
+								</c:set>
+								<a href="${url}" >${i.directorateName }</a>
+							</td>
 							<td>${i.addrLine1}</td>
 							<td>${i.postcode}</td>
 							<td>${i.leadContact}</td>

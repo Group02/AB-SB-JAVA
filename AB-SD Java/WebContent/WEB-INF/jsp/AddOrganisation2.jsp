@@ -29,9 +29,6 @@
 				<!-- Titile -->
 				<h1>Organisation Details</h1>
 				
-				<p>Input</p>
-				<input type="text" id="test" name="test" value="${fn:escapeXml(param.test)}">
-				
 				<hr>
 				
 				<!-- Form -->

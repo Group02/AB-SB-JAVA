@@ -35,9 +35,6 @@
 				<!-- Titile -->
 				<h1>Organisation Details</h1>
 				
-				<p>Input</p>
-				<input type="text" id="test" name="test" value="${fn:escapeXml(param.test)}">
-				
 				<hr>
 				
 				<!-- Form -->
@@ -72,20 +69,20 @@
 					<jsp:include page="OrgDetails_Tab2.jsp"/>
 					
 					<!-- "Details 3" content -->
-					<%-- <jsp:include page="OrgDetails_Tab3.jsp"/> --%>
+					<jsp:include page="OrgDetails_Tab3.jsp"/>
 					
 					<!-- "Details 4" content -->
-					<%-- <jsp:include page="OrgDetails_Tab4.jsp"/> --%>
+					<jsp:include page="OrgDetails_Tab4.jsp"/>
 					
 					<!-- "Details 5" content -->
-					<%-- <jsp:include page="OrgDetails_Tab5.jsp"/> --%>
+					<jsp:include page="OrgDetails_Tab5.jsp"/>
 					
 					<!-- "BU/Directorates" content -->
-					<%-- <jsp:include page="OrgDetails_BU-Directorate.jsp"/> --%>
+					<jsp:include page="OrgDetails_BU-Directorate.jsp"/>
 				</form:form>
 				
 				<!-- Include AddSupportingMaterials Page -->
-				<%-- <jsp:include page="AddSupportingMaterials.jsp"/> --%>
+				<jsp:include page="AddSupportingMaterials.jsp"/>
 				
 				<!-- Error -->
 				<div id="error" class="error"></div>
