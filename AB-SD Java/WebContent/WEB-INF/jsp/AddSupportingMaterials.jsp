@@ -26,7 +26,7 @@
 					<input type="button" value="Back" onclick="onBack()" class="btn_opt">
 					<input type="submit" value="Save" class="btn_opt">
 				</div>
-				<div class="tabcontent" style="display: block;">
+				<div style="border: 1px solid #0067FF;">
 					<table width="100%">
 						<tr valign="top">
 							<td>
@@ -37,7 +37,7 @@
 									</tr>
 									<tr>
 										<td>Description</td>
-										<td><form:textarea path="description" id="description" rows="5" cols="25"/>
+										<td><form:textarea path="description" id="description" rows="5" cols="25"/></td>
 									</tr>
 									<tr>
 										<td>Type</td>

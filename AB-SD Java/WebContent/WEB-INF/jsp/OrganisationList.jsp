@@ -57,11 +57,11 @@
 						for (int i = 0; i < 15; i++) {
 					%>
 							<tr>
-								<td><%=i + 1%></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td><a href="<%=request.getContextPath()%>/organisation/amend.html">Organisation Name <%=i+1%></a>
+								<td>218/20 Tran Hung Dao, Ninh Kieu, Can Tho</td>
+								<td>SE10 11<%=i%></td>
+								<td>Nguyen Van A<%=i%></td>
+								<td>Active</td>
 							</tr>
 					<%
 						}
@@ -71,7 +71,6 @@
 				<!-- Page -->
 				<div align="center" class="page">
 					<a href="#previous" class="btn_page">1</a>
-					<a href="#previous" class="btn_page">2</a>
 				</div>
 			</div>
 		</div>

@@ -17,11 +17,6 @@ $(document).ready(function() {
 		$(this).css("border-color", "red");
 	});
 
-	// When mouse leaves
-	$("input").mouseleave(function() {
-		$(this).css("border-color", "#0067FF");
-	});
-
 	// change border color in textarea
 	$('#save').click(function() {
 		var content = $('textarea').text();

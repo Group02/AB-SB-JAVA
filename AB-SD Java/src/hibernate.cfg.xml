@@ -33,6 +33,6 @@
 		<mapping class="model.SupportingMaterial" />
 		<mapping class="model.Directorate"/>
 		<mapping class="model.Team" />
-		
+		<mapping class="model.Department" />
 	</session-factory>
 </hibernate-configuration>
