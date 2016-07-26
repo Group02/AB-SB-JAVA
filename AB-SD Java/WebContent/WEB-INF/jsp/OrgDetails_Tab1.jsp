@@ -27,7 +27,7 @@
 							<td>Lead Contact</td>
 							<td>
 								<form:hidden id="contactId" path="leadContact.id"/>
-								<input type="text" id="contactName" disabled="disabled" style="width: 70%;">
+								<input type="text" id="contactName" disabled="disabled" style="width: 60%;">
 								<a href="#" onclick="openPopup('popup-address')">Lookup</a>
 							</td>
 						</tr>
@@ -38,7 +38,7 @@
 						<tr>
 							<td>Postcode <span class="mandatory">*</span></td>
 							<td>
-								<form:input id="postcode" path="addressLookup.postCode" style="width: 70%;"/>
+								<form:input id="postcode" path="addressLookup.postCode" style="width: 60%;"/>
 								<a href="#">Lookup</a>
 							</td>
 						</tr>
@@ -80,7 +80,7 @@
 						<tr>
 							<td>Type of Business <span class="mandatory">*</span></td>
 							<td>
-								<form:input id="businessName" path="businessLookup.businessName" style="width: 70%;"/>
+								<form:input id="businessName" path="businessLookup.businessName" style="width: 60%;"/>
 								<a href="#">Lookup</a>
 							</td>
 						</tr>
