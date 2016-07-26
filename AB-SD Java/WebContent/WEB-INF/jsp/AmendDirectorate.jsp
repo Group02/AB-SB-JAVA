@@ -57,7 +57,7 @@
 								<td><form:input id="BUName" path="directorateName" size="24px"/> </td>
 								<td>Type of Business *</td>
 								<td>
-									<form:input id="typeBusiness" path="typeBusiness" disabled="true" style="width: 70%;"/>
+									<form:input id="typeBusiness" path="typeBusiness" disabled="true" style="width: 60%;"/>
 									<a href="#" id="business">Lookup</a>
 								</td>
 							</tr>
@@ -65,12 +65,12 @@
 								<td>BU/Directorate Short Description</td>
 								<td><form:textarea id="shortDescr" path="shortDescr" cols="30" rows="3"/></td>
 								<td>SIC Code</td>
-								<td><form:input id="SICCode" path="SICcode" disabled="true" style="width: 70%;"/></td>
+								<td><form:input id="SICCode" path="SICcode" disabled="true" style="width: 60%;"/></td>
 							</tr>
 							<tr>
 								<td>Lead Contact</td>
 								<td>
-									<form:input id="leadContact" path="leadContact" disabled="true" style="width: 70%;"/>
+									<form:input id="leadContact" path="leadContact" disabled="true" style="width: 60%;"/>
 									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td>Organisation Full Description</td>
@@ -94,7 +94,7 @@
 							</tr>
 							<tr>		
 								<td>Postcode *</td>	
-								<td><form:input id="postcode" path="postcode"  style="width: 70%;"/>
+								<td><form:input id="postcode" path="postcode"  style="width: 60%;"/>
 								<a href="#" id="myBtn">Lookup</a>
 								<td>Email</td>
 								<td><form:input type="text" id="email" path="email" size="24px"/></td>

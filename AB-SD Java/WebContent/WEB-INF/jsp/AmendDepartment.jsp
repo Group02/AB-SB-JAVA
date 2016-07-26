@@ -51,13 +51,13 @@
 					
 					<!-- "Details" content -->
 					<div id="tab1" class="tabcontent" style="display: block;">
-						<table>
+						<table class="tb_dir">
 							<tr>
 								<td>Department Name *</td>
 								<td><form:input path="departmentName" size="24px" id = "departmentName" readonly = "${readonly}"/> </td>
 								<td>Type of Business</td>
 								<td>
-								<form:input path="typeOfBusiness" class="background" disabled="true" style="width: 70%;"/>
+								<form:input path="typeOfBusiness" class="background" disabled="true" style="width: 60%;"/>
 								<a href="#" id="business">Lookup</a>
 								</td>
 							</tr>
@@ -67,12 +67,12 @@
 									<form:textarea path="shortDescription" cols = "30" rows = "3" />
 								</td>
 								<td><span class="SIC">SIC Code</span></td>
-								<td><span class="SIC"><form:input path="sicCode" class="background" disabled="true" style="width: 70%;" /> </span> </td>
+								<td><span class="SIC"><form:input path="sicCode" class="background" disabled="true" style="width: 60%;" /> </span> </td>
 							</tr>
 							<tr>
 								<td>Lead Contact *</td>
 								<td>
-									<form:input path="leadContact" class="background" disabled="true" style="width: 70%;" />
+									<form:input path="leadContact" class="background" disabled="true" style="width: 60%;" />
 									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td rowspan="3"><span class="Fdes">Department Full Description</span></td>
@@ -102,7 +102,7 @@
 							<tr>
 								<td>Postcode</td>
 								<td>
-									<form:input path="postcode" class="background" style="width: 70%;"/>
+									<form:input path="postcode" class="background" style="width: 60%;"/>
 									<a href="#" id="myBtn">Lookup</a>
 								</td>
 								<td>Fax</td>
