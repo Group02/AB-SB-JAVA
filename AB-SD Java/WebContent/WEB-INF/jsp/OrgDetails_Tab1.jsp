@@ -95,7 +95,7 @@
 						<tr>
 							<td>Phone Number <span class="mandatory">*</span></td>
 							<td>
-								<form:input path="phoneNumber"/>
+								<form:input path="phoneNumber" id="phoneNumber"/>
 							</td>
 						</tr>
 						<tr>
@@ -119,13 +119,13 @@
 						<tr>
 							<td>Charity Number</td>
 							<td>
-								<form:input path="charityNumber"/>
+								<input type="text" id="charityNumber" name="charityNumber">
 							</td>
 						</tr>
 						<tr>
 							<td>Company Number</td>
 							<td>
-								<form:input path="companyNumber"/>
+								<input type="text" id="companyNumber" name="companyNumber">
 							</td>
 						</tr>
 					</table>
