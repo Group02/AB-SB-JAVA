@@ -11,6 +11,9 @@
 	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="../js/AddOrganisation.js"></script>
 	<script type="text/javascript" src="../js/details.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/address.css">
+	<link rel="stylesheet" type="text/css" href="../css/lookup.css">
+	<link rel="stylesheet" type="text/css" href="../css/General.css">
 </head>
 <body class="bg">
 
@@ -28,7 +31,7 @@
 				<h1>Department Details</h1>
 				
 				<hr>
-				
+
 				<!-- Form -->
 				<form:form method="post" action="handleSMForm.html" modelAttribute="command">
 					
@@ -54,8 +57,8 @@
 								<td><form:input path="departmentName" size="24px" id = "departmentName" readonly = "${readonly}"/> </td>
 								<td>Type of Business</td>
 								<td>
-								<form:input path="typeOfBusiness" class="background" size="14px" readonly="readonly"/>
-								<a href="">Lookup</a>
+								<form:input path="typeOfBusiness" class="background" disabled="true" style="width: 70%;"/>
+								<a href="#" id="business">Lookup</a>
 								</td>
 							</tr>
 							<tr>
@@ -64,13 +67,13 @@
 									<form:textarea path="shortDescription" cols = "30" rows = "3" />
 								</td>
 								<td><span class="SIC">SIC Code</span></td>
-								<td><span class="SIC"><form:input path="sicCode" class="background" size="14px" readonly="readonly" /> </span> </td>
+								<td><span class="SIC"><form:input path="sicCode" class="background" disabled="true" style="width: 70%;" /> </span> </td>
 							</tr>
 							<tr>
 								<td>Lead Contact *</td>
 								<td>
-									<form:input path="leadContact" class="background" size="16px" readonly="readonly" />
-									<a href="ListContact.jsp">Lookup</a>
+									<form:input path="leadContact" class="background" disabled="true" style="width: 70%;" />
+									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td rowspan="3"><span class="Fdes">Department Full Description</span></td>
 								<td rowspan=3><span class="Fdes"><form:textarea path="fullDescription" cols = "30" rows = "3"/> </span></td>
@@ -99,8 +102,8 @@
 							<tr>
 								<td>Postcode</td>
 								<td>
-									<form:input path="postcode" class="background" size="16px" readonly="readonly"/>
-									<a href="ListContact.jsp">Lookup</a>
+									<form:input path="postcode" class="background" style="width: 70%;"/>
+									<a href="#" id="myBtn">Lookup</a>
 								</td>
 								<td>Fax</td>
 								<td><form:input path="fax" size="24px"/> </td>
@@ -129,16 +132,6 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<button onclick="save()">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href = "<%= request.getContextPath()%>/web/index.html"><button type="button" >Back</button></a>
-								</td>
-							</tr>
-							
 						</table>
 					</div>
 					
@@ -153,8 +146,8 @@
 							<span><a href="filter.html?search=O R">O P Q R</a></span> |
 							<span><a href="filter.html?search=S V">S T U V</a></span> |
 							<span><a href="filter.html?search=W Z">W X Y Z</a></span>
-							<span style="float: right;">
-								<a href="teamadd.html" class="btn_1">Create</a>
+							<span  class="btn_opt">
+								<a href="teamadd.html?departmentName=${departmentName}" class="btn_opt">Create</a>
 							</span>
 							<span style="float: right;">
 								<a href="#" class="btn_1">In-active</a>
@@ -204,7 +197,7 @@
 										<tr>
 										<td>
 											<c:set var="url">
-												<c:url value="teammo.html">
+												<c:url value="teammo.html?departmentName=${departmentName}">
 													<c:param name="teamName" value="${team.teamName }" ></c:param>
 												</c:url>
 											</c:set>
@@ -214,21 +207,21 @@
 										<td>${team.postCode }</td>
 										<td>${team.leadContact }</td>
 										<td>
-											Yes 
+											Active
 										</td>
 										</tr>	
 									</c:when>
 									<c:otherwise>
-										<tr class="in-acticehide">
+										<tr class="in-activehide">
 										<td>
-											<a href="teamlist2.html?teamName=${team.teamName }" onclick="return active()" >${team.teamName }</a>
+											<a href="teamlist2.html?teamName=${team.teamName }&departmentName=${departmentName}" onclick="return active()" >${team.teamName }</a>
 											<input id="${team.teamName }" value="${team.teamName }" type="hidden">
 										</td>
 										<td>${team.address }</td>
 										<td>${team.postCode }</td>
 										<td>${team.leadContact }</td>
 										<td>
-											No
+											In-active
 										</td>
 										</tr>
 									</c:otherwise>
@@ -244,6 +237,61 @@
 					</div>				
 				</form:form>
 				
+<!-- 				script for lookup -->
+					<%@ include file="address_lookup.jsp" %>
+					<%@ include file="list_contact.jsp" %>
+					<%@ include file="business_lookup.jsp" %>
+					<script type="text/javascript">
+					// Get the modal
+					var modal = document.getElementById('myModal');
+					var contactModal = document.getElementById('contactModal');
+					var businessModal = document.getElementById('businessModal');
+				
+					// Get the button that opens the modal
+					var btn = document.getElementById("myBtn");
+					var contact = document.getElementById("contact");
+					var business = document.getElementById("business");
+				
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+					var span2 = document.getElementsByClassName("close2")[0];
+					var span3 = document.getElementsByClassName("close3")[0];
+				
+					// When the user clicks the button, open the modal
+					btn.onclick = function() {
+					    modal.style.display = "block";
+					}
+					
+					contact.onclick = function(){
+						contactModal.style.display = "block";
+					}
+				
+					business.onclick = function(){
+						businessModal.style.display = "block";
+					}
+					
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() {
+					    modal.style.display = "none";
+					}
+					
+					span2.onclick = function() {
+					    contactModal.style.display = "none";
+					}
+					
+					span3.onclick = function() {
+						businessModal.style.display = "none";
+					}
+					
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal || event.target == contactModal || event.target == businessModal) {
+					        modal.style.display = "none";
+					        contactModal.style.display = "none";
+					        businessModal.style.display = "none";
+					    }
+					}
+					</script>
 			</div>
 			<div id="error" class="error"></div>
 		</div>

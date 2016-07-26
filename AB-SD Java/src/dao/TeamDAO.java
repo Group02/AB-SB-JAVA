@@ -9,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 
 import hibernate.HibernateUtil;
 import model.Team;
+import sun.tools.jar.Main;
 
 public class TeamDAO implements TeamInterface{
 	
@@ -153,4 +154,15 @@ public class TeamDAO implements TeamInterface{
 		}
 	}
 
+	public static void main(String[] args) {
+		TeamDAO dao = new TeamDAO();
+//		dao.insertTeam(new Team("cu sen", "mau trang", "ngon"));
+		Team team = new Team("cu sen", "mau trang trang", "ngon");
+		dao.updateTeam(team);
+		List<Team> list =dao.getAllTeam();
+		for (Team string : list) {
+			System.out.println(string.getTeamName() + "lead"+ string.getLeadContact());
+			
+		}
+	}
 }

@@ -1,0 +1,5 @@
+/* css for hide object with status in-active */
+.in-activehide{
+	display: none;
+	color:blue;
+}

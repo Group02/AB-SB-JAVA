@@ -2,6 +2,9 @@ package controller;
 
 import java.util.List;
 
+import model.AddressLookup;
+import model.BusinessLookup;
+import model.Contacts;
 import model.Directorate;
 import model.Organisation;
 import model.SupportingMaterial;
@@ -12,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import dao.AddressLookupDAO;
+import dao.BusinessLookupDAO;
+import dao.ContactDAO;
 import dao.DirectorateDAO;
 import dao.SupportingMaterialsDAO;
 
@@ -20,6 +26,9 @@ import dao.SupportingMaterialsDAO;
 public class OrganisationController {
 	private SupportingMaterialsDAO smDAO = new SupportingMaterialsDAO();
 	DirectorateDAO dao = new DirectorateDAO();
+	AddressLookupDAO addrdao= new AddressLookupDAO();
+	ContactDAO cont = new ContactDAO();
+	BusinessLookupDAO busidao = new BusinessLookupDAO();
 
 	@RequestMapping(value = "/list")
 	public ModelAndView listOrg() {
@@ -57,8 +66,34 @@ public class OrganisationController {
 	public ModelAndView amendDir() {
 		ModelAndView model = new ModelAndView("AmendDirectorate","he",new Directorate());
 		
+		//list address lookup
+		if(addrdao.getAllAddr()!=null){
+			
+			//Make list address lookup
+			List<AddressLookup> listAddr = addrdao.getAllAddr();
+			
+			model.addObject("listAddr", listAddr);
+		}
 		
-		
+		//list contact lookup
+		if(cont.getAllCont()!=null){
+			
+			//Make list address lookup
+			List<Contacts> listCont = cont.getAllCont();
+			
+			//Save object to session
+			model.addObject("listCont", listCont);
+		}
+
+		//list business lookup
+		if(busidao.getAllBusi() != null){
+			
+			//Make list business lookup
+			List<BusinessLookup> listBusi = busidao.getAllBusi();
+			
+			model.addObject("listBusi", listBusi);
+		}
+				
 		return model;
 	}
 	
