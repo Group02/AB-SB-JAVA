@@ -110,16 +110,27 @@ public class OrganisationController {
 		// Get new URL
 		String newURL = request.getParameter("newURL");
 		
+		if (SM.getUrl() == null || "".equals(SM.getUrl())) {
+			// Set URL fo new SM
+			SM.setUrl(newURL);
+			
+			// Insert new SM:
+			smDAO.insertSM(SM);
+			
+			return "redirect:/organisation/amend.html";
+		}
+		
 		// Kiem tra newURL va oldURL co giong nhau hay khong?
 		if (newURL.equals(SM.getUrl())) {
 			// GIONG:
-			smDAO.insertSM(SM);
+			smDAO.updateSM(SM);
 		} else {
 			// KHONG GIONG:
 			SupportingMaterial newSM = new SupportingMaterial();
 			newSM.setUrl(newURL);
 			newSM.setDescription(SM.getDescription());
 			newSM.setType(SM.getType());
+			newSM.setAddedBy(SM.getAddedBy());
 			
 			// Delete old SM:
 			smDAO.deleteSM(SM);
@@ -129,7 +140,7 @@ public class OrganisationController {
 		}
 		
 		// Back to details form
-		return "redirect:/organisation/details.html";
+		return "redirect:/organisation/amend.html";
 	}
 	
 	
