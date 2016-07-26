@@ -20,6 +20,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_ADDPeer;
 
+import dao.AddressLookupDAO;
+import dao.BusinessLookupDAO;
+import dao.ContactDAO;
+import dao.TeamDAO;
 import model.*;
 import hibernate.*;
 
@@ -28,6 +32,11 @@ import java.util.*;
 @Controller
 @RequestMapping (value = "/web")
 public class DepartmentController {
+	
+	TeamDAO teamDao = new TeamDAO();
+	AddressLookupDAO addrdao= new AddressLookupDAO();
+	ContactDAO cont = new ContactDAO();
+	BusinessLookupDAO busidao = new BusinessLookupDAO();
 	
 	private static int turn = 0;
 	private static SessionFactory factory = HibernateUtil.getSessionFactory();
@@ -323,13 +332,242 @@ public class DepartmentController {
 		return model;
 	}
 	
+	//return page amend department with details tab, teams tab
 	@RequestMapping(value="/viewDepartment", method=RequestMethod.GET)
 	public ModelAndView viewDepartment(HttpServletRequest request){
 		kt = 2;
 		String deptName = request.getParameter("departmentName");
 		ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
+		
+		//get list team
+		List<Team> listTeam = teamDao.getAllTeam();
+		model.addObject("listTeam", listTeam);
+		
+		//code lookup
+		//list address lookup
+		if(addrdao.getAllAddr()!=null){
+			
+			//Make list address lookup
+			List<AddressLookup> listAddr = addrdao.getAllAddr();
+			
+			model.addObject("listAddr", listAddr);
+		}
+		
+		//list contact lookup
+		if(cont.getAllCont()!=null){
+			
+			//Make list address lookup
+			List<Contacts> listCont = cont.getAllCont();
+			
+			//Save object to session
+			model.addObject("listCont", listCont);
+		}
+
+		//list business lookup
+		if(busidao.getAllBusi() != null){
+			
+			//Make list business lookup
+			List<BusinessLookup> listBusi = busidao.getAllBusi();
+			
+			model.addObject("listBusi", listBusi);
+		}
+		
 		turn = 0;
 		model.addObject("readonly", "true");
+		model.addObject("departmentName", deptName);
+		
+		return model;
+	}
+	
+//	change status active
+	@RequestMapping(value="/teamlist2", method=RequestMethod.GET)
+	public ModelAndView active(HttpServletRequest request){
+		kt = 2;
+		String deptName = request.getParameter("departmentName");
+		ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
+		
+		Team team = teamDao.FindTeam(request.getParameter("teamName"));
+		team.setStatus(true);
+		System.out.println("chage status" +deptName + team);
+		teamDao.updateTeam(team);
+
+		List<Team> listTeam = teamDao.getAllTeam();
+		
+		model.addObject("listTeam", listTeam);
+		
+		turn = 0;
+		model.addObject("readonly", "true");
+		model.addObject("departmentName", deptName);
+		
+		return model;
+	}
+	
+	//return page team add
+	@RequestMapping(value="/teamadd", method=RequestMethod.GET)
+	public ModelAndView addteam(HttpServletRequest request){
+		
+		String deptName = request.getParameter("departmentName");
+		ModelAndView model = new ModelAndView("AddTeam", "teamadd", new Team());
+		
+		//list address lookup
+		if(addrdao.getAllAddr()!=null){
+			
+			//Make list address lookup
+			List<AddressLookup> listAddr = addrdao.getAllAddr();
+			
+			model.addObject("listAddr", listAddr);
+		}
+		
+		//list contact lookup
+		if(cont.getAllCont()!=null){
+			
+			//Make list address lookup
+			List<Contacts> listCont = cont.getAllCont();
+			
+			//Save object to session
+			model.addObject("listCont", listCont);
+		}
+
+		//list business lookup
+		if(busidao.getAllBusi() != null){
+			
+			//Make list business lookup
+			List<BusinessLookup> listBusi = busidao.getAllBusi();
+			
+			model.addObject("listBusi", listBusi);
+		}
+		
+		model.addObject("departmentName", deptName);
+		
+		return model;
+	}
+	
+	//add a new team
+	@RequestMapping(value="/teamadd", method=RequestMethod.POST)
+	public ModelAndView addteam(@ModelAttribute("teamadd") Team team, HttpServletRequest request){
+			kt = 2;
+			String deptName = request.getParameter("departmentName");
+			ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
+		
+			team.setStatus(true);
+			
+			teamDao.insertTeam(team);
+			
+//			add list team to model
+			List<Team> listTeam = teamDao.getAllTeam();
+			model.addObject("listTeam", listTeam);
+			
+			turn = 0;
+			model.addObject("readonly", "true");
+			model.addObject("departmentName", deptName);
+			return model;
+	}
+	
+//	return page team modify
+	@RequestMapping(value="/teammo", method=RequestMethod.GET)
+	public ModelAndView moteam(HttpServletRequest request){
+		ModelAndView model = new ModelAndView("AmendTeam", "teammodi", new Team());
+		String deptName = request.getParameter("departmentName");
+		
+		String teamName = request.getParameter("teamName");
+		model.addObject("teamName", teamName);
+		
+		//get a team with teamName
+		if(teamDao.FindTeam(teamName)!=null){
+			
+			Team team = teamDao.FindTeam(teamName);
+			model.addObject("shortDes", team.getShortDes());
+			model.addObject("leadContact", team.getLeadContact());
+			model.addObject("address", team.getAddress());
+			model.addObject("postCode", team.getPostCode());
+			model.addObject("town", team.getTown());
+			model.addObject("county", team.getCounty());
+			model.addObject("nation", team.getNation());
+			model.addObject("typeOfBu", team.getTypeOfBu());
+			model.addObject("sicCode", team.getSicCode());
+			model.addObject("fullDes", team.getFullDes());
+			model.addObject("phone", team.getPhone());
+			model.addObject("fax", team.getFax());
+			model.addObject("mail", team.getMail());
+			model.addObject("WA", team.getWA());
+			
+		}
+		
+			//list address lookup
+			if(addrdao.getAllAddr()!=null){
+				
+				//Make list address lookup
+				List<AddressLookup> listAddr = addrdao.getAllAddr();
+				
+				model.addObject("listAddr", listAddr);
+			}
+			
+			//list contact lookup
+			if(cont.getAllCont()!=null){
+				
+				//Make list address lookup
+				List<Contacts> listCont = cont.getAllCont();
+				
+				//Save object to session
+				model.addObject("listCont", listCont);
+			}
+	
+			//list business lookup
+			if(busidao.getAllBusi() != null){
+				
+				//Make list business lookup
+				List<BusinessLookup> listBusi = busidao.getAllBusi();
+				
+				model.addObject("listBusi", listBusi);
+			}
+		
+		model.addObject("departmentName", deptName);
+			
+		return model;
+	}
+	
+	//amend team
+	@RequestMapping(value="/teammo", method=RequestMethod.POST)
+	public ModelAndView moteam(@ModelAttribute("teammodi") Team team, HttpServletRequest request){
+		kt = 2;
+		String deptName = request.getParameter("departmentName");
+		ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
+
+		team.setStatus(true);
+		
+		teamDao.updateTeam(team);
+		
+//		add list team to model
+		List<Team> listTeam = teamDao.getAllTeam();
+		model.addObject("listTeam", listTeam);
+		
+		turn = 0;
+		model.addObject("readonly", "true");
+		model.addObject("departmentName", deptName);
+		return model;
+	}
+
+	//mark in-active
+	@RequestMapping(value="/teammo2", method=RequestMethod.GET)
+	public ModelAndView inactive(HttpServletRequest request){
+		kt = 2;
+		String deptName = request.getParameter("departmentName");
+		ModelAndView model = new ModelAndView("AmendDepartment", "command", findDepartment(deptName));
+		
+		
+		Team team = teamDao.FindTeam(request.getParameter("teamName"));
+		team.setStatus(false);
+		
+		teamDao.updateTeam(team);
+
+		List<Team> listTeam = teamDao.getAllTeam();
+		System.out.println("mark in active"+deptName +team);
+		model.addObject("listTeam", listTeam);
+		
+		turn = 0;
+		model.addObject("readonly", "true");
+		model.addObject("departmentName", deptName);
+		
 		return model;
 	}
 	
