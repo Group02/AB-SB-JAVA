@@ -49,7 +49,7 @@
 						</span>
 						<script type="text/javascript">
 							function getall(){
-								var x = document.getElementsByClassName("in-acticehide");
+								var x = document.getElementsByClassName("in-activehide");
 								
 								if (document.getElementById("in-active").checked) {
 									for(var i=0;i<x.length;i++) {
@@ -65,7 +65,6 @@
 							
 							function active(){
 								var x = confirm("Do you want to make this Team active?");
-								
 								if(x==true) return true;
 								else return false;
 							}
@@ -93,7 +92,7 @@
 							</tr>	
 						</c:when>
 						<c:otherwise>
-							<tr class="in-acticehide">
+							<tr class="in-activehide">
 							<td>
 								<a href="teamlist2.html?teamName=${team.teamName }" onclick="return active()" >${team.teamName }</a>
 								<input id="${team.teamName }" value="${team.teamName }" type="hidden">

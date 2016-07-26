@@ -16,6 +16,11 @@ $(document).ready(function() {
 	$("input").focus(function() {
 		$(this).css("border-color", "red");
 	});
+	
+	//when move mouse
+	$("input").mouseleave(function() {
+		$(this).css("border-color", "#0067FF");
+	});
 
 	// change border color in textarea
 	$('#save').click(function() {
@@ -170,3 +175,33 @@ function checkEmail() {
 
 	return true;
 }
+
+
+//javascript 's team
+function checkEMP(){
+	var phoneNumber = document.getElementById("phoneTeam").value;
+	var email = document.getElementById("mailTeam").value;
+	var phoneNumberVal = /(09\d{8})|(((01)|(07))\d{9})/;
+	var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	if(document.getElementById("teamName").value == null || document.getElementById("teamName").value ==""){
+		document.getElementById("teamName").style.borderColor = "red";
+		document.getElementById("message").innerHTML = "Please don't leave this empty";
+		return false;
+	}
+		
+	if (!phoneNumberVal.test(phoneNumber) && phoneNumber != null) {
+		document.getElementById("phoneTeam").style.border = "1px solid red";
+		document.getElementById("message").innerHTML = "Sorry, System can't recognize the phone number!";
+		return false;
+	}
+	
+	if (!emailPattern.test(email) && email != null) {
+		document.getElementById("mailTeam").style.border = "1px solid red";
+		document.getElementById("message").innerHTML = "Sorry, System doesn't recognize that email.";
+		return false;
+	}
+		return true;
+}
+
+
