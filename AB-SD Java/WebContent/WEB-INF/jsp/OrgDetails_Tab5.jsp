@@ -43,7 +43,7 @@
 							<td>${sm.type}</td>
 							<td>${sm.addedBy}</td>
 							<td>${sm.addedDate}</td>
-							<td>In Active</td>
+							<td>No</td>
 						</tr>
 					</c:when>
 					<c:otherwise>
@@ -53,7 +53,7 @@
 							<td>${sm.type}</td>
 							<td>${sm.addedBy}</td>
 							<td>${sm.addedDate}</td>
-							<td>Active</td>
+							<td>Yes</td>
 						</tr>
 					</c:otherwise>
 				</c:choose>

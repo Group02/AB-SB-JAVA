@@ -26,16 +26,17 @@ public class DirectorateController {
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView listForm(@ModelAttribute(value = "command") Directorate dir) {
+	public ModelAndView listForm(
+			@ModelAttribute(value = "he") Directorate dir) {
 		ModelAndView model = new ModelAndView("DirectorateList");
-		
+
 		dir.setActive(true);
 		dao.insertDir(dir);
-		
+
 		List<Directorate> list = dao.getAllDir();
 		model.addObject("list", list);
-		
+
 		return model;
-		}
-		
+	}
+
 }

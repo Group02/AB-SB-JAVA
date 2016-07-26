@@ -207,7 +207,7 @@
 											<td>${team.postCode }</td>
 											<td>${team.leadContact }</td>
 											<td>
-												Active
+												Yes
 											</td>
 										</tr>	
 									</c:when>
@@ -221,7 +221,7 @@
 											<td>${team.postCode }</td>
 											<td>${team.leadContact }</td>
 											<td>
-												In-active
+												No
 											</td>
 										</tr>
 									</c:otherwise>
