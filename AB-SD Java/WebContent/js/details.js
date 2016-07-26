@@ -56,6 +56,9 @@ function validateTab1() {
 		document.getElementById("st_orgName").innerHTML = "Please input Organisation Name";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_orgName").innerHTML = null;
+		document.getElementById("orgName").style.borderColor = "#0067FF";
 	}
 	
 	// Check short description:
@@ -65,6 +68,9 @@ function validateTab1() {
 		document.getElementById("st_drs").innerHTML = "Please input Short Description";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_drs").innerHTML = null;
+		document.getElementById("shortDescr").style.borderColor = "#0067FF";
 	}
 	
 	// Check Address:
@@ -74,6 +80,9 @@ function validateTab1() {
 		document.getElementById("st_addr").innerHTML = "Please input Address";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_addr").innerHTML = null;
+		document.getElementById("addressLine").style.borderColor = "#0067FF";
 	}
 	
 	// Check short Postcode:
@@ -83,6 +92,9 @@ function validateTab1() {
 		document.getElementById("st_postcode").innerHTML = "Please input Postcode";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_postcode").innerHTML = null;
+		document.getElementById("postcode").style.borderColor = "#0067FF";
 	}
 	
 	// Check Type Of Business:
@@ -92,6 +104,9 @@ function validateTab1() {
 		document.getElementById("st_business").innerHTML = "Please choose Type of Business";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_business").innerHTML = null;
+		document.getElementById("businessName").style.borderColor = "#0067FF";
 	}
 	
 	// Check phoneNumber:
@@ -101,26 +116,13 @@ function validateTab1() {
 		document.getElementById("st_phone").innerHTML = "Please input Phone Number";
 		check = false;
 		numOfFail++;
+	} else {
+		document.getElementById("st_phone").innerHTML = null;
+		document.getElementById("phoneNumber").style.borderColor = "#0067FF";
 	}
 	
 	// Input success:
 	if(numOfFail == 0) {
-		// Reset error
-		document.getElementById("st_orgName").innerHTML = null;
-		document.getElementById("st_drs").innerHTML = null;
-		document.getElementById("st_addr").innerHTML = null;
-		document.getElementById("st_postcode").innerHTML = null;
-		document.getElementById("st_business").innerHTML = null;
-		document.getElementById("st_phone").innerHTML = null;
-		
-		// Reset border:
-		document.getElementById("orgName").style.borderColor = "#0067FF";
-		document.getElementById("shortDescr").style.borderColor = "#0067FF";
-		document.getElementById("addressLine").style.borderColor = "#0067FF";
-		document.getElementById("postcode").style.borderColor = "#0067FF";
-		document.getElementById("businessName").style.borderColor = "#0067FF";
-		document.getElementById("phoneNumber").style.borderColor = "#0067FF";
-		
 		document.getElementById("success").innerHTML = "Save success.";
 	}
 	

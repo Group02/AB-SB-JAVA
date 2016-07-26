@@ -45,7 +45,7 @@
 						</ul>
 
 						<!-- Operation -->
-						<input type="button" value="Back" class="btn_opt" onclick="onBackOrg()">
+						<input type="button" value="Back" class="btn_opt" onclick="">
 						<input type="submit" value="Save" class="btn_opt">
 					</div>
 					

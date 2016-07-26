@@ -143,6 +143,11 @@ public class OrganisationController {
 		return "redirect:/organisation/amend.html";
 	}
 	
-	
+	@RequestMapping(value = "/createDir", method = RequestMethod.GET)
+	public ModelAndView InitCreateDir() {
+		ModelAndView model = new ModelAndView("AddDirectorate", "he", new Directorate());
+		
+		return model;
+	}
 }
 

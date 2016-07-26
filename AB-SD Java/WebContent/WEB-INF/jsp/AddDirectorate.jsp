@@ -10,10 +10,8 @@
 <title>Add a new Directorate</title>
 <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="../js/AddDirectorate.js"></script>
-<link  type="text/css" href="../css/AddOrganisation.css" rel="stylesheet"/>
-<link type="text/css" href="../css/style-1.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="bg">
 
 <!-- HEADER -->
 	
@@ -35,40 +33,37 @@
 					<div class="tab_head">
 						<ul class="tab">
 							<li><a href="#" class="tablinks active"
-								onclick="openTab(event, 'tab1')">Details 1</a></li>
-							<li><a href="#" class="tablinks"
-								onclick="openTab(event, 'tab2')">Details 2</a></li>
+								onclick="openTab(event, 'tab1')">Details</a></li>
 						</ul>
 
 						<!-- Operation -->
-						<input type="button" value="Back" class="btn_opt" onclick="onBackOrg()">
+						<input type="button" value="Back" class="btn_opt" onclick="">
 						<input type="submit" value="Save" class="btn_opt">
-						<input type="button" value="In-active" class="btn_opt">
 					</div>
 					
-					<!-- "Details 1" content -->
-					<div id="tab1" class="tabcontent">
-						<table>
+					<!-- "Details" content -->
+					<div id="tab1" class="tabcontent" style="display: block;">
+						<table class="tb_dir">
 							<tr>
 								<td>BU/Directorate Name *</td>
 								<td><form:input id="BUName" path="directorateName" size="24px"/> </td>
 								<td>Type of Business *</td>
 								<td>
-									<form:input id="typeBusiness" path="typeBusiness" class="background" size="17px" readonly="readonly"/>
-									<a href="#">Lookup</a>
+									<form:input id="typeBusiness" path="typeBusiness" disabled="true" style="width: 60%;"/>
+									<a href="#" id="business">Lookup</a>
 								</td>
 							</tr>
 							<tr>
 								<td>BU/Directorate Short Description</td>
 								<td><form:textarea id="shortDescr" path="shortDescr" cols="30" rows="3"/></td>
 								<td>SIC Code</td>
-								<td><form:input type="text" id="SICCode" path="SICcode" class="background" size="7px" readonly="readonly"/></td>
+								<td><form:input id="SICCode" path="SICcode" disabled="true" style="width: 60%;"/></td>
 							</tr>
 							<tr>
 								<td>Lead Contact</td>
 								<td>
-									<form:input type="text" id="leadContact" path="leadContact" class="background" size="17px" readonly="readonly"/>
-									<a href="#">Lookup</a>
+									<form:input id="leadContact" path="leadContact" disabled="true" style="width: 60%;"/>
+									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td>Organisation Full Description</td>
 								<td><form:textarea id="BUFullDescr" path="fullDescr" cols="30" rows="3"/></td>
@@ -91,8 +86,8 @@
 							</tr>
 							<tr>		
 								<td>Postcode *</td>	
-								<td><form:input type="text" id="postcode" path="postcode" size="16px"/>
-								<a href="#">Lookup</a></td>
+								<td><form:input id="postcode" path="postcode"  style="width: 60%;"/>
+								<a href="#" id="myBtn">Lookup</a>
 								<td>Email</td>
 								<td><form:input type="text" id="email" path="email" size="24px"/></td>
 							</tr>
@@ -122,9 +117,6 @@
 							</tr>
 						</table>
 					</div>
-					
-					<!-- "Details 2" content -->
-					
 				</form:form>
 				
 				<!-- Error -->
@@ -132,28 +124,6 @@
 			</div>
 		</div>
 	</div>
- 
-<div>
-	<form:form action="add.html" modelAttribute="he" onsubmit="return addDirForm()"  method="post">
-		<div id="wrapper">
-			<div id="tabs">
-			<div style="position: absolute; top:70px; left: 600px;" >
-				<button >Save</button>
-			</div>
-			<div style="position: absolute; top:73px; left: 700px;" >
-				<a href="<%= request.getContextPath() %>/directorate/list.html" class="bt" style="text-decoration:none">Back</a>
-			</div>
-				<ul>
-					<li class="active">Details</li>
-				</ul>
-				<div class="content">
-					
-				</div>
-		</div>
-		<div id="error" class="error"></div>
-	</div>
-	
-</form:form>
 </div>
 </body>
 </html>
