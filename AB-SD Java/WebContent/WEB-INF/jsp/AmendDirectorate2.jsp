@@ -35,7 +35,7 @@
 					<!-- Tab Name -->
 					<div class="tab_head">
 						<ul class="tab">
-							<li><a href="#" class="tablinks"
+							<li><a href="<%=request.getContextPath() %>/organisation/searchBU.html?search=${search}" class="tablinks"
 								onclick="openTab(event, 'tab1')">Details</a></li>
 							<li><a href="#" class="tablinks active"
 								onclick="openTab(event, 'tab2')">Departments</a></li>
@@ -86,7 +86,7 @@
 							<c:forEach var="dept" items="${result}">
 								<tr>
 						  			<c:if test="${dept.isActive == 'no' }">
-						  				<td><a href="activateDept.html?departmentName=${dept.departmentName}&status=no" onclick="return confirm('Do you want to activate this department!')" style = "color: #333;">${dept.departmentName }</a> </td>
+						  				<td><a href="viewDepartment.html?departmentName=${dept.departmentName}&status=no" onclick="return confirm('Do you want to activate this department!')" style = "color: #333;">${dept.departmentName }</a> </td>
 						  			</c:if>
 						  			<c:if test="${dept.isActive == 'yes' }">
 						  				<td><a href="viewDepartment.html?departmentName=${dept.departmentName}">${dept.departmentName }</a> </td>

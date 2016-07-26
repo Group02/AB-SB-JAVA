@@ -27,7 +27,7 @@ import dao.SupportingMaterialsDAO;
 @RequestMapping(value = "/organisation")
 public class OrganisationController {
 	private SupportingMaterialsDAO smDAO = new SupportingMaterialsDAO();
-	DirectorateDAO dao = new DirectorateDAO();
+	DirectorateDAO daoDir = new DirectorateDAO();
 	AddressLookupDAO addrdao= new AddressLookupDAO();
 	ContactDAO cont = new ContactDAO();
 	BusinessLookupDAO busidao = new BusinessLookupDAO();
@@ -50,7 +50,7 @@ public class OrganisationController {
 	public ModelAndView amendOrg() {
 		ModelAndView model = new ModelAndView("AmendOrganisation");
 		
-		List<Directorate> list = dao.getAllDir();
+		List<Directorate> list = daoDir.getAllDir();
 		model.addObject("list", list);
 		
 		SupportingMaterial SM = new SupportingMaterial();
@@ -96,6 +96,15 @@ public class OrganisationController {
 			model.addObject("listBusi", listBusi);
 		}
 				
+		return model;
+	}
+	
+	static String searchBU = "";
+	@RequestMapping(value = "/searchBU")
+	public ModelAndView searchBU(HttpServletRequest request){
+		String search = request.getParameter("search");
+		searchBU = search;
+		ModelAndView model = new ModelAndView("AmendDirectorate","he",daoDir.FindDir(search));
 		return model;
 	}
 	

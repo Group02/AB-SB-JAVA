@@ -44,12 +44,7 @@
 					<c:when test="${i.active ==true}">
 						<tr>
 							<td>
-							<c:set var="url">
-									<c:url value="amendDir.html">
-										<c:param name="directorateName" value="${i.directorateName }" ></c:param>
-									</c:url>
-								</c:set>
-								<a href="${url}" >${i.directorateName }</a>
+								<a href="searchBU.html?search=${i.directorateName}" >${i.directorateName }</a>
 							</td>
 							<td>${i.addrLine1}</td>
 							<td>${i.postcode}</td>

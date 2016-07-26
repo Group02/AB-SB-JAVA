@@ -6,6 +6,9 @@ import model.Directorate;
 
 public interface DirectorateInterface {
 
+	//find a Directory
+	public Directorate FindDir(String directorateName);
+	
 	//delete a Directorate
 	public void deleteDir(Directorate directorate);
 			

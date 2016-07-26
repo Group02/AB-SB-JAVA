@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import hibernate.HibernateUtil;
+import model.AddressLookup;
 import model.Directorate;
 
 import org.hibernate.HibernateException;
@@ -171,6 +172,23 @@ public class DirectorateDAO implements DirectorateInterface{
 		} finally {
 			closeSession();
 		}
+	}
+
+	@Override
+	public Directorate FindDir(String directorateName) {
+		try {
+			openSession();
+			
+			Directorate dir = (Directorate)session.get(Directorate.class, directorateName);
+			
+			return dir;
+		} catch (HibernateException e) {
+			System.out.println("Failed when to Find Directorate!");
+			e.printStackTrace();
+		} finally {
+			closeSession();
+		}
+		return null;
 	}
 
 }
