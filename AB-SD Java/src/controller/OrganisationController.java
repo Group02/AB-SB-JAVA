@@ -31,6 +31,7 @@ public class OrganisationController {
 	AddressLookupDAO addrdao= new AddressLookupDAO();
 	ContactDAO cont = new ContactDAO();
 	BusinessLookupDAO busidao = new BusinessLookupDAO();
+	DirectorateDAO dirDao = new DirectorateDAO();
 
 	@RequestMapping(value = "/list")
 	public ModelAndView listOrg() {
@@ -156,6 +157,45 @@ public class OrganisationController {
 	public ModelAndView InitCreateDir() {
 		ModelAndView model = new ModelAndView("AddDirectorate", "he", new Directorate());
 		
+		//list address lookup
+			if(addrdao.getAllAddr()!=null){
+				
+				//Make list address lookup
+				List<AddressLookup> listAddr = addrdao.getAllAddr();
+				
+				model.addObject("listAddr", listAddr);
+			}
+			
+			//list contact lookup
+			if(cont.getAllCont()!=null){
+				
+				//Make list address lookup
+				List<Contacts> listCont = cont.getAllCont();
+				
+				//Save object to session
+				model.addObject("listCont", listCont);
+			}
+	
+			//list business lookup
+			if(busidao.getAllBusi() != null){
+				
+				//Make list business lookup
+				List<BusinessLookup> listBusi = busidao.getAllBusi();
+				
+				model.addObject("listBusi", listBusi);
+			}
+				
+		return model;
+	}
+	
+	@RequestMapping(value = "/handleCreateDir", method = RequestMethod.POST)
+	public ModelAndView listForm(
+			@ModelAttribute(value = "he") Directorate dir) {
+		ModelAndView model = new ModelAndView("redirect:/organisation/amend.html");
+
+		dir.setActive(true);
+		dirDao.insertDir(dir);
+
 		return model;
 	}
 }

@@ -158,6 +158,11 @@ function onBack() {
 }
 // ==============================================
 
+// DIRECTORATE ======================
+function backToAmendOrg() {
+	location = "amend.html";
+}
+
 /* ============== POPUP ============== */
 function openPopup(popupID) {
 	document.getElementById(popupID).style.display = "block";

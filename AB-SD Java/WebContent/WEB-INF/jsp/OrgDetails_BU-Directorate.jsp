@@ -58,7 +58,7 @@
 							<td>${i.addrLine1}</td>
 							<td>${i.postcode}</td>
 							<td>${i.leadContact}</td>
-							<td>no</td>
+							<td>No</td>
 						</tr>
 					</c:otherwise>
 				</c:choose>
