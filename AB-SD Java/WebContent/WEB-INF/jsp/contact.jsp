@@ -54,7 +54,7 @@
 			  </tr>
 			 <tr>
 				<td> Email Address</td> 
-				<td> <input type="address" name = "emailAddress"></td>
+				<td> <input type="text" name = "emailAddress"></td>
 				<td> Is Active </td>
 				<td> <input type="checkbox" name="isActive"></td>
 			  </tr>

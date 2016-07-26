@@ -40,7 +40,7 @@
 				</div>
 				
 				<!-- List -->
-				<table class="list sort">
+				<table class="list">
 					<tr>
 						<th>Orgainsation Name</th>
 						<th>Head Office Address Line 1</th>

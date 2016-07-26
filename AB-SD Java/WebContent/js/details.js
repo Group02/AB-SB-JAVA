@@ -56,6 +56,7 @@ function onModifySM(rowId, frameID) {
 	document.getElementById(frameID).style.display = "block";
 	
 	document.getElementById("url").value = rowId;
+	document.getElementById("newURL").value = rowId;
 	document.getElementById("description").value = description;
 	document.getElementById("type").value = type;
 }

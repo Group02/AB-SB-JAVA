@@ -186,3 +186,12 @@ input:focus {
 .tb_dir tr td{
 	padding: 3px 10px;
 }
+
+/* ================ END Directorate ================ */
+
+.error {
+	color: red;
+	font-size: 14px;
+	font-style: italic;
+}
+

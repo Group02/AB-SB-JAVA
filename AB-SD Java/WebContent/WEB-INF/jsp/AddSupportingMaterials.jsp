@@ -10,12 +10,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AB-SD: Organisation Details</title>
+<script type="text/javascript">
+	function checkURL() {
+		var url = document.getElementById("newURL").value;
+		
+		if(url == null || url == "") {
+			document.getElementById("newURL").style.borderColor = "red";
+			document.getElementById("error").innerHTML = "Please input URL."
+			
+			return false;
+		}
+		
+		return true;
+	}
+</script>
 </head>
 <body>
 	<div id="sm-details" class="popup-form">
 		<fieldset>
 			<legend>Supporting Materials Details</legend>
-			<form:form action="handleSMForm.html" modelAttribute="SM" method="post">
+			<form:form action="handleSMForm.html" modelAttribute="SM" method="post" onsubmit="return checkURL()">
+			
 				<!-- Tab Name -->
 				<div class="tab_head">
 					<ul class="tab">
@@ -26,6 +41,7 @@
 					<input type="button" value="Back" onclick="onBack()" class="btn_opt">
 					<input type="submit" value="Save" class="btn_opt">
 				</div>
+				
 				<div style="border: 1px solid #0067FF;">
 					<table width="100%">
 						<tr valign="top">
@@ -33,7 +49,10 @@
 								<table>
 									<tr>
 										<td>URL<span class="mandatory">*</span></td>
-										<td><form:input path="url" id="url"/></td>
+										<td>
+											<form:hidden path="url" id="url"/>
+											<input type="text" id="newURL" name="newURL">
+										</td>
 									</tr>
 									<tr>
 										<td>Description</td>
@@ -76,6 +95,7 @@
 					</table>
 				</div>
 			</form:form>
+			<div id="error" class="error"></div>
 		</fieldset>
 	</div>
 </body>
