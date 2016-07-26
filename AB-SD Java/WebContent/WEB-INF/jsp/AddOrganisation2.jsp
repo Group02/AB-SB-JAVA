@@ -32,7 +32,7 @@
 				<hr>
 				
 				<!-- Form -->
-				<form:form method="post" action="handleSMForm.html" modelAttribute="Org">
+				<form:form method="post" action="handleSMForm.html" modelAttribute="Org" onsubmit="return validateTab1()">
 					<!-- Tab Name -->
 					<div class="tab_head">
 						<ul class="tab">
@@ -69,6 +69,8 @@
 				<div id="st_postcode" class="error"></div>
 				<div id="st_business" class="error"></div>
 				<div id="st_phone" class="error"></div>
+				
+				<div id="success" style="color: green; font-style: italic;"></div>
 			</div>
 		</div>
 	</div>
