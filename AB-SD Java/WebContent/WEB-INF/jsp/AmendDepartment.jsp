@@ -147,7 +147,7 @@
 							<span><a href="filter.html?search=S V">S T U V</a></span> |
 							<span><a href="filter.html?search=W Z">W X Y Z</a></span>
 							<span style="float: right;">
-								<a href="teamadd.html?departmentName=${departmentName}" class="btn_1">Create</a>
+								<a href="<%=request.getContextPath() %>/web/add.html" class="btn_1">Create</a>
 							</span>
 							<span style="float: right;">
 								<a href="#" class="btn_1">In-active</a>

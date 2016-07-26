@@ -171,6 +171,7 @@ public class DepartmentController {
 		
 	    setConfig(model,viewList(variable, array[checkButton], array[checkButton] + 15) , view);
 	    setView(model, index, number.length);
+	    model.addAttribute("search",OrganisationController.searchBU);
 		return "AmendDirectorate2";
 	}
 	
@@ -202,11 +203,12 @@ public class DepartmentController {
 			else variable = listAll;
 			setNumber(variable);
 			session.close();
-			//turn++;
+			turn++;
 		}
 		else{
 			checkButton = Integer.parseInt(request.getParameter("pageNumber"))-1;
 		}
+		model.addAttribute("search",OrganisationController.searchBU);
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
 		setConfig(model, viewList(variable, array[checkButton], array[checkButton]+15), view);
@@ -229,7 +231,8 @@ public class DepartmentController {
 		setView(model, index, number.length);
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
-		return "AmendDepartment";
+		model.addAttribute("search",OrganisationController.searchBU);
+		return "AmendDirectorate2";
 	}
 	
 	public static void setCheckboxList(Model model){
@@ -262,6 +265,7 @@ public class DepartmentController {
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
 		setView(model, index, number.length);*/
+		model.addAttribute("search",OrganisationController.searchBU);
 		return "AmendDirectorate2";
 	}
 	
@@ -280,6 +284,7 @@ public class DepartmentController {
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
 		setView(model, index, number.length);*/
+		model.addAttribute("search",OrganisationController.searchBU);
 		return "AmendDirectorate2";
 	}
 	
@@ -317,6 +322,7 @@ public class DepartmentController {
 		checkButton = 0;
 		model.addAttribute("style","background: yellow;");
 		model.addAttribute("checkButton", checkButton);
+		model.addAttribute("search",OrganisationController.searchBU);
 		return "AmendDirectorate2";
 	}
 	
@@ -327,7 +333,7 @@ public class DepartmentController {
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public ModelAndView addDepartment(){
 		kt = 1;
-		ModelAndView model = new ModelAndView("addDepartment", "command", new Department());
+		ModelAndView model = new ModelAndView("AddDepartments", "command", new Department());
 		turn = 0;
 		model.addObject("readonly", "false");
 		
@@ -573,6 +579,8 @@ public class DepartmentController {
 		model.addObject("style", "background: grey;");
 		return model;
 	}
+	
+
 	
 	
 	@RequestMapping(value="/addDepartment", method=RequestMethod.POST)
