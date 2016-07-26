@@ -44,6 +44,16 @@ function onCheckInActive() {
 	}
 }
 
+// Organisation Details Tab1:
+function validateTab1() {
+	// Check organisation name:
+	var orgName = document.getElementById("orgName").value;
+	if(orgName == null || orgName == "") {
+		document.getElementById("orgName").style.borderCorlor = "red";
+		
+	}
+}
+
 // Supporting Materials:
 function opCreateSM() {
 	document.getElementById("sm-details").style.display = "block";
