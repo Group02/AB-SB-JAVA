@@ -148,4 +148,19 @@ public class SupportingMaterialsDAO implements SupportingMaterialsInterface {
 		return null;
 	}
 
+	@Override
+	public void deleteSM(SupportingMaterial SM) {
+		try {
+			openSessionWithBeginTransaction();
+			session.delete(SM);
+			commit();
+		} catch (HibernateException e) {
+			System.out.println("Failed when to delete Supporting Materials");
+			e.printStackTrace();
+			rollback();
+		} finally {
+			closeSession();
+		}
+	}
+
 }

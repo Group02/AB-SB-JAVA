@@ -61,6 +61,14 @@
 				
 				<!-- Error -->
 				<div id="error" class="error"></div>
+				
+				<!-- Save Status of Details 1 -->
+				<div id="st_orgName" class="error"></div>
+				<div id="st_drs" class="error"></div>
+				<div id="st_addr" class="error"></div>
+				<div id="st_postcode" class="error"></div>
+				<div id="st_business" class="error"></div>
+				<div id="st_phone" class="error"></div>
 			</div>
 		</div>
 	</div>

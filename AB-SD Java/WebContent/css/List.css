@@ -34,6 +34,7 @@ a.btn_1 {
 	border: 1px solid #FF6700;
 	border-radius: 3px;
 	transition: 0.2s;
+	margin-left: 5px;
 }
 
 a.btn_1:hover {

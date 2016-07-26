@@ -28,7 +28,7 @@
 		<!-- List -->
 		<table class="list">
 			<tr>
-				<th>Orgainsation Name</th>
+				<th>BU/Directorate Name</th>
 				<th>Head Office Address Line 1</th>
 				<th>Postcode</th>
 				<th>Contact</th>

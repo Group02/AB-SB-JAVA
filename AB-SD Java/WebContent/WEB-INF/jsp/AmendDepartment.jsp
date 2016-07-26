@@ -146,8 +146,8 @@
 							<span><a href="filter.html?search=O R">O P Q R</a></span> |
 							<span><a href="filter.html?search=S V">S T U V</a></span> |
 							<span><a href="filter.html?search=W Z">W X Y Z</a></span>
-							<span  class="btn_opt">
-								<a href="teamadd.html?departmentName=${departmentName}" class="btn_opt">Create</a>
+							<span style="float: right;">
+								<a href="teamadd.html?departmentName=${departmentName}" class="btn_1">Create</a>
 							</span>
 							<span style="float: right;">
 								<a href="#" class="btn_1">In-active</a>
@@ -168,7 +168,7 @@
 									</span>
 									<script type="text/javascript">
 										function getall(){
-											var x = document.getElementsByClassName("in-acticehide");
+											var x = document.getElementsByClassName("in-activehide");
 											
 											if (document.getElementById("in-active").checked) {
 												for(var i=0;i<x.length;i++) {
@@ -195,34 +195,34 @@
 								<c:choose>
 									<c:when test="${team.status == true}">
 										<tr>
-										<td>
-											<c:set var="url">
-												<c:url value="teammo.html?departmentName=${departmentName}">
-													<c:param name="teamName" value="${team.teamName }" ></c:param>
-												</c:url>
-											</c:set>
-											<a href="${url}" >${team.teamName }</a>
-										</td>
-										<td>${team.address }</td>
-										<td>${team.postCode }</td>
-										<td>${team.leadContact }</td>
-										<td>
-											Active
-										</td>
+											<td>
+												<c:set var="url">
+													<c:url value="teammo.html?departmentName=${departmentName}">
+														<c:param name="teamName" value="${team.teamName }" ></c:param>
+													</c:url>
+												</c:set>
+												<a href="${url}" >${team.teamName }</a>
+											</td>
+											<td>${team.address }</td>
+											<td>${team.postCode }</td>
+											<td>${team.leadContact }</td>
+											<td>
+												Active
+											</td>
 										</tr>	
 									</c:when>
 									<c:otherwise>
 										<tr class="in-activehide">
-										<td>
-											<a href="teamlist2.html?teamName=${team.teamName }&departmentName=${departmentName}" onclick="return active()" >${team.teamName }</a>
-											<input id="${team.teamName }" value="${team.teamName }" type="hidden">
-										</td>
-										<td>${team.address }</td>
-										<td>${team.postCode }</td>
-										<td>${team.leadContact }</td>
-										<td>
-											In-active
-										</td>
+											<td>
+												<a href="teamlist2.html?teamName=${team.teamName }&departmentName=${departmentName}" onclick="return active()" >${team.teamName }</a>
+												<input id="${team.teamName }" value="${team.teamName }" type="hidden">
+											</td>
+											<td>${team.address }</td>
+											<td>${team.postCode }</td>
+											<td>${team.leadContact }</td>
+											<td>
+												In-active
+											</td>
 										</tr>
 									</c:otherwise>
 								</c:choose>

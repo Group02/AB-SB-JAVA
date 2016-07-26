@@ -151,12 +151,10 @@
 								<th class="header-background">Postcode</th>
 								<th class="header-background">Contact</th>
 								<th class="header-background">
-									
-											<span>
-											<input id="in-active" type="checkbox" onclick="getall()" ${check}>
-											<label for="in-active"> In Active ?</label>
-											</span>
-											
+									<span>
+										<input id="in-active" type="checkbox" onclick="getall()" ${check}>
+										<label for="in-active"> In Active ?</label>
+									</span>
 								</th>
 							</tr>
 							<c:forEach var="dept" items="${result}">

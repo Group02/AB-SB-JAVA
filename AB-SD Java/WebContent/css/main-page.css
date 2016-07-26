@@ -33,18 +33,6 @@ body {
 
 /* END HEADER */
 
-/* TABLE LAYOUT */
-
-#layout {
-	width: 1000px;
-}
-
-#layout tr td {
-	padding: 5px;
-}
-
-/* END TABLE LAYOUT */
-
 /* MENU */
 #menu ul{
     list-style-type: none;

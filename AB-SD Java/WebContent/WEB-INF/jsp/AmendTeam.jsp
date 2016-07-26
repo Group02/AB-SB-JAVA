@@ -45,13 +45,17 @@
 						<!-- Operation -->
 						<input type="button" value="Back" class="btn_opt" onclick="goBack()">
 						<input type="submit" value="Save" class="btn_opt" onclick="return checkEMP();">
-						<span  class="btn_opt">
-						<a href="teammo2.html?teamName=${teamName }&departmentName=${departmentName}" class="btn_1 a">In-active</a></span>
+						<input type="button" value="In-active" class="btn_opt" onclick="clickInActive_Team()">
+						<script type="text/javascript">
+							function clickInActive_Team() {
+								location = "teammo2.html?teamName=${teamName}&departmentName=${departmentName}";
+							}
+						</script>
 					</div>
 					
 					<!-- "Details" content -->
 					<div id="tab1" class="tabcontent" style="display: block;">
-						<table>
+						<table class="tb_dir">
 							<tr>
 								<td>Team Name *</td>
 								<td><form:input path="teamName" size="24px" id="teamName" value="${teamName }"/> </td>

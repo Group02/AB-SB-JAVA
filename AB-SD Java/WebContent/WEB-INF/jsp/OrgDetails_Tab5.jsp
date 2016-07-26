@@ -15,7 +15,7 @@
 		<hr>
 		<div class="sort" style="margin-bottom: 25px;">
 			<span style="float: right;">
-				<a href="#sm-details" class="btn_1" onclick="onCreate('sm-details')">Create</a>
+				<a href="#sm-details" class="btn_1" onclick="opCreateSM()">Create</a>
 			</span>
 		</div>
 		<table class="list sortable">

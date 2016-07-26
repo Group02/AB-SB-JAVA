@@ -5,6 +5,8 @@ import java.util.List;
 import model.AddressLookup;
 import model.BusinessLookup;
 import model.Contacts;
+import javax.servlet.http.HttpServletRequest;
+
 import model.Directorate;
 import model.Organisation;
 import model.SupportingMaterial;
@@ -104,12 +106,41 @@ public class OrganisationController {
 	}
 	
 	@RequestMapping(value = "/handleSMForm", method = RequestMethod.POST)
-	public String handleSMForm(@ModelAttribute("SM") SupportingMaterial SM) {
-		// Save new Supporting Materials to DS
-		smDAO.insertSM(SM);
+	public String handleSMForm(@ModelAttribute("SM") SupportingMaterial SM, HttpServletRequest request) {
+		// Get new URL
+		String newURL = request.getParameter("newURL");
+		
+		if (SM.getUrl() == null || "".equals(SM.getUrl())) {
+			// Set URL fo new SM
+			SM.setUrl(newURL);
+			
+			// Insert new SM:
+			smDAO.insertSM(SM);
+			
+			return "redirect:/organisation/amend.html";
+		}
+		
+		// Kiem tra newURL va oldURL co giong nhau hay khong?
+		if (newURL.equals(SM.getUrl())) {
+			// GIONG:
+			smDAO.updateSM(SM);
+		} else {
+			// KHONG GIONG:
+			SupportingMaterial newSM = new SupportingMaterial();
+			newSM.setUrl(newURL);
+			newSM.setDescription(SM.getDescription());
+			newSM.setType(SM.getType());
+			newSM.setAddedBy(SM.getAddedBy());
+			
+			// Delete old SM:
+			smDAO.deleteSM(SM);
+			
+			// Insert new SM:
+			smDAO.insertSM(newSM);
+		}
 		
 		// Back to details form
-		return "redirect:/organisation/details.html";
+		return "redirect:/organisation/amend.html";
 	}
 	
 	

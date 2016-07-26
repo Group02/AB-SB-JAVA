@@ -43,6 +43,7 @@ public class DepartmentController {
 	private static Session session;
 	private static Transaction tx;
 	private static List<Department> list;
+	private static List<Department> listBusiness;
 	private static int[] number;
 	private static int[] view;
 	private static int[] array;
@@ -329,6 +330,7 @@ public class DepartmentController {
 		ModelAndView model = new ModelAndView("addDepartment", "command", new Department());
 		turn = 0;
 		model.addObject("readonly", "false");
+		
 		return model;
 	}
 	
@@ -568,6 +570,7 @@ public class DepartmentController {
 		model.addObject("readonly", "true");
 		model.addObject("departmentName", deptName);
 		
+		model.addObject("style", "background: grey;");
 		return model;
 	}
 	
@@ -580,8 +583,11 @@ public class DepartmentController {
 			else update(dept);
 		}
 		else{
+			model.addObject("style", "background: grey;");
+			model.addObject("readonly", "true");
 			dept.setIsActive("yes");
 			update(dept);
+			kt = 2;
 		}
 		list.clear();
 		return model;

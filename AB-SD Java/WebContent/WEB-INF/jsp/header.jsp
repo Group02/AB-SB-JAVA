@@ -17,7 +17,13 @@
 					<tr>
 						<td><img alt="AB-SA Java" src="../image/logo.png" height="40px;"></td>
 						<td align="center">
-							<jsp:include page="menu.jsp"/>
+							<%
+								if(session.getAttribute("User") != null) {
+							%>
+									<jsp:include page="menu.jsp"/>
+							<%
+								}
+							%>
 						</td>
 					</tr>
 				</table>

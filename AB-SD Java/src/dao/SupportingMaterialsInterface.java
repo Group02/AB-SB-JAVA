@@ -16,4 +16,6 @@ public interface SupportingMaterialsInterface {
 	
 	public List<SupportingMaterial> getAllSM();
 	
+	public void deleteSM(SupportingMaterial SM);
+	
 }
