@@ -22,13 +22,14 @@ public class LoginController {
 	public ModelAndView initialLoginForm() {
 		ModelAndView model = new ModelAndView("login");
 		model.addObject("User", new User());
-		
+		DepartmentController.turn = 0;
 		return model;
 	}
 	
 	@RequestMapping(value = "/forgot-password", method = RequestMethod.GET)
 	public ModelAndView initForgotPassword() {
 
+		DepartmentController.turn = 0;
 		return new ModelAndView("SendPassword");
 	}
 	
@@ -44,7 +45,7 @@ public class LoginController {
 			 */
 			session.setAttribute("User", user);
 			return new ModelAndView("OrganisationList");
-		}
+		}DepartmentController.turn = 0;
 
 		// Else -> Redirect to Login Page with error message:
 		return new ModelAndView("login", "message", 
@@ -62,6 +63,7 @@ public class LoginController {
 		 User user = userDAO.getUserByEmail(email);
 		
 		// Find user on database with email:
+		 DepartmentController.turn = 0;
 		if(user == null) {
 			// If user is null then return message to Forgot Password page
 			model.addObject("message", "Sorry! We can't find this email!");

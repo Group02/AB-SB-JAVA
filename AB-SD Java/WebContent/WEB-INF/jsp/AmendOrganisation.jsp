@@ -38,7 +38,7 @@
 				<hr>
 				
 				<!-- Form -->
-				<form:form method="post" action="" modelAttribute="Org">
+				<form:form method="post" action="" modelAttribute="Org"  onsubmit="return validateTab1()">
 					<!-- Tab Name -->
 					<div class="tab_head">
 						<ul class="tab">

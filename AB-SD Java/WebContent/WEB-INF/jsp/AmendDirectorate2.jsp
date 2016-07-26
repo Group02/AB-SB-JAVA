@@ -68,13 +68,13 @@
 						</div>
 						
 						<!-- List -->
-						<table class="list">
+						<table class="list sortable">
 							<tr>
-								<th class="header-background">Department Name</th>
-								<th class="header-background">Address</th>
-								<th class="header-background">Postcode</th>
-								<th class="header-background">Contact</th>
-								<th class="header-background">
+								<th>Department Name</th>
+								<th>Address</th>
+								<th>Postcode</th>
+								<th>Contact</th>
+								<th>
 									
 									<span>
 										<input id="in-active" type="checkbox" onclick="getall()" ${check}>

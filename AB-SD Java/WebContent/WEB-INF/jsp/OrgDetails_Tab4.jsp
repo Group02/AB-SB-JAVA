@@ -14,7 +14,7 @@
 		<div>
 			<fieldset>
 				<legend>Premise</legend>
-				<table class="list">
+				<table class="list sortable">
 					<tr>
 						<th>Premise Name</th>
 						<th>Address</th>

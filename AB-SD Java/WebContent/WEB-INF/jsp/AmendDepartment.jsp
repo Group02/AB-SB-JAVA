@@ -57,7 +57,7 @@
 								<td><form:input path="departmentName" size="24px" id = "departmentName" readonly = "${readonly}"/> </td>
 								<td>Type of Business</td>
 								<td>
-								<form:input path="typeOfBusiness" class="background" disabled="true" style="width: 60%;"/>
+								<form:input path="typeOfBusiness" class="background" disabled="true" style="width: 60%;" id="typebusi"/>
 								<a href="#" id="business">Lookup</a>
 								</td>
 							</tr>
@@ -67,12 +67,12 @@
 									<form:textarea path="shortDescription" cols = "30" rows = "3" />
 								</td>
 								<td><span class="SIC">SIC Code</span></td>
-								<td><span class="SIC"><form:input path="sicCode" class="background" disabled="true" style="width: 60%;" /> </span> </td>
+								<td><span class="SIC"><form:input path="sicCode" class="background" disabled="true" style="width: 60%;" id="sic"/> </span> </td>
 							</tr>
 							<tr>
 								<td>Lead Contact *</td>
 								<td>
-									<form:input path="leadContact" class="background" disabled="true" style="width: 60%;" />
+									<form:input path="leadContact" class="background" disabled="true" style="width: 60%;" id="leadcont"/>
 									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td rowspan="3"><span class="Fdes">Department Full Description</span></td>
@@ -102,7 +102,7 @@
 							<tr>
 								<td>Postcode</td>
 								<td>
-									<form:input path="postcode" class="background" style="width: 60%;"/>
+									<form:input path="postcode" class="background" style="width: 60%;" id="postCode"/>
 									<a href="#" id="myBtn">Lookup</a>
 								</td>
 								<td>Fax</td>
@@ -147,7 +147,7 @@
 							<span><a href="filter.html?search=S V">S T U V</a></span> |
 							<span><a href="filter.html?search=W Z">W X Y Z</a></span>
 							<span style="float: right;">
-								<a href="<%=request.getContextPath() %>/web/add.html" class="btn_1">Create</a>
+								<a href="<%=request.getContextPath() %>/web/teamadd.html" class="btn_1">Create</a>
 							</span>
 							<span style="float: right;">
 								<a href="#" class="btn_1">In-active</a>
@@ -155,42 +155,44 @@
 						</div>
 						
 						<!-- List -->
-						<table class="list">
-							<tr>
-								<th class="header-background">Team Name</th>
-								<th class="header-background">Address Line 1</th>
-								<th class="header-background">Postcode</th>
-								<th class="header-background">Contact</th>
-								<th class="header-background">
-									<span>
-										<input id="in-active" type="checkbox" onclick="getall()">
-										<label for="in-active"> In Active ?</label>
-									</span>
-									<script type="text/javascript">
-										function getall(){
-											var x = document.getElementsByClassName("in-activehide");
+						<table class="list sortable">
+							<thead>
+								<tr>
+									<th>Team Name</th>
+									<th>Address Line 1</th>
+									<th>Postcode</th>
+									<th>Contact</th>
+									<th>
+										<span>
+											<input id="in-active" type="checkbox" onclick="getall()">
+											<label for="in-active"> In Active ?</label>
+										</span>
+										<script type="text/javascript">
+											function getall(){
+												var x = document.getElementsByClassName("in-activehide");
+												
+												if (document.getElementById("in-active").checked) {
+													for(var i=0;i<x.length;i++) {
+														x[i].style.display = "table-row";
+													} 
+												} else {
+													for(var i=0;i<x.length;i++) {
+														x[i].style.display = "none";
+													} 
+												}					
+												
+											}
 											
-											if (document.getElementById("in-active").checked) {
-												for(var i=0;i<x.length;i++) {
-													x[i].style.display = "table-row";
-												} 
-											} else {
-												for(var i=0;i<x.length;i++) {
-													x[i].style.display = "none";
-												} 
-											}					
-											
-										}
-										
-										function active(){
-											var x = confirm("Do you want to make this Team active?");
-											
-											if(x==true) return true;
-											else return false;
-										}
-									</script>
-								</th>
-							</tr>
+											function active(){
+												var x = confirm("Do you want to make this Team active?");
+												
+												if(x==true) return true;
+												else return false;
+											}
+										</script>
+									</th>
+								</tr>
+							</thead>
 							<c:forEach var="team" items="${listTeam }">
 								<c:choose>
 									<c:when test="${team.status == true}">

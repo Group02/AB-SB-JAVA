@@ -36,6 +36,7 @@ public class OrganisationController {
 	@RequestMapping(value = "/list")
 	public ModelAndView listOrg() {
 		
+		DepartmentController.turn = 0;
 		return new ModelAndView("OrganisationList", "Organisation",
 				new Organisation());
 	}
@@ -43,14 +44,14 @@ public class OrganisationController {
 	@RequestMapping(value = "/create")
 	public ModelAndView createOrg() {
 		Organisation org = new Organisation();
-		
+		DepartmentController.turn = 0;
 		return new ModelAndView("AddOrganisation2", "Org", org);
 	}
 	
 	@RequestMapping(value = "/amend")
 	public ModelAndView amendOrg() {
 		ModelAndView model = new ModelAndView("AmendOrganisation");
-		
+		DepartmentController.turn = 0;
 		List<Directorate> list = daoDir.getAllDir();
 		model.addObject("list", list);
 		
@@ -68,7 +69,7 @@ public class OrganisationController {
 	@RequestMapping(value = "/amendDir")
 	public ModelAndView amendDir() {
 		ModelAndView model = new ModelAndView("AmendDirectorate","he",new Directorate());
-		
+		DepartmentController.turn = 0;
 		//list address lookup
 		if(addrdao.getAllAddr()!=null){
 			
@@ -106,6 +107,35 @@ public class OrganisationController {
 		String search = request.getParameter("search");
 		searchBU = search;
 		ModelAndView model = new ModelAndView("AmendDirectorate","he",daoDir.FindDir(search));
+		DepartmentController.turn = 0;
+		//list address lookup
+			if(addrdao.getAllAddr()!=null){
+				
+				//Make list address lookup
+				List<AddressLookup> listAddr = addrdao.getAllAddr();
+				
+				model.addObject("listAddr", listAddr);
+			}
+			
+			//list contact lookup
+			if(cont.getAllCont()!=null){
+				
+				//Make list address lookup
+				List<Contacts> listCont = cont.getAllCont();
+				
+				//Save object to session
+				model.addObject("listCont", listCont);
+			}
+
+			//list business lookup
+			if(busidao.getAllBusi() != null){
+				
+				//Make list business lookup
+				List<BusinessLookup> listBusi = busidao.getAllBusi();
+				
+				model.addObject("listBusi", listBusi);
+			}
+				
 		return model;
 	}
 	
@@ -148,7 +178,7 @@ public class OrganisationController {
 			// Insert new SM:
 			smDAO.insertSM(newSM);
 		}
-		
+		DepartmentController.turn = 0;
 		// Back to details form
 		return "redirect:/organisation/amend.html";
 	}

@@ -63,13 +63,13 @@
 					
 					<!-- "Details" content -->
 					<div id="tab1" class="tabcontent" style="display: block;">
-						<table>
+						<table class="tb_dir">
 						<tr>
 							<td>Department Name *</td>
 							<td><form:input path="departmentName" size="24px" id = "departmentName" readonly = "${readonly}"/> </td>
 							<td>Type of Business</td>
 							<td>
-							<form:input path="typeOfBusiness" class="background" size="14px" readonly="readonly"/>
+							<form:input path="typeOfBusiness" class="background" style="width:60%" disabled="true"/>
 							<a href="">Lookup</a>
 							</td>
 						</tr>
@@ -79,12 +79,12 @@
 								<form:textarea path="shortDescription" cols = "30" rows = "3" />
 							</td>
 							<td><span class="SIC">SIC Code</span></td>
-							<td><span class="SIC"><form:input path="sicCode" class="background" size="14px" readonly="readonly" /> </span> </td>
+							<td><span class="SIC"><form:input path="sicCode" class="background" style="width:60%" disabled="true" /> </span> </td>
 						</tr>
 						<tr>
 							<td>Lead Contact *</td>
 							<td>
-								<form:input path="leadContact" class="background" size="16px" readonly="readonly" />
+								<form:input path="leadContact" class="background" style="width:60%" disabled="true" />
 								<a href="ListContact.jsp">Lookup</a>
 							</td>
 							<td rowspan="3"><span class="Fdes">Department Full Description</span></td>
@@ -114,7 +114,7 @@
 						<tr>
 							<td>Postcode</td>
 							<td>
-								<form:input path="postcode" class="background" size="16px" readonly="readonly"/>
+								<form:input path="postcode" class="background" style="width:60%" />
 								<a href="ListContact.jsp">Lookup</a>
 							</td>
 							<td>Fax</td>
@@ -143,15 +143,6 @@
 							</td>
 							<td></td>
 							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-								<button onclick="save()">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href = "<%= request.getContextPath()%>/web/index.html"><button type="button" >Back</button></a>
-							</td>
 						</tr>
 						
 					</table>

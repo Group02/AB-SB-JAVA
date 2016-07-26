@@ -26,7 +26,7 @@
 		</div>
 		
 		<!-- List -->
-		<table class="list">
+		<table class="list sortable">
 			<tr>
 				<th>BU/Directorate Name</th>
 				<th>Head Office Address Line 1</th>
