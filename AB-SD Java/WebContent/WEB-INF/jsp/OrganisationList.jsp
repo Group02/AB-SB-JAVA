@@ -40,7 +40,7 @@
 				</div>
 				
 				<!-- List -->
-				<table class="list">
+				<table class="list sortable">
 					<tr>
 						<th>Orgainsation Name</th>
 						<th>Head Office Address Line 1</th>
@@ -54,14 +54,27 @@
 						</th>
 					</tr>
 					<%
-						for (int i = 0; i < 15; i++) {
+						for (int i = 0; i < 10; i++) {
 					%>
 							<tr>
 								<td><a href="<%=request.getContextPath()%>/organisation/amend.html">Organisation Name <%=i+1%></a>
 								<td>218/20 Tran Hung Dao, Ninh Kieu, Can Tho</td>
 								<td>SE10 11<%=i%></td>
 								<td>Nguyen Van A<%=i%></td>
-								<td>Active</td>
+								<td>Yes</td>
+							</tr>
+					<%
+						}
+					%>
+					<%
+						for (int i = 10; i <= 15; i++) {
+					%>
+							<tr class="">
+								<td><a href="<%=request.getContextPath()%>/organisation/amend.html">Organisation Name <%=i+1%></a>
+								<td>218/20 Tran Hung Dao, Ninh Kieu, Can Tho</td>
+								<td>SE10 11<%=i%></td>
+								<td>Nguyen Van A<%=i%></td>
+								<td>No</td>
 							</tr>
 					<%
 						}

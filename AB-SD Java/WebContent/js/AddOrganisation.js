@@ -190,13 +190,13 @@ function checkEMP(){
 		return false;
 	}
 		
-	if (!phoneNumberVal.test(phoneNumber) && phoneNumber != null) {
+	if (!phoneNumberVal.test(phoneNumber) && phoneNumber != "") {
 		document.getElementById("phoneTeam").style.border = "1px solid red";
 		document.getElementById("message").innerHTML = "Sorry, System can't recognize the phone number!";
 		return false;
 	}
 	
-	if (!emailPattern.test(email) && email != null) {
+	if (!emailPattern.test(email) && email != "") {
 		document.getElementById("mailTeam").style.border = "1px solid red";
 		document.getElementById("message").innerHTML = "Sorry, System doesn't recognize that email.";
 		return false;

@@ -40,7 +40,7 @@ public class TeamController {
 		List<Team> listTeam = dao.getAllTeam();
 		
 		model.addObject("listTeam", listTeam);
-		
+		DepartmentController.turn = 0;
 		
 		return model;
 	}
@@ -55,7 +55,7 @@ public class TeamController {
 		dao.updateTeam(team);
 
 		List<Team> listTeam = dao.getAllTeam();
-		
+		DepartmentController.turn = 0;
 		model.addObject("listTeam", listTeam);
 		return model;
 	}
@@ -69,7 +69,6 @@ public class TeamController {
 			
 			//Make list address lookup
 			List<AddressLookup> listAddr = addrdao.getAllAddr();
-			
 			model.addObject("listAddr", listAddr);
 		}
 		
@@ -91,6 +90,7 @@ public class TeamController {
 			
 			model.addObject("listBusi", listBusi);
 		}
+		DepartmentController.turn = 0;
 		return model;
 	}
 	
@@ -105,7 +105,7 @@ public class TeamController {
 //			add list team to model
 			List<Team> listTeam = dao.getAllTeam();
 			model.addObject("listTeam", listTeam);
-			
+			DepartmentController.turn = 0;
 			return model;
 	}
 	
@@ -165,6 +165,7 @@ public class TeamController {
 				
 				model.addObject("listBusi", listBusi);
 			}
+			DepartmentController.turn = 0;
 		return model;
 	}
 	
@@ -179,7 +180,7 @@ public class TeamController {
 //		add list team to model
 		List<Team> listTeam = dao.getAllTeam();
 		model.addObject("listTeam", listTeam);
-		
+		DepartmentController.turn = 0;
 		return model;
 	}
 
@@ -193,7 +194,7 @@ public class TeamController {
 		dao.updateTeam(team);
 
 		List<Team> listTeam = dao.getAllTeam();
-		
+		DepartmentController.turn = 0;
 		model.addObject("listTeam", listTeam);
 		return model;
 	}
@@ -238,7 +239,7 @@ public class TeamController {
 				variable = new LinkedList<Team>();
 				variable = s;
 			}
-			
+			DepartmentController.turn = 0;
 			model.addObject("listTeam", variable);
 			return model;
 		}

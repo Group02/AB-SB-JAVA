@@ -38,7 +38,7 @@ public class DepartmentController {
 	ContactDAO cont = new ContactDAO();
 	BusinessLookupDAO busidao = new BusinessLookupDAO();
 	
-	private static int turn = 0;
+	public static int turn = 0;
 	private static SessionFactory factory = HibernateUtil.getSessionFactory();
 	private static Session session;
 	private static Transaction tx;
