@@ -17,7 +17,7 @@
 					<table class="cols-left"> 
 						<tr>
 							<td>Organisation Name <span class="mandatory">*</span></td>
-							<td><form:input path="orgName" id="orgName"/></td>
+							<td><form:input path="orgName" id="orgName" value="Organisation Name 1"/></td>
 						</tr>
 						<tr>
 							<td>Organisation Short Description <span class="mandatory">*</span></td>
@@ -27,18 +27,18 @@
 							<td>Lead Contact</td>
 							<td>
 								<form:hidden id="contactId" path="leadContact.id"/>
-								<input type="text" id="contactName" disabled="disabled" style="width: 60%;">
+								<input type="text" id="contactName" disabled="disabled" style="width: 60%;" value="Nguyen Van A0">
 								<a href="#" onclick="openPopup('popup-address')">Lookup</a>
 							</td>
 						</tr>
 						<tr>
 							<td>Address Line <span class="mandatory">*</span></td>
-							<td><form:input id="addressLine" path="addressLookup.address"/></td>
+							<td><form:input id="addressLine" path="addressLookup.address" value="218/20 Tran Hung Dao, Ninh Kieu, Can Tho"/></td>
 						</tr>
 						<tr>
 							<td>Postcode <span class="mandatory">*</span></td>
 							<td>
-								<form:input id="postcode" path="addressLookup.postCode" style="width: 60%;"/>
+								<form:input id="postcode" path="addressLookup.postCode" style="width: 60%;" value="SE10 110"/>
 								<a href="#">Lookup</a>
 							</td>
 						</tr>
@@ -80,7 +80,7 @@
 						<tr>
 							<td>Type of Business <span class="mandatory">*</span></td>
 							<td>
-								<form:input id="businessName" path="businessLookup.businessName" style="width: 60%;"/>
+								<form:input id="businessName" path="businessLookup.businessName" style="width: 60%;" value="Type1"/>
 								<a href="#">Lookup</a>
 							</td>
 						</tr>
@@ -95,7 +95,7 @@
 						<tr>
 							<td>Phone Number <span class="mandatory">*</span></td>
 							<td>
-								<form:input path="phoneNumber" id="phoneNumber"/>
+								<form:input path="phoneNumber" id="phoneNumber" value="0918 113 114"/>
 							</td>
 						</tr>
 						<tr>

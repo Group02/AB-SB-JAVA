@@ -8,6 +8,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script type="text/javascript" src="../js/sorttable.js"></script>
+	<script type="text/javascript" src="../js/details.js"></script>
 </head>
 <body>
 	<div id="tab5" class="tabcontent">
@@ -28,36 +29,38 @@
 					<th>Added Date</th>
 					<th>
 						<span>
-							<input id="in-active" type="checkbox" onclick="onCheckInActive()">
+							<input id="in-active-SM" type="checkbox" onclick="onCheckInActive()">
 							<label for="in-active-SM">In Active?</label>
 						</span>
-					</th>
+					</th>	
 				</tr>
 			</thead>
-			<c:forEach var="sm" items="${listSM}" varStatus="i">
-				<c:choose>
-					<c:when test="${sm.isActive == false}">
-						<tr id="${sm.url}" class="inActive-SM">
-							<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
-							<td>${sm.description}</td>
-							<td>${sm.type}</td>
-							<td>${sm.addedBy}</td>
-							<td>${sm.addedDate}</td>
-							<td>No</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<tr id="${sm.url}">
-							<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
-							<td>${sm.description}</td>
-							<td>${sm.type}</td>
-							<td>${sm.addedBy}</td>
-							<td>${sm.addedDate}</td>
-							<td>Yes</td>
-						</tr>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
+			<tbody>
+				<c:forEach var="sm" items="${listSM}" varStatus="i">
+					<c:choose>
+						<c:when test="${sm.isActive == false}">
+							<tr id="${sm.url}" class="inActive-SM">
+								<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
+								<td>${sm.description}</td>
+								<td>${sm.type}</td>
+								<td>${sm.addedBy}</td>
+								<td>${sm.addedDate}</td>
+								<td>No</td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<tr id="${sm.url}">
+								<td><a href="#sm-details" onclick="onModifySM('${sm.url}', 'sm-details')">${sm.url}</a></td>
+								<td>${sm.description}</td>
+								<td>${sm.type}</td>
+								<td>${sm.addedBy}</td>
+								<td>${sm.addedDate}</td>
+								<td>Yes</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+			</tbody>
 		</table>
 		
 		<!-- Page -->

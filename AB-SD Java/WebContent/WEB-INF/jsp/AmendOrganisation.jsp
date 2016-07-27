@@ -46,7 +46,7 @@
 								onclick="openTab(event, 'tab1')">Details 1</a></li>
 							<li><a href="#" class="tablinks"
 								onclick="openTab(event, 'tab2')">Details 2</a></li>
-							<li><a href="#" class="tablinks"
+							<li id="tablink3"><a href="#" class="tablinks"
 								onclick="openTab(event, 'tab3')">Details 3</a></li>
 							<li><a href="#" class="tablinks"
 								onclick="openTab(event, 'tab4')">Details 4</a></li>
