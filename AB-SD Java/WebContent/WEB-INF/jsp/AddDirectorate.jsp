@@ -71,7 +71,7 @@
 							<tr>
 								<td>Lead Contact</td>
 								<td>
-									<form:input path="leadContact" class="background" disabled="true" style="width: 70%;" id="leadcont" value="${leadContact }"/>
+									<form:input path="leadContact" class="background" disabled="true" style="width: 60%;" id="leadcont" value="${leadContact }"/>
 									<a href="#" id="contact">Lookup</a>
 								</td>
 								<td>Organisation Full Description</td>
